@@ -8,1007 +8,1007 @@ class iod:
     # menu 7 button actions
     def on_geany__clicked(self, widget):
         if os.path.isfile("/usr/bin/geany"):
-            os.system('xfce4-terminal -H -x sudo pacman -R geany')
+            os.system('xterm -e "sudo pacman -R geany"')
             if not os.path.isfile("/usr/bin/geany"):
                 self.geany__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S geany')
+            os.system('xterm -e "sudo pacman -S geany"')
             if os.path.isfile("/usr/bin/geany"):
                 self.geany__img.set_from_file('categories/gtk-yes.png')
 
     def on_blender__clicked(self, widget):
         if os.path.isfile("/usr/bin/blender"):
-            os.system('xfce4-terminal -H -x sudo pacman -R blender')
+            os.system('xterm -e "sudo pacman -R blender"')
             if not os.path.isfile("/usr/bin/audacious"):
                 self.blender__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S blender')
+            os.system('xterm -e "sudo pacman -S blender"')
             if os.path.isfile("/usr/bin/blender"):
                 self.blender__img.set_from_file('categories/gtk-yes.png')
 
     def on_ninja_ide__clicked(self, widget):
         if os.path.isfile("/usr/bin/ninja-ide"):
-            os.system('xfce4-terminal -H -x sudo pacman -R ninja-ide')
+            os.system('xterm -e "sudo pacman -R ninja-ide"')
             if not os.path.isfile("/usr/bin/ninja-ide"):
                 self.ninja_ide__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S banshee')
+            os.system('xterm -e "sudo pacman -S banshee"')
             if os.path.isfile("/usr/bin/ninja-ide"):
                 self.ninja_ide__img.set_from_file('categories/gtk-yes.png')
 
     def on_glade__clicked(self, widget):
         if os.path.isfile("/usr/bin/glade"):
-            os.system('xfce4-terminal -H -x sudo pacman -R glade')
+            os.system('xterm -e "sudo pacman -R glade"')
             if not os.path.isfile("/usr/bin/glade"):
                 self.glade__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S glade')
+            os.system('xterm -e "sudo pacman -S glade"')
             if os.path.isfile("/usr/bin/glade"):
                 self.glade__img.set_from_file('categories/gtk-yes.png')
 
     def on_audacious__clicked(self, widget):
         if os.path.isfile("/usr/bin/audacious"):
-            os.system('xfce4-terminal -H -x sudo pacman -R audacious')
+            os.system('xterm -e "sudo pacman -R audacious"')
             if not os.path.isfile("/usr/bin/audacious"):
                 self.audacious__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S audacious')
+            os.system('xterm -e "sudo pacman -S audacious"')
             if os.path.isfile("/usr/bin/audacious"):
                 self.audacious__img.set_from_file('categories/gtk-yes.png')
 
     def on_gimp__clicked(self, widget):
         if os.path.isfile("/usr/bin/gimp"):
-            os.system('xfce4-terminal -H -x sudo pacman -R gimp')
+            os.system('xterm -e "sudo pacman -R gimp"')
             if not os.path.isfile("/usr/bin/gimp"):
                 self.gimp__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S gimp')
+            os.system('xterm -e "sudo pacman -S gimp"')
             if os.path.isfile("/usr/bin/gimp"):
                 self.gimp__img.set_from_file('categories/gtk-yes.png')
 
     def on_evince__clicked(self, widget):
         if os.path.isfile("/usr/bin/evince"):
-            os.system('xfce4-terminal -H -x sudo pacman -R evince')
+            os.system('xterm -e "sudo pacman -R evince"')
             if not os.path.isfile("/usr/bin/evince"):
                 self.evince__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S evince')
+            os.system('xterm -e "sudo pacman -S evince"')
             if os.path.isfile("/usr/bin/evince"):
                 self.evince__img.set_from_file('categories/gtk-yes.png')
 
     def on_xfburn__clicked(self, widget):
         if os.path.isfile("/usr/bin/xfburn"):
-            os.system('xfce4-terminal -H -x sudo pacman -R xfburn')
+            os.system('xterm -e "sudo pacman -R xfburn"')
             if not os.path.isfile("/usr/bin/xfburn"):
                 self.xfburn__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S xfburn')
+            os.system('xterm -e "sudo pacman -S xfburn"')
             if os.path.isfile("/usr/bin/xfburn"):
                 self.xfburn__img.set_from_file('categories/gtk-yes.png')
 
     def on_flashplayer__clicked(self, widget):
         if os.path.isfile("/usr/bin/flash-player-properties"):
-            os.system('xfce4-terminal -H -x sudo pacman -R flashplugin')
+            os.system('xterm -e "sudo pacman -R flashplugin"')
             if not os.path.isfile("/usr/bin/flash-player-properties"):
                 self.flashplayer__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S flashplugin')
+            os.system('xterm -e "sudo pacman -S flashplugin"')
             if os.path.isfile("/usr/bin/flash-player-properties"):
                 self.flashplayer__img.set_from_file('categories/gtk-yes.png')
 
     def on_openshot__clicked(self, widget):
         if os.path.isfile("/usr/bin/openshot"):
-            os.system('xfce4-terminal -H -x sudo pacman -R openshot')
+            os.system('xterm -e "sudo pacman -R openshot"')
             if not os.path.isfile("/usr/bin/openshot"):
                 self.openshot__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S openshot')
+            os.system('xterm -e "sudo pacman -S openshot"')
             if os.path.isfile("/usr/bin/openshot"):
                 self.openshot__img.set_from_file('categories/gtk-yes.png')
 
     def on_chromium__clicked(self, widget):
         if os.path.isfile("/usr/bin/chromium"):
-            os.system('xfce4-terminal -H -x sudo pacman -R chromium')
+            os.system('xterm -e "sudo pacman -R chromium"')
             if not os.path.isfile("/usr/bin/chromium"):
                 self.chromium__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S chromium')
+            os.system('xterm -e "sudo pacman -S chromium"')
             if os.path.isfile("/usr/bin/chromium"):
                 self.chromium__img.set_from_file('categories/gtk-yes.png')
 
     def on_deluge__clicked(self, widget):
         if os.path.isfile("/usr/bin/deluge"):
-            os.system('xfce4-terminal -H -x sudo pacman -R deluge')
+            os.system('xterm -e "sudo pacman -R deluge"')
             if not os.path.isfile("/usr/bin/deluge"):
                 self.deluge__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S deluge')
+            os.system('xterm -e "sudo pacman -S deluge"')
             if os.path.isfile("/usr/bin/deluge"):
                 self.deluge__img.set_from_file('categories/gtk-yes.png')
 
     def on_liferea__clicked(self, widget):
         if os.path.isfile("/usr/bin/liferea"):
-            os.system('xfce4-terminal -H -x sudo pacman -R liferea')
+            os.system('xterm -e "sudo pacman -R liferea"')
             if not os.path.isfile("/usr/bin/liferea"):
                 self.liferea__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S liferea')
+            os.system('xterm -e "sudo pacman -S liferea"')
             if os.path.isfile("/usr/bin/liferea"):
                 self.liferea__img.set_from_file('categories/gtk-yes.png')
 
     def on_htop__clicked(self, widget):
         if os.path.isfile("/usr/bin/htop"):
-            os.system('xfce4-terminal -H -x sudo pacman -R htop')
+            os.system('xterm -e "sudo pacman -R htop"')
             if not os.path.isfile("/usr/bin/htop"):
                 self.htop__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S htop')
+            os.system('xterm -e "sudo pacman -S htop"')
             if os.path.isfile("/usr/bin/htop"):
                 self.htop__img.set_from_file('categories/gtk-yes.png')
 
     def on_skype__clicked(self, widget):
         if os.path.isfile("/usr/bin/skype"):
-            os.system('xfce4-terminal -H -x sudo pacman -R skype')
+            os.system('xterm -e "sudo pacman -R skype"')
             if not os.path.isfile("/usr/bin/skype"):
                 self.skype__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S skype')
+            os.system('xterm -e "sudo pacman -S skype"')
             if os.path.isfile("/usr/bin/skype"):
                 self.skype__img.set_from_file('categories/gtk-yes.png')
 
     def on_wireshark__clicked(self, widget):
         if os.path.isfile("/usr/bin/wireshark"):
-            os.system('xfce4-terminal -H -x sudo pacman -R wireshark-gtk')
+            os.system('xterm -e "sudo pacman -R wireshark-gtk"')
             if not os.path.isfile("/usr/bin/wireshark"):
                 self.wireshark__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S wireshark-gtk')
+            os.system('xterm -e "sudo pacman -S wireshark-gtk"')
             if os.path.isfile("/usr/bin/wireshark"):
                 self.wireshark__img.set_from_file('categories/gtk-yes.png')
 
     def on_virtualbox__clicked(self, widget):
         if os.path.isfile("/usr/bin/virtualbox"):
-            os.system('xfce4-terminal -H -x sudo pacman -R virtualbox')
+            os.system('xterm -e "sudo pacman -R virtualbox"')
             if not os.path.isfile("/usr/bin/virtualbox"):
                 self.virtualbox__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S virtualbox')
+            os.system('xterm -e "sudo pacman -S virtualbox"')
             if os.path.isfile("/usr/bin/virtualbox"):
                 self.virtualbox__img.set_from_file('categories/gtk-yes.png')
 
     def on_steam__clicked(self, widget):
         if os.path.isfile("/usr/bin/steam"):
-            os.system('xfce4-terminal -H -x sudo pacman -R steam')
+            os.system('xterm -e "sudo pacman -R steam"')
             if not os.path.isfile("/usr/bin/steam"):
                 self.steam__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S steam')
+            os.system('xterm -e "sudo pacman -S steam"')
             if os.path.isfile("/usr/bin/steam"):
                 self.steam__img.set_from_file('categories/gtk-yes.png')
 
     def on_xchat__clicked(self, widget):
         if os.path.isfile("/usr/bin/xchat"):
-            os.system('xfce4-terminal -H -x sudo pacman -R xchat')
+            os.system('xterm -e "sudo pacman -R xchat"')
             if not os.path.isfile("/usr/bin/xchat"):
                 self.xchat__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S xchat')
+            os.system('xterm -e "sudo pacman -S xchat"')
             if os.path.isfile("/usr/bin/xchat"):
                 self.xchat__img.set_from_file('categories/gtk-yes.png')
 
     def on_gedit__clicked(self, widget):
         if os.path.isfile("/usr/bin/gedit"):
-            os.system('xfce4-terminal -H -x sudo pacman -R gedit')
+            os.system('xterm -e "sudo pacman -R gedit"')
             if not os.path.isfile("/usr/bin/gedit"):
                 self.gedit__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S gedit')
+            os.system('xterm -e "sudo pacman -S gedit"')
             if os.path.isfile("/usr/bin/gedit"):
                 self.gedit__img.set_from_file('categories/gtk-yes.png')
 
     # menu 6 button actions
     def on_docky_clicked(self, widget):
         if os.path.isfile("/usr/bin/docky"):
-            os.system('xfce4-terminal -H -x sudo pacman -R docky')
+            os.system('xterm -e "sudo pacman -R docky"')
             if not os.path.isfile("/usr/bin/docky"):
                 self.docky_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S docky')
+            os.system('xterm -e "sudo pacman -S docky"')
             if os.path.isfile("/usr/bin/docky"):
                 self.docky_img.set_from_file('categories/gtk-yes.png')
 
     def on_emacs_clicked(self, widget):
         if os.path.isfile("/usr/bin/emacs"):
-            os.system('xfce4-terminal -H -x sudo pacman -R emacs')
+            os.system('xterm -e "sudo pacman -R emacs"')
             if not os.path.isfile("/usr/bin/emacs"):
                 self.emacs_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S emacs')
+            os.system('xterm -e "sudo pacman -S emacs"')
             if os.path.isfile("/usr/bin/emacs"):
                 self.emacs_img.set_from_file('categories/gtk-yes.png')
 
     def on_vim_clicked(self, widget):
         if os.path.isfile("/usr/bin/vim"):
-            os.system('xfce4-terminal -H -x sudo pacman -R vim')
+            os.system('xterm -e "sudo pacman -R vim"')
             if not os.path.isfile("/usr/bin/vim"):
                 self.vim_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S vim')
+            os.system('xterm -e "sudo pacman -S vim"')
             if os.path.isfile("/usr/bin/vim"):
                 self.vim_img.set_from_file('categories/gtk-yes.png')
 
     def on_galculator_clicked(self, widget):
         if os.path.isfile("/usr/bin/galculator"):
-            os.system('xfce4-terminal -H -x sudo pacman -R galculator')
+            os.system('xterm -e "sudo pacman -R galculator"')
             if not os.path.isfile("/usr/bin/galculator"):
                 self.galculator_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S galculator')
+            os.system('xterm -e "sudo pacman -S galculator"')
             if os.path.isfile("/usr/bin/galculator"):
                 self.galculator_img.set_from_file('categories/gtk-yes.png')
 
     def on_gedit_clicked(self, widget):
         if os.path.isfile("/usr/bin/gedit"):
-            os.system('xfce4-terminal -H -x sudo pacman -R gedit')
+            os.system('xterm -e "sudo pacman -R gedit"')
             if not os.path.isfile("/usr/bin/gedit"):
                 self.gedit_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S gedit')
+            os.system('xterm -e "sudo pacman -S gedit"')
             if os.path.isfile("/usr/bin/gedit"):
                 self.gedit_img.set_from_file('categories/gtk-yes.png')
 
     def on_gloobus_clicked(self, widget):
         if os.path.isfile("/usr/bin/gloobus-preview"):
-            os.system('xfce4-terminal -H -x sudo pacman -R gloobus-preview')
+            os.system('xterm -e "sudo pacman -R gloobus-preview"')
             if not os.path.isfile("/usr/bin/gloobus-preview"):
                 self.gloobus_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S gloobus-preview')
+            os.system('xterm -e "sudo pacman -S gloobus-preview"')
             if os.path.isfile("/usr/bin/gloobus-preview"):
                 self.gloobus_img.set_from_file('categories/gtk-yes.png')
 
     def on_leafpad_clicked(self, widget):
         if os.path.isfile("/usr/bin/leafpad"):
-            os.system('xfce4-terminal -H -x sudo pacman -R leafpad')
+            os.system('xterm -e "sudo pacman -R leafpad"')
             if not os.path.isfile("/usr/bin/leafpad"):
                 self.leafpad_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S leafpad')
+            os.system('xterm -e "sudo pacman -S leafpad"')
             if os.path.isfile("/usr/bin/leafpad"):
                 self.leafpad_img.set_from_file('categories/gtk-yes.png')
 
     def on_scribes_clicked(self, widget):
         if os.path.isfile("/usr/bin/scribes"):
-            os.system('xfce4-terminal -H -x sudo pacman -R scribes')
+            os.system('xterm -e "sudo pacman -R scribes"')
             if not os.path.isfile("/usr/bin/scribes"):
                 self.scribes_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S scribes')
+            os.system('xterm -e "sudo pacman -S scribes"')
             if os.path.isfile("/usr/bin/scribes"):
                 self.scribes_img.set_from_file('categories/gtk-yes.png')
 
     def on_tomboy_clicked(self, widget):
         if os.path.isfile("/usr/bin/tomboy"):
-            os.system('xfce4-terminal -H -x sudo pacman -R tomboy')
+            os.system('xterm -e "sudo pacman -R tomboy"')
             if not os.path.isfile("/usr/bin/tomboy"):
                 self.tomboy_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S tomboy')
+            os.system('xterm -e "sudo pacman -S tomboy"')
             if os.path.isfile("/usr/bin/tomboy"):
                 self.tomboy_img.set_from_file('categories/gtk-yes.png')
 
     def on_tuxcards_clicked(self, widget):
         if os.path.isfile("/usr/bin/tuxcards"):
-            os.system('xfce4-terminal -H -x sudo pacman -R tuxcards')
+            os.system('xterm -e "sudo pacman -R tuxcards"')
             if not os.path.isfile("/usr/bin/tuxcards"):
                 self.tuxcards_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S tuxcards')
+            os.system('xterm -e "sudo pacman -S tuxcards"')
             if os.path.isfile("/usr/bin/tuxcards"):
                 self.tuxcards_img.set_from_file('categories/gtk-yes.png')
 
     # menu 5 button actions
     def on_gparted_clicked(self, widget):
         if os.path.isfile("/usr/bin/gparted"):
-            os.system('xfce4-terminal -H -x sudo pacman -R gparted')
+            os.system('xterm -e "sudo pacman -R gparted"')
             if not os.path.isfile("/usr/bin/gparted"):
                 self.gparted_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S gparted')
+            os.system('xterm -e "sudo pacman -S gparted"')
             if os.path.isfile("/usr/bin/gparted"):
                 self.gparted_img.set_from_file('categories/gtk-yes.png')
 
     def on_guake_clicked(self, widget):
         if os.path.isfile("/usr/bin/guake"):
-            os.system('xfce4-terminal -H -x sudo pacman -R guake')
+            os.system('xterm -e "sudo pacman -R guake"')
             if not os.path.isfile("/usr/bin/guake"):
                 self.guake_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S guake')
+            os.system('xterm -e "sudo pacman -S guake"')
             if os.path.isfile("/usr/bin/guake"):
                 self.guake_img.set_from_file('categories/gtk-yes.png')
 
     def on_hardinfo_clicked(self, widget):
         if os.path.isfile("/usr/bin/hardinfo"):
-            os.system('xfce4-terminal -H -x sudo pacman -R hardinfo')
+            os.system('xterm -e "sudo pacman -R hardinfo"')
             if not os.path.isfile("/usr/bin/hardinfo"):
                 self.hardinfo_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S hardinfo')
+            os.system('xterm -e "sudo pacman -S hardinfo"')
             if os.path.isfile("/usr/bin/hardinfo"):
                 self.hardinfo_img.set_from_file('categories/gtk-yes.png')
 
     def on_htop_clicked(self, widget):
         if os.path.isfile("/usr/bin/htop"):
-            os.system('xfce4-terminal -H -x sudo pacman -R htop')
+            os.system('xterm -e "sudo pacman -R htop"')
             if not os.path.isfile("/usr/bin/htop"):
                 self.htop_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S htop')
+            os.system('xterm -e "sudo pacman -S htop"')
             if os.path.isfile("/usr/bin/htop"):
                 self.htop_img.set_from_file('categories/gtk-yes.png')
 
     def on_keepassx_clicked(self, widget):
         if os.path.isfile("/usr/bin/keepassx"):
-            os.system('xfce4-terminal -H -x sudo pacman -R keepassx')
+            os.system('xterm -e "sudo pacman -R keepassx"')
             if not os.path.isfile("/usr/bin/keepassx"):
                 self.keepassx_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S keepassx')
+            os.system('xterm -e "sudo pacman -S keepassx"')
             if os.path.isfile("/usr/bin/keepassx"):
                 self.keepassx_img.set_from_file('categories/gtk-yes.png')
 
     def on_playonlinux_clicked(self, widget):
         if os.path.isfile("/usr/bin/playonlinux"):
-            os.system('xfce4-terminal -H -x sudo pacman -R playonlinux')
+            os.system('xterm -e "sudo pacman -R playonlinux"')
             if not os.path.isfile("/usr/bin/playonlinux"):
                 self.playonlinux_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S playonlinux')
+            os.system('xterm -e "sudo pacman -S playonlinux"')
             if os.path.isfile("/usr/bin/playonlinux"):
                 self.playonlinux_img.set_from_file('categories/gtk-yes.png')
 
     def on_terminator_clicked(self, widget):
         if os.path.isfile("/usr/bin/terminator"):
-            os.system('xfce4-terminal -H -x sudo pacman -R terminator')
+            os.system('xterm -e "sudo pacman -R terminator"')
             if not os.path.isfile("/usr/bin/terminator"):
                 self.terminator_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S terminator')
+            os.system('xterm -e "sudo pacman -S terminator"')
             if os.path.isfile("/usr/bin/terminator"):
                 self.terminator_img.set_from_file('categories/gtk-yes.png')
 
     def on_thunar_clicked(self, widget):
         if os.path.isfile("/usr/bin/thunar"):
-            os.system('xfce4-terminal -H -x sudo pacman -R thunar')
+            os.system('xterm -e "sudo pacman -R thunar"')
             if not os.path.isfile("/usr/bin/thunar"):
                 self.thunar_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S thunar')
+            os.system('xterm -e "sudo pacman -S thunar"')
             if os.path.isfile("/usr/bin/thunar"):
                 self.thunar_img.set_from_file('categories/gtk-yes.png')
 
     def on_truecrypt_clicked(self, widget):
         if os.path.isfile("/usr/bin/truecrypt"):
-            os.system('xfce4-terminal -H -x sudo pacman -R truecrypt')
+            os.system('xterm -e "sudo pacman -R truecrypt"')
             if not os.path.isfile("/usr/bin/truecrypt"):
                 self.truecrypt_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S truecrypt')
+            os.system('xterm -e "sudo pacman -S truecrypt"')
             if os.path.isfile("/usr/bin/truecrypt"):
                 self.truecrypt_img.set_from_file('categories/gtk-yes.png')
 
     def on_unetbootin_clicked(self, widget):
         if os.path.isfile("/usr/bin/unetbootin"):
-            os.system('xfce4-terminal -H -x sudo pacman -R unetbootin')
+            os.system('xterm -e "sudo pacman -R unetbootin"')
             if not os.path.isfile("/usr/bin/unetbootin"):
                 self.unetbootin_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S unetbootin')
+            os.system('xterm -e "sudo pacman -S unetbootin"')
             if os.path.isfile("/usr/bin/unetbootin"):
                 self.unetbootin_img.set_from_file('categories/gtk-yes.png')
 
     def on_virtualbox_clicked(self, widget):
         if os.path.isfile("/usr/bin/virtualbox"):
-            os.system('xfce4-terminal -H -x sudo pacman -R virtualbox')
+            os.system('xterm -e "sudo pacman -R virtualbox"')
             if not os.path.isfile("/usr/bin/virtualbox"):
                 self.virtualbox_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S virtualbox')
+            os.system('xterm -e "sudo pacman -S virtualbox"')
             if os.path.isfile("/usr/bin/virtualbox"):
                 self.virtualbox_img.set_from_file('categories/gtk-yes.png')
 
     def on_wine_clicked(self, widget):
         if os.path.isfile("/usr/bin/wine"):
-            os.system('xfce4-terminal -H -x sudo pacman -R wine')
+            os.system('xterm -e "sudo pacman -R wine"')
             if not os.path.isfile("/usr/bin/wine"):
                 self.wine_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S wine')
+            os.system('xterm -e "sudo pacman -S wine"')
             if os.path.isfile("/usr/bin/wine"):
                 self.wine_img.set_from_file('categories/gtk-yes.png')
 
     def on_wireshark_clicked(self, widget):
         if os.path.isfile("/usr/bin/wireshark"):
-            os.system('xfce4-terminal -H -x sudo pacman -R wireshark-gtk')
+            os.system('xterm -e "sudo pacman -R wireshark-gtk"')
             if not os.path.isfile("/usr/bin/wireshark"):
                 self.wireshark_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S wireshark-gtk')
+            os.system('xterm -e "sudo pacman -S wireshark-gtk"')
             if os.path.isfile("/usr/bin/wireshark"):
                 self.wireshark_img.set_from_file('categories/gtk-yes.png')
 
     def on_xbmc_clicked(self, widget):
         if os.path.isfile("/usr/bin/xbmc"):
-            os.system('xfce4-terminal -H -x sudo pacman -R xbmc')
+            os.system('xterm -e "sudo pacman -R xbmc"')
             if not os.path.isfile("/usr/bin/xbmc"):
                 self.xbmc_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S xbmc')
+            os.system('xterm -e "sudo pacman -S xbmc"')
             if os.path.isfile("/usr/bin/xbmc"):
                 self.xbmc_img.set_from_file('categories/gtk-yes.png')
 
     # menu 4 button actions
     def on_amarok_clicked(self, widget):
         if os.path.isfile("/usr/bin/amarok"):
-            os.system('xfce4-terminal -H -x sudo pacman -R amarok')
+            os.system('xterm -e "sudo pacman -R amarok"')
             if not os.path.isfile("/usr/bin/amarok"):
                 self.amarok_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S amarok')
+            os.system('xterm -e "sudo pacman -S amarok"')
             if os.path.isfile("/usr/bin/amarok"):
                 self.amarok_img.set_from_file('categories/gtk-yes.png')
 
     def on_audacious_clicked(self, widget):
         if os.path.isfile("/usr/bin/audacious"):
-            os.system('xfce4-terminal -H -x sudo pacman -R audacious')
+            os.system('xterm -e "sudo pacman -R audacious"')
             if not os.path.isfile("/usr/bin/audacious"):
                 self.audacious_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S audacious')
+            os.system('xterm -e "sudo pacman -S audacious"')
             if os.path.isfile("/usr/bin/audacious"):
                 self.audacious_img.set_from_file('categories/gtk-yes.png')
 
     def on_banshee_clicked(self, widget):
         if os.path.isfile("/usr/bin/banshee"):
-            os.system('xfce4-terminal -H -x sudo pacman -R banshee')
+            os.system('xterm -e "sudo pacman -R banshee"')
             if not os.path.isfile("/usr/bin/banshee"):
                 self.banshee_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S banshee')
+            os.system('xterm -e "sudo pacman -S banshee"')
             if os.path.isfile("/usr/bin/banshee"):
                 self.banshee_img.set_from_file('categories/gtk-yes.png')
 
     def on_cheese_clicked(self, widget):
         if os.path.isfile("/usr/bin/cheese"):
-            os.system('xfce4-terminal -H -x sudo pacman -R cheese')
+            os.system('xterm -e "sudo pacman -R cheese"')
             if not os.path.isfile("/usr/bin/cheese"):
                 self.cheese_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S cheese')
+            os.system('xterm -e "sudo pacman -S cheese"')
             if os.path.isfile("/usr/bin/cheese"):
                 self.cheese_img.set_from_file('categories/gtk-yes.png')
 
     def on_clementine_clicked(self, widget):
         if os.path.isfile("/usr/bin/clementine"):
-            os.system('xfce4-terminal -H -x sudo pacman -R clementine')
+            os.system('xterm -e "sudo pacman -R clementine"')
             if not os.path.isfile("/usr/bin/clementine"):
                 self.clementine_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S clementine')
+            os.system('xterm -e "sudo pacman -S clementine"')
             if os.path.isfile("/usr/bin/clementine"):
                 self.clementine_img.set_from_file('categories/gtk-yes.png')
 
     def on_flashplayer_clicked(self, widget):
         if os.path.isfile("/usr/bin/flash-player-properties"):
-            os.system('xfce4-terminal -H -x sudo pacman -R flashplugin')
+            os.system('xterm -e "sudo pacman -R flashplugin"')
             if not os.path.isfile("/usr/bin/flash-player-properties"):
                 self.flashplayer_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S flashplugin')
+            os.system('xterm -e "sudo pacman -S flashplugin"')
             if os.path.isfile("/usr/bin/flash-player-properties"):
                 self.flashplayer_img.set_from_file('categories/gtk-yes.png')
 
     def on_recordmydesktop_clicked(self, widget):
         if os.path.isfile("/usr/bin/gtk-recordMyDesktop"):
-            os.system('xfce4-terminal -H -x sudo pacman -R gtk-recordmydesktop')
+            os.system('xterm -e "sudo pacman -R gtk-recordmydesktop"')
             if not os.path.isfile("/usr/bin/gtk-recordMyDesktop"):
                 self.recordmydesktop_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S gtk-recordmydesktop')
+            os.system('xterm -e "sudo pacman -S gtk-recordmydesktop"')
             if os.path.isfile("/usr/bin/gtk-recordMyDesktop"):
                 self.recordmydesktop_img.set_from_file('categories/gtk-yes.png')
 
     def on_guayadeque_clicked(self, widget):
         if os.path.isfile("/usr/bin/guayadeque"):
-            os.system('xfce4-terminal -H -x sudo pacman -R guayadeque')
+            os.system('xterm -e "sudo pacman -R guayadeque"')
             if not os.path.isfile("/usr/bin/guayadeque"):
                 self.guayadeque_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S guayadeque')
+            os.system('xterm -e "sudo pacman -S guayadeque"')
             if os.path.isfile("/usr/bin/guayadeque"):
                 self.guayadeque_img.set_from_file('categories/gtk-yes.png')
 
     def on_mplayer_clicked(self, widget):
         if os.path.isfile("/usr/bin/mplayer"):
-            os.system('xfce4-terminal -H -x sudo pacman -R mplayer')
+            os.system('xterm -e "sudo pacman -R mplayer"')
             if not os.path.isfile("/usr/bin/mplayer"):
                 self.mplayer_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S mplayer')
+            os.system('xterm -e "sudo pacman -S mplayer"')
             if os.path.isfile("/usr/bin/mplayer"):
                 self.mplayer_img.set_from_file('categories/gtk-yes.png')
 
     def on_openshot_clicked(self, widget):
         if os.path.isfile("/usr/bin/openshot"):
-            os.system('xfce4-terminal -H -x sudo pacman -R openshot')
+            os.system('xterm -e "sudo pacman -R openshot"')
             if not os.path.isfile("/usr/bin/openshot"):
                 self.openshot_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S openshot')
+            os.system('xterm -e "sudo pacman -S openshot"')
             if os.path.isfile("/usr/bin/openshot"):
                 self.openshot_img.set_from_file('categories/gtk-yes.png')
 
     def on_pitivi_clicked(self, widget):
         if os.path.isfile("/usr/bin/pitivi"):
-            os.system('xfce4-terminal -H -x sudo pacman -R pitivi')
+            os.system('xterm -e "sudo pacman -R pitivi"')
             if not os.path.isfile("/usr/bin/pitivi"):
                 self.pitivi_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S pitivi')
+            os.system('xterm -e "sudo pacman -S pitivi"')
             if os.path.isfile("/usr/bin/pitivi"):
                 self.pitivi_img.set_from_file('categories/gtk-yes.png')
 
     def on_rhythmbox_clicked(self, widget):
         if os.path.isfile("/usr/bin/rhythmbox"):
-            os.system('xfce4-terminal -H -x sudo pacman -R rhythmbox')
+            os.system('xterm -e "sudo pacman -R rhythmbox"')
             if not os.path.isfile("/usr/bin/rhythmbox"):
                 self.rhythmbox_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S rhythmbox')
+            os.system('xterm -e "sudo pacman -S rhythmbox"')
             if os.path.isfile("/usr/bin/rhythmbox"):
                 self.rhythmbox_img.set_from_file('categories/gtk-yes.png')
 
     def on_soundconverter_clicked(self, widget):
         if os.path.isfile("/usr/bin/soundconverter"):
-            os.system('xfce4-terminal -H -x sudo pacman -R soundconverter')
+            os.system('xterm -e "sudo pacman -R soundconverter"')
             if not os.path.isfile("/usr/bin/soundconverter"):
                 self.soundconverter_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S soundconverter')
+            os.system('xterm -e "sudo pacman -S soundconverter"')
             if os.path.isfile("/usr/bin/soundconverter"):
                 self.soundconverter_img.set_from_file('categories/gtk-yes.png')
 
     def on_totem_clicked(self, widget):
         if os.path.isfile("/usr/bin/totem"):
-            os.system('xfce4-terminal -H -x sudo pacman -R totem')
+            os.system('xterm -e "sudo pacman -R totem"')
             if not os.path.isfile("/usr/bin/totem"):
                 self.totem_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S totem')
+            os.system('xterm -e "sudo pacman -S totem"')
             if os.path.isfile("/usr/bin/totem"):
                 self.totem_img.set_from_file('categories/gtk-yes.png')
 
     def on_vlc_clicked(self, widget):
         if os.path.isfile("/usr/bin/vlc"):
-            os.system('xfce4-terminal -H -x sudo pacman -R vlc')
+            os.system('xterm -e "sudo pacman -R vlc"')
             if not os.path.isfile("/usr/bin/vlc"):
                 self.vlc_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S vlc')
+            os.system('xterm -e "sudo pacman -S vlc"')
             if os.path.isfile("/usr/bin/vlc"):
                 self.vlc_img.set_from_file('categories/gtk-yes.png')
 
     def on_winff_clicked(self, widget):
         if os.path.isfile("/usr/bin/winff"):
-            os.system('xfce4-terminal -H -x sudo pacman -R winff')
+            os.system('xterm -e "sudo pacman -R winff"')
             if not os.path.isfile("/usr/bin/winff"):
                 self.winff_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S winff')
+            os.system('xterm -e "sudo pacman -S winff"')
             if os.path.isfile("/usr/bin/winff"):
                 self.winff_img.set_from_file('categories/gtk-yes.png')
 
     def on_xfburn_clicked(self, widget):
         if os.path.isfile("/usr/bin/xfburn"):
-            os.system('xfce4-terminal -H -x sudo pacman -R xfburn')
+            os.system('xterm -e "sudo pacman -R xfburn"')
             if not os.path.isfile("/usr/bin/xfburn"):
                 self.xfburn_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S xfburn')
+            os.system('xterm -e "sudo pacman -S xfburn"')
             if os.path.isfile("/usr/bin/xfburn"):
                 self.xfburn_img.set_from_file('categories/gtk-yes.png')
 
     # menu 3 button actions
     def on_chromium_clicked(self, widget):
         if os.path.isfile("/usr/bin/chromium"):
-            os.system('xfce4-terminal -H -x sudo pacman -R chromium')
+            os.system('xterm -e "sudo pacman -R chromium"')
             if not os.path.isfile("/usr/bin/chromium"):
                 self.chromium_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S chromium')
+            os.system('xterm -e "sudo pacman -S chromium"')
             if os.path.isfile("/usr/bin/chromium"):
                 self.chromium_img.set_from_file('categories/gtk-yes.png')
 
     def on_deluge_clicked(self, widget):
         if os.path.isfile("/usr/bin/deluge"):
-            os.system('xfce4-terminal -H -x sudo pacman -R deluge')
+            os.system('xterm -e "sudo pacman -R deluge"')
             if not os.path.isfile("/usr/bin/deluge"):
                 self.deluge_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S deluge')
+            os.system('xterm -e "sudo pacman -S deluge"')
             if os.path.isfile("/usr/bin/deluge"):
                 self.deluge_img.set_from_file('categories/gtk-yes.png')
 
     def on_evolution_clicked(self, widget):
         if os.path.isfile("/usr/bin/evolution"):
-            os.system('xfce4-terminal -H -x sudo pacman -R evolution')
+            os.system('xterm -e "sudo pacman -R evolution"')
             if not os.path.isfile("/usr/bin/evolution"):
                 self.evolution_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S evolution')
+            os.system('xterm -e "sudo pacman -S evolution"')
             if os.path.isfile("/usr/bin/evolution"):
                 self.evolution_img.set_from_file('categories/gtk-yes.png')
 
     def on_filezilla_clicked(self, widget):
         if os.path.isfile("/usr/bin/filezilla"):
-            os.system('xfce4-terminal -H -x sudo pacman -R filezilla')
+            os.system('xterm -e "sudo pacman -R filezilla"')
             if not os.path.isfile("/usr/bin/filezilla"):
                 self.filezilla_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S filezilla')
+            os.system('xterm -e "sudo pacman -S filezilla"')
             if os.path.isfile("/usr/bin/filezilla"):
                 self.filezilla_img.set_from_file('categories/gtk-yes.png')
 
     def on_firefox_clicked(self, widget):
         if os.path.isfile("/usr/bin/firefox"):
-            os.system('xfce4-terminal -H -x sudo pacman -R firefox')
+            os.system('xterm -e "sudo pacman -R firefox"')
             if not os.path.isfile("/usr/bin/firefox"):
                 self.firefox_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S firefox')
+            os.system('xterm -e "sudo pacman -S firefox"')
             if os.path.isfile("/usr/bin/firefox"):
                 self.firefox_img.set_from_file('categories/gtk-yes.png')
 
     def on_chrome_clicked(self, widget):
         if os.path.isfile("/usr/bin/google-chrome-stable"):
-            os.system('xfce4-terminal -H -x yaourt -R google-chrome')
+            os.system('xterm -e "yaourt -R google-chrome"')
             if not os.path.isfile("/usr/bin/google-chrome-stable"):
                 self.chrome_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x yaourt -S google-chrome')
+            os.system('xterm -e "yaourt -S google-chrome"')
             if os.path.isfile("/usr/bin/google-chrome-stable"):
                 self.chrome_img.set_from_file('categories/gtk-yes.png')
 
     def on_xchat_clicked(self, widget):
         if os.path.isfile("/usr/bin/xchat"):
-            os.system('xfce4-terminal -H -x sudo pacman -R xchat')
+            os.system('xterm -e "sudo pacman -R xchat"')
             if not os.path.isfile("/usr/bin/xchat"):
                 self.xchat_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S xchat')
+            os.system('xterm -e "sudo pacman -S xchat"')
             if os.path.isfile("/usr/bin/xchat"):
                 self.xchat_img.set_from_file('categories/gtk-yes.png')
 
     def on_liferea_clicked(self, widget):
         if os.path.isfile("/usr/bin/liferea"):
-            os.system('xfce4-terminal -H -x sudo pacman -R liferea')
+            os.system('xterm -e "sudo pacman -R liferea"')
             if not os.path.isfile("/usr/bin/liferea"):
                 self.liferea_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S liferea')
+            os.system('xterm -e "sudo pacman -S liferea"')
             if os.path.isfile("/usr/bin/liferea"):
                 self.liferea_img.set_from_file('categories/gtk-yes.png')
 
     def on_midori_clicked(self, widget):
         if os.path.isfile("/usr/bin/midori"):
-            os.system('xfce4-terminal -H -x sudo pacman -R midori')
+            os.system('xterm -e "sudo pacman -R midori"')
             if not os.path.isfile("/usr/bin/midori"):
                 self.midori_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S midori')
+            os.system('xterm -e "sudo pacman -S midori"')
             if os.path.isfile("/usr/bin/midori"):
                 self.midori_img.set_from_file('categories/gtk-yes.png')
 
     def on_minitube_clicked(self, widget):
         if os.path.isfile("/usr/bin/minitube"):
-            os.system('xfce4-terminal -H -x sudo pacman -R minitube')
+            os.system('xterm -e "sudo pacman -R minitube"')
             if not os.path.isfile("/usr/bin/minitube"):
                 self.minitube_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S minitube')
+            os.system('xterm -e "sudo pacman -S minitube"')
             if os.path.isfile("/usr/bin/minitube"):
                 self.minitube_img.set_from_file('categories/gtk-yes.png')
 
     def on_opera_clicked(self, widget):
         if os.path.isfile("/usr/bin/opera"):
-            os.system('xfce4-terminal -H -x sudo pacman -R opera')
+            os.system('xterm -e "sudo pacman -R opera"')
             if not os.path.isfile("/usr/bin/opera"):
                 self.opera_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S opera')
+            os.system('xterm -e "sudo pacman -S opera"')
             if os.path.isfile("/usr/bin/opera"):
                 self.opera_img.set_from_file('categories/gtk-yes.png')
 
     def on_pidgin_clicked(self, widget):
         if os.path.isfile("/usr/bin/pidgin"):
-            os.system('xfce4-terminal -H -x sudo pacman -R pidgin')
+            os.system('xterm -e "sudo pacman -R pidgin"')
             if not os.path.isfile("/usr/bin/pidgin"):
                 self.pidgin_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S pidgin')
+            os.system('xterm -e "sudo pacman -S pidgin"')
             if os.path.isfile("/usr/bin/pidgin"):
                 self.pidgin_img.set_from_file('categories/gtk-yes.png')
 
     def on_skyp_clicked(self, widget):
         if os.path.isfile("/usr/bin/skype"):
-            os.system('xfce4-terminal -H -x sudo pacman -R skype')
+            os.system('xterm -e "sudo pacman -R skype"')
             if not os.path.isfile("/usr/bin/skype"):
                 self.skype_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S skype')
+            os.system('xterm -e "sudo pacman -S skype"')
             if os.path.isfile("/usr/bin/skype"):
                 self.skype_img.set_from_file('categories/gtk-yes.png')
 
     def on_steam_clicked(self, widget):
         if os.path.isfile("/usr/bin/steam"):
-            os.system('xfce4-terminal -H -x sudo pacman -R steam')
+            os.system('xterm -e "sudo pacman -R steam"')
             if not os.path.isfile("/usr/bin/steam"):
                 self.steam_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S steam')
+            os.system('xterm -e "sudo pacman -S steam"')
             if os.path.isfile("/usr/bin/steam"):
                 self.steam_img.set_from_file('categories/gtk-yes.png')
 
     def on_thunderbird_clicked(self, widget):
         if os.path.isfile("/usr/bin/thunderbird"):
-            os.system('xfce4-terminal -H -x sudo pacman -R thunderbird')
+            os.system('xterm -e "sudo pacman -R thunderbird"')
             if not os.path.isfile("/usr/bin/thunderbird"):
                 self.thunderbird_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S thunderbird')
+            os.system('xterm -e "sudo pacman -S thunderbird"')
             if os.path.isfile("/usr/bin/thunderbird"):
                 self.thunderbird_img.set_from_file('categories/gtk-yes.png')
 
     def on_transmission_clicked(self, widget):
         if os.path.isfile("/usr/bin/transmission-gtk"):
-            os.system('xfce4-terminal -H -x sudo pacman -R transmission-gtk')
+            os.system('xterm -e "sudo pacman -R transmission-gtk"')
             if not os.path.isfile("/usr/bin/transmission-gtk"):
                 self.transmission_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S transmission-gtk')
+            os.system('xterm -e "sudo pacman -S transmission-gtk"')
             if os.path.isfile("/usr/bin/transmission-gtk"):
                 self.transmission_img.set_from_file('categories/gtk-yes.png')
 
     # menu 2 button actions
     def on_evince_clicked(self, widget):
         if os.path.isfile("/usr/bin/evince"):
-            os.system('xfce4-terminal -H -x sudo pacman -R evince')
+            os.system('xterm -e "sudo pacman -R evince"')
             if not os.path.isfile("/usr/bin/evince"):
                 self.evince_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S evince')
+            os.system('xterm -e "sudo pacman -S evince"')
             if os.path.isfile("/usr/bin/evince"):
                 self.evince_img.set_from_file('categories/gtk-yes.png')
 
     def on_f_spot_clicked(self, widget):
         if os.path.isfile("/usr/bin/f-spot"):
-            os.system('xfce4-terminal -H -x sudo pacman -R f-spot')
+            os.system('xterm -e "sudo pacman -R f-spot"')
             if not os.path.isfile("/usr/bin/f-spot"):
                 self.f_spot_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S f-spot')
+            os.system('xterm -e "sudo pacman -S f-spot"')
             if os.path.isfile("/usr/bin/f-spot"):
                 self.f_spot_img.set_from_file('categories/gtk-yes.png')
 
     def on_gimp_clicked(self, widget):
         if os.path.isfile("/usr/bin/gimp"):
-            os.system('xfce4-terminal -H -x sudo pacman -R gimp')
+            os.system('xterm -e "sudo pacman -R gimp"')
             if not os.path.isfile("/usr/bin/gimp"):
                 self.gimp_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S gimp')
+            os.system('xterm -e "sudo pacman -S gimp"')
             if os.path.isfile("/usr/bin/gimp"):
                 self.gimp_img.set_from_file('categories/gtk-yes.png')
 
     def on_gwenview_clicked(self, widget):
         if os.path.isfile("/usr/bin/gwenview"):
-            os.system('xfce4-terminal -H -x sudo pacman -R gwenview')
+            os.system('xterm -e "sudo pacman -R gwenview"')
             if not os.path.isfile("/usr/bin/gwenview"):
                 self.gwenview_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S gwenview')
+            os.system('xterm -e "sudo pacman -S gwenview"')
             if os.path.isfile("/usr/bin/gwenview"):
                 self.gwenview_img.set_from_file('categories/gtk-yes.png')
 
     def on_imagemagick_clicked(self, widget):
         if os.path.exists("/usr/share/licenses/imagemagick/"):
-            os.system('xfce4-terminal -H -x sudo pacman -R imagemagick')
+            os.system('xterm -e "sudo pacman -R imagemagick"')
             if not os.path.exists("/usr/share/licenses/imagemagick/"):
                 self.imagemagick_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S imagemagick')
+            os.system('xterm -e "sudo pacman -S imagemagick"')
             if os.path.exists("/usr/share/licenses/imagemagick/"):
                 self.imagemagick_img.set_from_file('categories/gtk-yes.png')
 
     def on_inkscape_clicked(self, widget):
         if os.path.isfile("/usr/bin/inkscape"):
-            os.system('xfce4-terminal -H -x sudo pacman -R inkscape')
+            os.system('xterm -e "sudo pacman -R inkscape"')
             if not os.path.isfile("/usr/bin/inkscape"):
                 self.inkscape_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S inkscape')
+            os.system('xterm -e "sudo pacman -S inkscape"')
             if os.path.isfile("/usr/bin/inkscape"):
                 self.inkscape_img.set_from_file('categories/gtk-yes.png')
 
     def on_mypaint_clicked(self, widget):
         if os.path.isfile("/usr/bin/mypaint"):
-            os.system('xfce4-terminal -H -x sudo pacman -R mypaint')
+            os.system('xterm -e "sudo pacman -R mypaint"')
             if not os.path.isfile("/usr/bin/mypaint"):
                 self.mypaint_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S mypaint')
+            os.system('xterm -e "sudo pacman -S mypaint"')
             if os.path.isfile("/usr/bin/mypaint"):
                 self.mypaint_img.set_from_file('categories/gtk-yes.png')
 
     def on_pinta_clicked(self, widget):
         if os.path.isfile("/usr/bin/pinta"):
-            os.system('xfce4-terminal -H -x sudo pacman -R pinta')
+            os.system('xterm -e "sudo pacman -R pinta"')
             if not os.path.isfile("/usr/bin/pinta"):
                 self.pinta_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S pinta')
+            os.system('xterm -e "sudo pacman -S pinta"')
             if os.path.isfile("/usr/bin/pinta"):
                 self.pinta_img.set_from_file('categories/gtk-yes.png')
 
     def on_shotwell_clicked(self, widget):
         if os.path.isfile("/usr/bin/shotwell"):
-            os.system('xfce4-terminal -H -x sudo pacman -R shotwell')
+            os.system('xterm -e "sudo pacman -R shotwell"')
             if not os.path.isfile("/usr/bin/shotwell"):
                 self.shotwell_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S shotwell')
+            os.system('xterm -e "sudo pacman -S shotwell"')
             if os.path.isfile("/usr/bin/shotwell"):
                 self.shotwell_img.set_from_file('categories/gtk-yes.png')
 
     def on_stellarium_clicked(self, widget):
         if os.path.isfile("/usr/bin/stellarium"):
-            os.system('xfce4-terminal -H -x sudo pacman -R stellarium')
+            os.system('xterm -e "sudo pacman -R stellarium"')
             if not os.path.isfile("/usr/bin/stellarium"):
                 self.stellarium_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S stellarium')
+            os.system('xterm -e "sudo pacman -S stellarium"')
             if os.path.isfile("/usr/bin/stellarium"):
                 self.stellarium_img.set_from_file('categories/gtk-yes.png')
 
     # menu 1 button actions
     def on_anjuta_clicked(self, widget):
         if os.path.isfile("/usr/bin/anjuta"):
-            os.system('xfce4-terminal -H -x sudo pacman -R anjuta')
+            os.system('xterm -e "sudo pacman -R anjuta"')
             if not os.path.isfile("/usr/bin/anjuta"):
                 self.anjuta_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S anjuta')
+            os.system('xterm -e "sudo pacman -S anjuta"')
             if os.path.isfile("/usr/bin/anjuta"):
                 self.anjuta_img.set_from_file('categories/gtk-yes.png')
 
     def on_blender_clicked(self, widget):
         if os.path.isfile("/usr/bin/anjuta"):
-            os.system('xfce4-terminal -H -x sudo pacman -R blender')
+            os.system('xterm -e "sudo pacman -R blender"')
             if not os.path.isfile("/usr/bin/anjuta"):
                 self.blender_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S blender')
+            os.system('xterm -e "sudo pacman -S blender"')
             if os.path.isfile("/usr/bin/anjuta"):
                 self.blender_img.set_from_file('categories/gtk-yes.png')
 
     def on_bluefish_clicked(self, widget):
         if os.path.isfile("/usr/bin/bluefish"):
-            os.system('xfce4-terminal -H -x sudo pacman -R bluefish')
+            os.system('xterm -e "sudo pacman -R bluefish"')
             if not os.path.isfile("/usr/bin/bluefish"):
                 self.bluefish_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S bluefish')
+            os.system('xterm -e "sudo pacman -S bluefish"')
             if os.path.isfile("/usr/bin/bluefish"):
                 self.bluefish_img.set_from_file('categories/gtk-yes.png')
 
     def on_eclipse_clicked(self, widget):
         if os.path.isfile("/usr/bin/eclipse"):
-            os.system('xfce4-terminal -H -x sudo pacman -R eclipse')
+            os.system('xterm -e "sudo pacman -R eclipse"')
             if not os.path.isfile("/usr/bin/eclipse"):
                 self.eclipse_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S eclipse')
+            os.system('xterm -e "sudo pacman -S eclipse"')
             if os.path.isfile("/usr/bin/eclipse"):
                 self.eclipse_img.set_from_file('categories/gtk-yes.png')
 
     def on_geany_clicked(self, widget):
         if os.path.isfile("/usr/bin/geany"):
-            os.system('xfce4-terminal -H -x sudo pacman -R geany')
+            os.system('xterm -e "sudo pacman -R geany"')
             if not os.path.isfile("/usr/bin/geany"):
                 self.geany_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S geany')
+            os.system('xterm -e "sudo pacman -S geany"')
             if os.path.isfile("/usr/bin/geany"):
                 self.geany_img.set_from_file('categories/gtk-yes.png')
 
     def on_glade_clicked(self, widget):
         if os.path.isfile("/usr/bin/glade"):
-            os.system('xfce4-terminal -H -x sudo pacman -R glade')
+            os.system('xterm -e "sudo pacman -R glade"')
             if not os.path.isfile("/usr/bin/glade"):
                 self.glade_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S glade')
+            os.system('xterm -e "sudo pacman -S glade"')
             if os.path.isfile("/usr/bin/glade"):
                 self.glade_img.set_from_file('categories/gtk-yes.png')
 
     def on_openjdk_clicked(self, widget):
         if os.path.exists("/etc/java-7-openjdk/"):
-            os.system('xfce4-terminal -H -x sudo pacman -R jre7-openjdk')
+            os.system('xterm -e "sudo pacman -R jre7-openjdk"')
             if not os.path.exists("/etc/java-7-openjdk/"):
                 self.openjdk_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S jre7-openjdk')
+            os.system('xterm -e "sudo pacman -S jre7-openjdk"')
             if os.path.exists("/etc/java-7-openjdk/"):
                 self.openjdk_img.set_from_file('categories/gtk-yes.png')
 
     def on_meld_clicked(self, widget):
         if os.path.isfile("/usr/bin/meld"):
-            os.system('xfce4-terminal -H -x sudo pacman -R meld')
+            os.system('xterm -e "sudo pacman -R meld"')
             if not os.path.isfile("/usr/bin/meld"):
                 self.meld_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S meld')
+            os.system('xterm -e "sudo pacman -S meld"')
             if os.path.isfile("/usr/bin/meld"):
                 self.meld_img.set_from_file('categories/gtk-yes.png')
 
     def on_netbeans_clicked(self, widget):
         if os.path.isfile("/usr/bin/netbeans"):
-            os.system('xfce4-terminal -H -x sudo pacman -R netbeans')
+            os.system('xterm -e "sudo pacman -R netbeans"')
             if not os.path.isfile("/usr/bin/netbeans"):
                 self.netbeans_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S netbeans')
+            os.system('xterm -e "sudo pacman -S netbeans"')
             if os.path.isfile("/usr/bin/netbeans"):
                 self.netbeans_img.set_from_file('categories/gtk-yes.png')
 
     def on_qt4_clicked(self, widget):
         if os.path.exists("/usr/share/qt4/"):
-            os.system('xfce4-terminal -H -x sudo pacman -R qt4')
+            os.system('xterm -e "sudo pacman -R qt4"')
             if not os.path.exists("/usr/share/qt4/"):
                 self.qt4_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S qt4')
+            os.system('xterm -e "sudo pacman -S qt4"')
             if os.path.exists("/usr/share/qt4/"):
                 self.qt4_img.set_from_file('categories/gtk-yes.png')
 
     def on_qt5_clicked(self, widget):
         if os.path.exists("/usr/share/licenses/qt5/"):
-            os.system('xfce4-terminal -H -x sudo pacman -R qt5-base')
+            os.system('xterm -e "sudo pacman -R qt5-base"')
             if not os.path.exists("/usr/share/licenses/qt5/"):
                 self.qt5_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S qt5-base')
+            os.system('xterm -e "sudo pacman -S qt5-base"')
             if os.path.exists("/usr/share/licenses/qt5/"):
                 self.qt5_img.set_from_file('categories/gtk-yes.png')
 
     def on_qtcreator_clicked(self, widget):
         if os.path.isfile("/usr/bin/netbeans"):
-            os.system('xfce4-terminal -H -x sudo pacman -R qtcreator')
+            os.system('xterm -e "sudo pacman -R qtcreator"')
             if not os.path.isfile("/usr/bin/netbeans"):
                 self.qtcreator_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S qtcreator')
+            os.system('xterm -e "sudo pacman -S qtcreator"')
             if os.path.isfile("/usr/bin/netbeans"):
                 self.qtcreator_img.set_from_file('categories/gtk-yes.png')
 
     def on_ninja_ide_clicked(self, widget):
         if os.path.isfile("/usr/bin/ninja-ide"):
-            os.system('xfce4-terminal -H -x sudo pacman -R ninja-ide')
+            os.system('xterm -e "sudo pacman -R ninja-ide"')
             if not os.path.isfile("/usr/bin/ninja-ide"):
                 self.ninja_ide_img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xfce4-terminal -H -x sudo pacman -S ninja-ide')
+            os.system('xterm -e "sudo pacman -S ninja-ide"')
             if os.path.isfile("/usr/bin/ninja-ide"):
                 self.ninja_ide_img.set_from_file('categories/gtk-yes.png')
 

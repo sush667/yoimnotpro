@@ -8,7 +8,7 @@ I was inspired by Zorin OS and GNOME 3 to create this program.
 
 ## Requirements
 
-* xfce4-terminal
+* xterm
 * python2
 * python2-gobject
 * webkitgtk
