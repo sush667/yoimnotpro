@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.0 on Wed Dec 11 17:53:06 2013 -->
 <interface>
   <!-- interface-requires gtk+ 3.10 -->
   <object class="GtkImage" id="gparted_img">

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.0 on Wed Dec 11 20:28:28 2013 -->
 <interface>
   <!-- interface-requires gtk+ 3.10 -->
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">../categories/menu3.png</property>
+    <property name="pixbuf">../categories/menu1.png</property>
   </object>
   <object class="GtkImage" id="image2">
     <property name="visible">True</property>
@@ -15,7 +14,7 @@
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">../categories/menu1.png</property>
+    <property name="pixbuf">../categories/menu3.png</property>
   </object>
   <object class="GtkImage" id="image4">
     <property name="visible">True</property>
@@ -52,13 +51,15 @@
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
             <child>
-              <object class="GtkButton" id="button1">
+              <object class="GtkToggleButton" id="button1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image3</property>
+                <property name="halign">center</property>
+                <property name="image">image1</property>
                 <property name="relief">none</property>
                 <property name="always_show_image">True</property>
+                <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button1_clicked" swapped="no"/>
               </object>
               <packing>
@@ -68,13 +69,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button2">
+              <object class="GtkToggleButton" id="button2">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="halign">center</property>
                 <property name="image">image2</property>
                 <property name="relief">none</property>
                 <property name="always_show_image">True</property>
+                <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button2_clicked" swapped="no"/>
               </object>
               <packing>
@@ -84,13 +87,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button3">
+              <object class="GtkToggleButton" id="button3">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="image">image1</property>
+                <property name="halign">center</property>
+                <property name="image">image3</property>
                 <property name="relief">none</property>
                 <property name="always_show_image">True</property>
+                <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button3_clicked" swapped="no"/>
               </object>
               <packing>
@@ -100,13 +105,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button4">
+              <object class="GtkToggleButton" id="button4">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="halign">center</property>
                 <property name="image">image4</property>
                 <property name="relief">none</property>
                 <property name="always_show_image">True</property>
+                <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button4_clicked" swapped="no"/>
               </object>
               <packing>
@@ -116,13 +123,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button5">
+              <object class="GtkToggleButton" id="button5">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="halign">center</property>
                 <property name="image">image5</property>
                 <property name="relief">none</property>
                 <property name="always_show_image">True</property>
+                <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button5_clicked" swapped="no"/>
               </object>
               <packing>
@@ -132,13 +141,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button6">
+              <object class="GtkToggleButton" id="button6">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="halign">center</property>
                 <property name="image">image6</property>
                 <property name="relief">none</property>
                 <property name="always_show_image">True</property>
+                <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button6_clicked" swapped="no"/>
               </object>
               <packing>
@@ -148,13 +159,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button7">
+              <object class="GtkToggleButton" id="button7">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="halign">center</property>
                 <property name="image">image7</property>
                 <property name="relief">none</property>
                 <property name="always_show_image">True</property>
+                <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button7_clicked" swapped="no"/>
               </object>
               <packing>
