@@ -1014,6 +1014,12 @@ class iod:
 
 
     def on_button1_clicked(self, widget):
+        self.image1.set_from_file('categories/menu11.png')
+        self.image2.set_from_file('categories/menu2.png')
+        self.image3.set_from_file('categories/menu3.png')
+        self.image4.set_from_file('categories/menu4.png')
+        self.image5.set_from_file('categories/menu5.xpm')
+        self.image6.set_from_file('categories/menu6.png')
         self.vbox.remove(self.grid_graphics)
         self.vbox.remove(self.grid_internet)
         self.vbox.remove(self.grid_multimedia)
@@ -1101,6 +1107,12 @@ class iod:
         self.vbox.add(self.grid_development)
 
     def on_button2_clicked(self, widget):
+        self.image1.set_from_file('categories/menu1.png')
+        self.image2.set_from_file('categories/menu22.png')
+        self.image3.set_from_file('categories/menu3.png')
+        self.image4.set_from_file('categories/menu4.png')
+        self.image5.set_from_file('categories/menu5.xpm')
+        self.image6.set_from_file('categories/menu6.png')
         self.vbox.remove(self.grid_development)
         self.vbox.remove(self.grid_internet)
         self.vbox.remove(self.grid_multimedia)
@@ -1170,6 +1182,12 @@ class iod:
         self.vbox.add(self.grid_graphics)
 
     def on_button3_clicked(self, widget):
+        self.image1.set_from_file('categories/menu1.png')
+        self.image2.set_from_file('categories/menu2.png')
+        self.image3.set_from_file('categories/menu33.png')
+        self.image4.set_from_file('categories/menu4.png')
+        self.image5.set_from_file('categories/menu5.xpm')
+        self.image6.set_from_file('categories/menu6.png')
         self.vbox.remove(self.grid_graphics)
         self.vbox.remove(self.grid_development)
         self.vbox.remove(self.grid_multimedia)
@@ -1275,6 +1293,12 @@ class iod:
         self.vbox.add(self.grid_internet)
 
     def on_button4_clicked(self, widget):
+        self.image1.set_from_file('categories/menu1.png')
+        self.image2.set_from_file('categories/menu2.png')
+        self.image3.set_from_file('categories/menu3.png')
+        self.image4.set_from_file('categories/menu44.png')
+        self.image5.set_from_file('categories/menu5.xpm')
+        self.image6.set_from_file('categories/menu6.png')
         self.vbox.remove(self.grid_graphics)
         self.vbox.remove(self.grid_development)
         self.vbox.remove(self.grid_internet)
@@ -1386,6 +1410,12 @@ class iod:
         self.vbox.add(self.grid_multimedia)
 
     def on_button5_clicked(self, widget):
+        self.image1.set_from_file('categories/menu1.png')
+        self.image2.set_from_file('categories/menu2.png')
+        self.image3.set_from_file('categories/menu3.png')
+        self.image4.set_from_file('categories/menu4.png')
+        self.image5.set_from_file('categories/menu55.xpm')
+        self.image6.set_from_file('categories/menu6.png')
         self.vbox.remove(self.grid_graphics)
         self.vbox.remove(self.grid_development)
         self.vbox.remove(self.grid_internet)
@@ -1479,6 +1509,12 @@ class iod:
         self.vbox.add(self.grid_system)
 
     def on_button6_clicked(self, widget):
+        self.image1.set_from_file('categories/menu1.png')
+        self.image2.set_from_file('categories/menu2.png')
+        self.image3.set_from_file('categories/menu3.png')
+        self.image4.set_from_file('categories/menu4.png')
+        self.image5.set_from_file('categories/menu5.xpm')
+        self.image6.set_from_file('categories/menu66.png')
         self.vbox.remove(self.grid_graphics)
         self.vbox.remove(self.grid_development)
         self.vbox.remove(self.grid_internet)
@@ -1612,6 +1648,14 @@ class iod:
             self.window.set_visual(self.window.visual)
         self.window.set_app_paintable(True)
         self.window.connect("draw", self.draw_transparency)
+
+        # get the categories images, will be used once you click on some the categories to change those images with active or inactive
+        self.image1 = self.builder.get_object("image1")
+        self.image2 = self.builder.get_object("image2")
+        self.image3 = self.builder.get_object("image3")
+        self.image4 = self.builder.get_object("image4")
+        self.image5 = self.builder.get_object("image5")
+        self.image6 = self.builder.get_object("image6")
 
         # get menu 7 application buttons
         self.geany_ = self.builder8.get_object("geany_")
@@ -2054,6 +2098,7 @@ class iod:
         self.qtcreator.connect("clicked", self.on_qtcreator_clicked)
         self.ninja_ide.connect("clicked", self.on_ninja_ide_clicked)
 
+        # display text for each category while hovering it with your mouse
         self.button1 = self.builder.get_object("button1")
         self.button1.set_tooltip_text("Development")
         self.button2 = self.builder.get_object("button2")
