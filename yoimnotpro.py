@@ -2312,14 +2312,14 @@ class iod:
         aboutdialog.destroy()
 
     def draw_transparency(self, widget, cr):
-        cr.set_source_rgba(.1, .1, .1, 0.8)
+        cr.set_source_rgba(.1, .1, .1, 0.95)
         cr.set_operator(cairo.OPERATOR_SOURCE)
         cr.paint()
         cr.set_operator(cairo.OPERATOR_OVER)
 
     def __init__(self):
         self.builder = Gtk.Builder()
-        self.builder.add_from_file('ui/main.ui')
+        self.builder.add_from_file('ui/main2.ui')
 
         self.builder2 = Gtk.Builder()
         self.builder2.add_from_file('ui/menu1.ui')
