@@ -1,14 +1,20 @@
 #!/usr/bin/python2
 import os
+import sys
 import cairo
 from gi.repository import Gtk, GdkPixbuf
 
 class iod:
 
+    # check if the program is started as root, else start it with gksudo
+    if os.geteuid() != 0:
+        arguments = ['', sys.executable] + sys.argv + [os.environ]
+        os.execlpe('gksudo', *arguments)
+
     # menu 7 button actions
     def on_geany__clicked(self, widget):
         if os.path.isfile("/usr/bin/geany"):
-            os.system('xterm -e "sudo pacman -R geany"')
+            os.system('pacman -R geany --noconfirm')
             if not os.path.isfile("/usr/bin/geany"):
                 self.geany__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -16,7 +22,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S geany"')
+            os.system('pacman -S geany --noconfirm')
             if os.path.isfile("/usr/bin/geany"):
                 self.geany__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -26,7 +32,7 @@ class iod:
 
     def on_blender__clicked(self, widget):
         if os.path.isfile("/usr/bin/blender"):
-            os.system('xterm -e "sudo pacman -R blender"')
+            os.system('pacman -R blender --noconfirm')
             if not os.path.isfile("/usr/bin/blender"):
                 self.blender__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -34,7 +40,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S blender"')
+            os.system('pacman -S blender --noconfirm')
             if os.path.isfile("/usr/bin/blender"):
                 self.blender__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -44,7 +50,7 @@ class iod:
 
     def on_ninja_ide__clicked(self, widget):
         if os.path.isfile("/usr/bin/ninja-ide"):
-            os.system('xterm -e "sudo pacman -R ninja-ide"')
+            os.system('pacman -R ninja-ide --noconfirm')
             if not os.path.isfile("/usr/bin/ninja-ide"):
                 self.ninja_ide__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -52,7 +58,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S ninja-ide"')
+            os.system('pacman -S ninja-ide --noconfirm')
             if os.path.isfile("/usr/bin/ninja-ide"):
                 self.ninja_ide__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -62,7 +68,7 @@ class iod:
 
     def on_glade__clicked(self, widget):
         if os.path.isfile("/usr/bin/glade"):
-            os.system('xterm -e "sudo pacman -R glade"')
+            os.system('pacman -R glade --noconfirm')
             if not os.path.isfile("/usr/bin/glade"):
                 self.glade__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -70,7 +76,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S glade"')
+            os.system('pacman -S glade --noconfirm')
             if os.path.isfile("/usr/bin/glade"):
                 self.glade__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -80,7 +86,7 @@ class iod:
 
     def on_audacious__clicked(self, widget):
         if os.path.isfile("/usr/bin/audacious"):
-            os.system('xterm -e "sudo pacman -R audacious"')
+            os.system('pacman -R audacious --noconfirm')
             if not os.path.isfile("/usr/bin/audacious"):
                 self.audacious__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -88,7 +94,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S audacious"')
+            os.system('pacman -S audacious --noconfirm')
             if os.path.isfile("/usr/bin/audacious"):
                 self.audacious__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -98,7 +104,7 @@ class iod:
 
     def on_gimp__clicked(self, widget):
         if os.path.isfile("/usr/bin/gimp"):
-            os.system('xterm -e "sudo pacman -R gimp"')
+            os.system('pacman -R gimp --noconfirm')
             if not os.path.isfile("/usr/bin/gimp"):
                 self.gimp__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -106,7 +112,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S gimp"')
+            os.system('pacman -S gimp --noconfirm')
             if os.path.isfile("/usr/bin/gimp"):
                 self.gimp__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -116,7 +122,7 @@ class iod:
 
     def on_evince__clicked(self, widget):
         if os.path.isfile("/usr/bin/evince"):
-            os.system('xterm -e "sudo pacman -R evince"')
+            os.system('pacman -R evince --noconfirm')
             if not os.path.isfile("/usr/bin/evince"):
                 self.evince__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -124,7 +130,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S evince"')
+            os.system('pacman -S evince --noconfirm')
             if os.path.isfile("/usr/bin/evince"):
                 self.evince__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -134,7 +140,7 @@ class iod:
 
     def on_xfburn__clicked(self, widget):
         if os.path.isfile("/usr/bin/xfburn"):
-            os.system('xterm -e "sudo pacman -R xfburn"')
+            os.system('pacman -R xfburn --noconfirm')
             if not os.path.isfile("/usr/bin/xfburn"):
                 self.xfburn__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -142,7 +148,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S xfburn"')
+            os.system('pacman -S xfburn --noconfirm')
             if os.path.isfile("/usr/bin/xfburn"):
                 self.xfburn__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -152,11 +158,11 @@ class iod:
 
     def on_flashplayer__clicked(self, widget):
         if os.path.isfile("/usr/bin/flash-player-properties"):
-            os.system('xterm -e "sudo pacman -R flashplugin"')
+            os.system('pacman -R flashplugin --noconfirm')
             if not os.path.isfile("/usr/bin/flash-player-properties"):
                 self.flashplayer__img.set_from_file('categories/gtk-no.png')
         else:
-            os.system('xterm -e "sudo pacman -S flashplugin"')
+            os.system('pacman -S flashplugin --noconfirm')
             if os.path.isfile("/usr/bin/flash-player-properties"):
                 self.flashplayer__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -166,7 +172,7 @@ class iod:
 
     def on_openshot__clicked(self, widget):
         if os.path.isfile("/usr/bin/openshot"):
-            os.system('xterm -e "sudo pacman -R openshot"')
+            os.system('pacman -R openshot --noconfirm')
             if not os.path.isfile("/usr/bin/openshot"):
                 self.openshot__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -174,7 +180,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S openshot"')
+            os.system('pacman -S openshot --noconfirm')
             if os.path.isfile("/usr/bin/openshot"):
                 self.openshot__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -184,7 +190,7 @@ class iod:
 
     def on_chromium__clicked(self, widget):
         if os.path.isfile("/usr/bin/chromium"):
-            os.system('xterm -e "sudo pacman -R chromium"')
+            os.system('pacman -R chromium --noconfirm')
             if not os.path.isfile("/usr/bin/chromium"):
                 self.chromium__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -192,7 +198,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S chromium"')
+            os.system('pacman -S chromium --noconfirm')
             if os.path.isfile("/usr/bin/chromium"):
                 self.chromium__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -202,7 +208,7 @@ class iod:
 
     def on_deluge__clicked(self, widget):
         if os.path.isfile("/usr/bin/deluge"):
-            os.system('xterm -e "sudo pacman -R deluge"')
+            os.system('pacman -R deluge --noconfirm')
             if not os.path.isfile("/usr/bin/deluge"):
                 self.deluge__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -210,7 +216,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S deluge"')
+            os.system('pacman -S deluge --noconfirm')
             if os.path.isfile("/usr/bin/deluge"):
                 self.deluge__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -220,7 +226,7 @@ class iod:
 
     def on_liferea__clicked(self, widget):
         if os.path.isfile("/usr/bin/liferea"):
-            os.system('xterm -e "sudo pacman -R liferea"')
+            os.system('pacman -R liferea --noconfirm')
             if not os.path.isfile("/usr/bin/liferea"):
                 self.liferea__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -228,7 +234,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S liferea"')
+            os.system('pacman -S liferea --noconfirm')
             if os.path.isfile("/usr/bin/liferea"):
                 self.liferea__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -238,7 +244,7 @@ class iod:
 
     def on_htop__clicked(self, widget):
         if os.path.isfile("/usr/bin/htop"):
-            os.system('xterm -e "sudo pacman -R htop"')
+            os.system('pacman -R htop --noconfirm')
             if not os.path.isfile("/usr/bin/htop"):
                 self.htop__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -246,7 +252,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S htop"')
+            os.system('pacman -S htop --noconfirm')
             if os.path.isfile("/usr/bin/htop"):
                 self.htop__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -256,7 +262,7 @@ class iod:
 
     def on_skype__clicked(self, widget):
         if os.path.isfile("/usr/bin/skype"):
-            os.system('xterm -e "sudo pacman -R skype"')
+            os.system('pacman -R skype --noconfirm')
             if not os.path.isfile("/usr/bin/skype"):
                 self.skype__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -264,7 +270,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S skype"')
+            os.system('pacman -S skype --noconfirm')
             if os.path.isfile("/usr/bin/skype"):
                 self.skype__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -274,7 +280,7 @@ class iod:
 
     def on_wireshark__clicked(self, widget):
         if os.path.isfile("/usr/bin/wireshark"):
-            os.system('xterm -e "sudo pacman -R wireshark-gtk"')
+            os.system('pacman -R wireshark-gtk --noconfirm')
             if not os.path.isfile("/usr/bin/wireshark"):
                 self.wireshark__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -282,7 +288,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S wireshark-gtk"')
+            os.system('pacman -S wireshark-gtk --noconfirm')
             if os.path.isfile("/usr/bin/wireshark"):
                 self.wireshark__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -292,7 +298,7 @@ class iod:
 
     def on_virtualbox__clicked(self, widget):
         if os.path.isfile("/usr/bin/virtualbox"):
-            os.system('xterm -e "sudo pacman -R virtualbox"')
+            os.system('pacman -R virtualbox --noconfirm')
             if not os.path.isfile("/usr/bin/virtualbox"):
                 self.virtualbox__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -300,7 +306,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S virtualbox"')
+            os.system('pacman -S virtualbox --noconfirm')
             if os.path.isfile("/usr/bin/virtualbox"):
                 self.virtualbox__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -310,7 +316,7 @@ class iod:
 
     def on_steam__clicked(self, widget):
         if os.path.isfile("/usr/bin/steam"):
-            os.system('xterm -e "sudo pacman -R steam"')
+            os.system('pacman -R steam --noconfirm')
             if not os.path.isfile("/usr/bin/steam"):
                 self.steam__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -318,7 +324,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S steam"')
+            os.system('pacman -S steam --noconfirm')
             if os.path.isfile("/usr/bin/steam"):
                 self.steam__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -328,7 +334,7 @@ class iod:
 
     def on_xchat__clicked(self, widget):
         if os.path.isfile("/usr/bin/xchat"):
-            os.system('xterm -e "sudo pacman -R xchat"')
+            os.system('pacman -R xchat --noconfirm')
             if not os.path.isfile("/usr/bin/xchat"):
                 self.xchat__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -336,7 +342,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S xchat"')
+            os.system('pacman -S xchat --noconfirm')
             if os.path.isfile("/usr/bin/xchat"):
                 self.xchat__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -346,7 +352,7 @@ class iod:
 
     def on_gedit__clicked(self, widget):
         if os.path.isfile("/usr/bin/gedit"):
-            os.system('xterm -e "sudo pacman -R gedit"')
+            os.system('pacman -R gedit --noconfirm')
             if not os.path.isfile("/usr/bin/gedit"):
                 self.gedit__img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -354,7 +360,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S gedit"')
+            os.system('pacman -S gedit --noconfirm')
             if os.path.isfile("/usr/bin/gedit"):
                 self.gedit__img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -365,7 +371,7 @@ class iod:
     # menu 6 button actions
     def on_docky_clicked(self, widget):
         if os.path.isfile("/usr/bin/docky"):
-            os.system('xterm -e "sudo pacman -R docky"')
+            os.system('pacman -R docky --noconfirm')
             if not os.path.isfile("/usr/bin/docky"):
                 self.docky_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -373,7 +379,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S docky"')
+            os.system('pacman -S docky --noconfirm')
             if os.path.isfile("/usr/bin/docky"):
                 self.docky_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -383,7 +389,7 @@ class iod:
 
     def on_emacs_clicked(self, widget):
         if os.path.isfile("/usr/bin/emacs"):
-            os.system('xterm -e "sudo pacman -R emacs"')
+            os.system('pacman -R emacs --noconfirm')
             if not os.path.isfile("/usr/bin/emacs"):
                 self.emacs_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -391,7 +397,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S emacs"')
+            os.system('pacman -S emacs --noconfirm')
             if os.path.isfile("/usr/bin/emacs"):
                 self.emacs_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -401,7 +407,7 @@ class iod:
 
     def on_vim_clicked(self, widget):
         if os.path.isfile("/usr/bin/vim"):
-            os.system('xterm -e "sudo pacman -R vim"')
+            os.system('pacman -R vim --noconfirm')
             if not os.path.isfile("/usr/bin/vim"):
                 self.vim_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -409,7 +415,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S vim"')
+            os.system('pacman -S vim --noconfirm')
             if os.path.isfile("/usr/bin/vim"):
                 self.vim_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -419,7 +425,7 @@ class iod:
 
     def on_galculator_clicked(self, widget):
         if os.path.isfile("/usr/bin/galculator"):
-            os.system('xterm -e "sudo pacman -R galculator"')
+            os.system('pacman -R galculator --noconfirm')
             if not os.path.isfile("/usr/bin/galculator"):
                 self.galculator_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -427,7 +433,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S galculator"')
+            os.system('pacman -S galculator --noconfirm')
             if os.path.isfile("/usr/bin/galculator"):
                 self.galculator_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -437,7 +443,7 @@ class iod:
 
     def on_gedit_clicked(self, widget):
         if os.path.isfile("/usr/bin/gedit"):
-            os.system('xterm -e "sudo pacman -R gedit"')
+            os.system('pacman -R gedit --noconfirm')
             if not os.path.isfile("/usr/bin/gedit"):
                 self.gedit_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -445,7 +451,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S gedit"')
+            os.system('pacman -S gedit --noconfirm')
             if os.path.isfile("/usr/bin/gedit"):
                 self.gedit_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -455,7 +461,7 @@ class iod:
 
     def on_gloobus_clicked(self, widget):
         if os.path.isfile("/usr/bin/gloobus-preview"):
-            os.system('xterm -e "sudo pacman -R gloobus-preview"')
+            os.system('pacman -R gloobus-preview --noconfirm')
             if not os.path.isfile("/usr/bin/gloobus-preview"):
                 self.gloobus_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -463,7 +469,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S gloobus-preview"')
+            os.system('pacman -S gloobus-preview --noconfirm')
             if os.path.isfile("/usr/bin/gloobus-preview"):
                 self.gloobus_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -473,7 +479,7 @@ class iod:
 
     def on_leafpad_clicked(self, widget):
         if os.path.isfile("/usr/bin/leafpad"):
-            os.system('xterm -e "sudo pacman -R leafpad"')
+            os.system('pacman -R leafpad --noconfirm')
             if not os.path.isfile("/usr/bin/leafpad"):
                 self.leafpad_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -481,7 +487,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S leafpad"')
+            os.system('pacman -S leafpad --noconfirm')
             if os.path.isfile("/usr/bin/leafpad"):
                 self.leafpad_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -491,7 +497,7 @@ class iod:
 
     def on_scribes_clicked(self, widget):
         if os.path.isfile("/usr/bin/scribes"):
-            os.system('xterm -e "sudo pacman -R scribes"')
+            os.system('pacman -R scribes --noconfirm')
             if not os.path.isfile("/usr/bin/scribes"):
                 self.scribes_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -499,7 +505,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S scribes"')
+            os.system('pacman -S scribes --noconfirm')
             if os.path.isfile("/usr/bin/scribes"):
                 self.scribes_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -509,7 +515,7 @@ class iod:
 
     def on_tomboy_clicked(self, widget):
         if os.path.isfile("/usr/bin/tomboy"):
-            os.system('xterm -e "sudo pacman -R tomboy"')
+            os.system('pacman -R tomboy --noconfirm')
             if not os.path.isfile("/usr/bin/tomboy"):
                 self.tomboy_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -517,7 +523,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S tomboy"')
+            os.system('pacman -S tomboy --noconfirm')
             if os.path.isfile("/usr/bin/tomboy"):
                 self.tomboy_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -527,7 +533,7 @@ class iod:
 
     def on_tuxcards_clicked(self, widget):
         if os.path.isfile("/usr/bin/tuxcards"):
-            os.system('xterm -e "sudo pacman -R tuxcards"')
+            os.system('pacman -R tuxcards --noconfirm')
             if not os.path.isfile("/usr/bin/tuxcards"):
                 self.tuxcards_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -535,7 +541,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S tuxcards"')
+            os.system('pacman -S tuxcards --noconfirm')
             if os.path.isfile("/usr/bin/tuxcards"):
                 self.tuxcards_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -546,7 +552,7 @@ class iod:
     # menu 5 button actions
     def on_gparted_clicked(self, widget):
         if os.path.isfile("/usr/bin/gparted"):
-            os.system('xterm -e "sudo pacman -R gparted"')
+            os.system('pacman -R gparted --noconfirm')
             if not os.path.isfile("/usr/bin/gparted"):
                 self.gparted_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -554,7 +560,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S gparted"')
+            os.system('pacman -S gparted --noconfirm')
             if os.path.isfile("/usr/bin/gparted"):
                 self.gparted_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -564,7 +570,7 @@ class iod:
 
     def on_guake_clicked(self, widget):
         if os.path.isfile("/usr/bin/guake"):
-            os.system('xterm -e "sudo pacman -R guake"')
+            os.system('pacman -R guake --noconfirm')
             if not os.path.isfile("/usr/bin/guake"):
                 self.guake_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -572,7 +578,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S guake"')
+            os.system('pacman -S guake --noconfirm')
             if os.path.isfile("/usr/bin/guake"):
                 self.guake_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -582,7 +588,7 @@ class iod:
 
     def on_hardinfo_clicked(self, widget):
         if os.path.isfile("/usr/bin/hardinfo"):
-            os.system('xterm -e "sudo pacman -R hardinfo"')
+            os.system('pacman -R hardinfo --noconfirm')
             if not os.path.isfile("/usr/bin/hardinfo"):
                 self.hardinfo_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -590,7 +596,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S hardinfo"')
+            os.system('pacman -S hardinfo --noconfirm')
             if os.path.isfile("/usr/bin/hardinfo"):
                 self.hardinfo_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -600,7 +606,7 @@ class iod:
 
     def on_htop_clicked(self, widget):
         if os.path.isfile("/usr/bin/htop"):
-            os.system('xterm -e "sudo pacman -R htop"')
+            os.system('pacman -R htop --noconfirm')
             if not os.path.isfile("/usr/bin/htop"):
                 self.htop_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -608,7 +614,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S htop"')
+            os.system('pacman -S htop --noconfirm')
             if os.path.isfile("/usr/bin/htop"):
                 self.htop_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -618,7 +624,7 @@ class iod:
 
     def on_keepassx_clicked(self, widget):
         if os.path.isfile("/usr/bin/keepassx"):
-            os.system('xterm -e "sudo pacman -R keepassx"')
+            os.system('pacman -R keepassx --noconfirm')
             if not os.path.isfile("/usr/bin/keepassx"):
                 self.keepassx_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -626,7 +632,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S keepassx"')
+            os.system('pacman -S keepassx --noconfirm')
             if os.path.isfile("/usr/bin/keepassx"):
                 self.keepassx_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -636,7 +642,7 @@ class iod:
 
     def on_playonlinux_clicked(self, widget):
         if os.path.isfile("/usr/bin/playonlinux"):
-            os.system('xterm -e "sudo pacman -R playonlinux"')
+            os.system('pacman -R playonlinux --noconfirm')
             if not os.path.isfile("/usr/bin/playonlinux"):
                 self.playonlinux_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -644,7 +650,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S playonlinux"')
+            os.system('pacman -S playonlinux --noconfirm')
             if os.path.isfile("/usr/bin/playonlinux"):
                 self.playonlinux_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -654,7 +660,7 @@ class iod:
 
     def on_terminator_clicked(self, widget):
         if os.path.isfile("/usr/bin/terminator"):
-            os.system('xterm -e "sudo pacman -R terminator"')
+            os.system('pacman -R terminator --noconfirm')
             if not os.path.isfile("/usr/bin/terminator"):
                 self.terminator_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -662,7 +668,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S terminator"')
+            os.system('pacman -S terminator --noconfirm')
             if os.path.isfile("/usr/bin/terminator"):
                 self.terminator_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -672,7 +678,7 @@ class iod:
 
     def on_thunar_clicked(self, widget):
         if os.path.isfile("/usr/bin/thunar"):
-            os.system('xterm -e "sudo pacman -R thunar"')
+            os.system('pacman -R thunar --noconfirm')
             if not os.path.isfile("/usr/bin/thunar"):
                 self.thunar_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -680,7 +686,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S thunar"')
+            os.system('pacman -S thunar --noconfirm')
             if os.path.isfile("/usr/bin/thunar"):
                 self.thunar_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -690,7 +696,7 @@ class iod:
 
     def on_truecrypt_clicked(self, widget):
         if os.path.isfile("/usr/bin/truecrypt"):
-            os.system('xterm -e "sudo pacman -R truecrypt"')
+            os.system('pacman -R truecrypt --noconfirm')
             if not os.path.isfile("/usr/bin/truecrypt"):
                 self.truecrypt_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -698,7 +704,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S truecrypt"')
+            os.system('pacman -S truecrypt --noconfirm')
             if os.path.isfile("/usr/bin/truecrypt"):
                 self.truecrypt_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -708,7 +714,7 @@ class iod:
 
     def on_unetbootin_clicked(self, widget):
         if os.path.isfile("/usr/bin/unetbootin"):
-            os.system('xterm -e "sudo pacman -R unetbootin"')
+            os.system('pacman -R unetbootin --noconfirm')
             if not os.path.isfile("/usr/bin/unetbootin"):
                 self.unetbootin_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -716,7 +722,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S unetbootin"')
+            os.system('pacman -S unetbootin --noconfirm')
             if os.path.isfile("/usr/bin/unetbootin"):
                 self.unetbootin_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -726,7 +732,7 @@ class iod:
 
     def on_virtualbox_clicked(self, widget):
         if os.path.isfile("/usr/bin/virtualbox"):
-            os.system('xterm -e "sudo pacman -R virtualbox"')
+            os.system('pacman -R virtualbox --noconfirm')
             if not os.path.isfile("/usr/bin/virtualbox"):
                 self.virtualbox_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -734,7 +740,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S virtualbox"')
+            os.system('pacman -S virtualbox --noconfirm')
             if os.path.isfile("/usr/bin/virtualbox"):
                 self.virtualbox_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -744,7 +750,7 @@ class iod:
 
     def on_wine_clicked(self, widget):
         if os.path.isfile("/usr/bin/wine"):
-            os.system('xterm -e "sudo pacman -R wine"')
+            os.system('pacman -R wine --noconfirm')
             if not os.path.isfile("/usr/bin/wine"):
                 self.wine_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -752,7 +758,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S wine"')
+            os.system('pacman -S wine --noconfirm')
             if os.path.isfile("/usr/bin/wine"):
                 self.wine_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -762,7 +768,7 @@ class iod:
 
     def on_wireshark_clicked(self, widget):
         if os.path.isfile("/usr/bin/wireshark"):
-            os.system('xterm -e "sudo pacman -R wireshark-gtk"')
+            os.system('pacman -R wireshark-gtk --noconfirm')
             if not os.path.isfile("/usr/bin/wireshark"):
                 self.wireshark_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -770,7 +776,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S wireshark-gtk"')
+            os.system('pacman -S wireshark-gtk --noconfirm')
             if os.path.isfile("/usr/bin/wireshark"):
                 self.wireshark_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -780,7 +786,7 @@ class iod:
 
     def on_xbmc_clicked(self, widget):
         if os.path.isfile("/usr/bin/xbmc"):
-            os.system('xterm -e "sudo pacman -R xbmc"')
+            os.system('pacman -R xbmc --noconfirm')
             if not os.path.isfile("/usr/bin/xbmc"):
                 self.xbmc_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -788,7 +794,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S xbmc"')
+            os.system('pacman -S xbmc --noconfirm')
             if os.path.isfile("/usr/bin/xbmc"):
                 self.xbmc_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -799,7 +805,7 @@ class iod:
     # menu 4 button actions
     def on_amarok_clicked(self, widget):
         if os.path.isfile("/usr/bin/amarok"):
-            os.system('xterm -e "sudo pacman -R amarok"')
+            os.system('pacman -R amarok --noconfirm')
             if not os.path.isfile("/usr/bin/amarok"):
                 self.amarok_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -807,7 +813,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S amarok"')
+            os.system('pacman -S amarok --noconfirm')
             if os.path.isfile("/usr/bin/amarok"):
                 self.amarok_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -817,7 +823,7 @@ class iod:
 
     def on_audacious_clicked(self, widget):
         if os.path.isfile("/usr/bin/audacious"):
-            os.system('xterm -e "sudo pacman -R audacious"')
+            os.system('pacman -R audacious --noconfirm')
             if not os.path.isfile("/usr/bin/audacious"):
                 self.audacious_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -825,7 +831,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S audacious"')
+            os.system('pacman -S audacious --noconfirm')
             if os.path.isfile("/usr/bin/audacious"):
                 self.audacious_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -835,7 +841,7 @@ class iod:
 
     def on_banshee_clicked(self, widget):
         if os.path.isfile("/usr/bin/banshee"):
-            os.system('xterm -e "sudo pacman -R banshee"')
+            os.system('pacman -R banshee --noconfirm')
             if not os.path.isfile("/usr/bin/banshee"):
                 self.banshee_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -843,7 +849,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S banshee"')
+            os.system('pacman -S banshee --noconfirm')
             if os.path.isfile("/usr/bin/banshee"):
                 self.banshee_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -853,7 +859,7 @@ class iod:
 
     def on_cheese_clicked(self, widget):
         if os.path.isfile("/usr/bin/cheese"):
-            os.system('xterm -e "sudo pacman -R cheese"')
+            os.system('pacman -R cheese --noconfirm')
             if not os.path.isfile("/usr/bin/cheese"):
                 self.cheese_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -861,7 +867,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S cheese"')
+            os.system('pacman -S cheese --noconfirm')
             if os.path.isfile("/usr/bin/cheese"):
                 self.cheese_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -871,7 +877,7 @@ class iod:
 
     def on_clementine_clicked(self, widget):
         if os.path.isfile("/usr/bin/clementine"):
-            os.system('xterm -e "sudo pacman -R clementine"')
+            os.system('pacman -R clementine --noconfirm')
             if not os.path.isfile("/usr/bin/clementine"):
                 self.clementine_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -879,7 +885,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S clementine"')
+            os.system('pacman -S clementine --noconfirm')
             if os.path.isfile("/usr/bin/clementine"):
                 self.clementine_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -889,7 +895,7 @@ class iod:
 
     def on_flashplayer_clicked(self, widget):
         if os.path.isfile("/usr/bin/flash-player-properties"):
-            os.system('xterm -e "sudo pacman -R flashplugin"')
+            os.system('pacman -R flashplugin --noconfirm')
             if not os.path.isfile("/usr/bin/flash-player-properties"):
                 self.flashplayer_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -897,7 +903,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S flashplugin"')
+            os.system('pacman -S flashplugin --noconfirm')
             if os.path.isfile("/usr/bin/flash-player-properties"):
                 self.flashplayer_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -907,7 +913,7 @@ class iod:
 
     def on_recordmydesktop_clicked(self, widget):
         if os.path.isfile("/usr/bin/gtk-recordMyDesktop"):
-            os.system('xterm -e "sudo pacman -R gtk-recordmydesktop"')
+            os.system('pacman -R gtk-recordmydesktop --noconfirm')
             if not os.path.isfile("/usr/bin/gtk-recordMyDesktop"):
                 self.recordmydesktop_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -915,7 +921,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S gtk-recordmydesktop"')
+            os.system('pacman -S gtk-recordmydesktop --noconfirm')
             if os.path.isfile("/usr/bin/gtk-recordMyDesktop"):
                 self.recordmydesktop_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -925,7 +931,7 @@ class iod:
 
     def on_guayadeque_clicked(self, widget):
         if os.path.isfile("/usr/bin/guayadeque"):
-            os.system('xterm -e "sudo pacman -R guayadeque"')
+            os.system('pacman -R guayadeque --noconfirm')
             if not os.path.isfile("/usr/bin/guayadeque"):
                 self.guayadeque_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -933,7 +939,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S guayadeque"')
+            os.system('pacman -S guayadeque --noconfirm')
             if os.path.isfile("/usr/bin/guayadeque"):
                 self.guayadeque_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -943,7 +949,7 @@ class iod:
 
     def on_mplayer_clicked(self, widget):
         if os.path.isfile("/usr/bin/mplayer"):
-            os.system('xterm -e "sudo pacman -R mplayer"')
+            os.system('pacman -R mplayer --noconfirm')
             if not os.path.isfile("/usr/bin/mplayer"):
                 self.mplayer_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -951,7 +957,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S mplayer"')
+            os.system('pacman -S mplayer --noconfirm')
             if os.path.isfile("/usr/bin/mplayer"):
                 self.mplayer_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -961,7 +967,7 @@ class iod:
 
     def on_openshot_clicked(self, widget):
         if os.path.isfile("/usr/bin/openshot"):
-            os.system('xterm -e "sudo pacman -R openshot"')
+            os.system('pacman -R openshot --noconfirm')
             if not os.path.isfile("/usr/bin/openshot"):
                 self.openshot_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -969,7 +975,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S openshot"')
+            os.system('pacman -S openshot --noconfirm')
             if os.path.isfile("/usr/bin/openshot"):
                 self.openshot_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -979,7 +985,7 @@ class iod:
 
     def on_pitivi_clicked(self, widget):
         if os.path.isfile("/usr/bin/pitivi"):
-            os.system('xterm -e "sudo pacman -R pitivi"')
+            os.system('pacman -R pitivi --noconfirm')
             if not os.path.isfile("/usr/bin/pitivi"):
                 self.pitivi_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -987,7 +993,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S pitivi"')
+            os.system('pacman -S pitivi --noconfirm')
             if os.path.isfile("/usr/bin/pitivi"):
                 self.pitivi_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -997,7 +1003,7 @@ class iod:
 
     def on_rhythmbox_clicked(self, widget):
         if os.path.isfile("/usr/bin/rhythmbox"):
-            os.system('xterm -e "sudo pacman -R rhythmbox"')
+            os.system('pacman -R rhythmbox --noconfirm')
             if not os.path.isfile("/usr/bin/rhythmbox"):
                 self.rhythmbox_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1005,7 +1011,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S rhythmbox"')
+            os.system('pacman -S rhythmbox --noconfirm')
             if os.path.isfile("/usr/bin/rhythmbox"):
                 self.rhythmbox_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1015,7 +1021,7 @@ class iod:
 
     def on_soundconverter_clicked(self, widget):
         if os.path.isfile("/usr/bin/soundconverter"):
-            os.system('xterm -e "sudo pacman -R soundconverter"')
+            os.system('pacman -R soundconverter --noconfirm')
             if not os.path.isfile("/usr/bin/soundconverter"):
                 self.soundconverter_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1023,7 +1029,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S soundconverter"')
+            os.system('pacman -S soundconverter --noconfirm')
             if os.path.isfile("/usr/bin/soundconverter"):
                 self.soundconverter_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1033,7 +1039,7 @@ class iod:
 
     def on_totem_clicked(self, widget):
         if os.path.isfile("/usr/bin/totem"):
-            os.system('xterm -e "sudo pacman -R totem"')
+            os.system('pacman -R totem --noconfirm')
             if not os.path.isfile("/usr/bin/totem"):
                 self.totem_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1041,7 +1047,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S totem"')
+            os.system('pacman -S totem --noconfirm')
             if os.path.isfile("/usr/bin/totem"):
                 self.totem_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1051,7 +1057,7 @@ class iod:
 
     def on_vlc_clicked(self, widget):
         if os.path.isfile("/usr/bin/vlc"):
-            os.system('xterm -e "sudo pacman -R vlc"')
+            os.system('pacman -R vlc --noconfirm')
             if not os.path.isfile("/usr/bin/vlc"):
                 self.vlc_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1059,7 +1065,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S vlc"')
+            os.system('pacman -S vlc --noconfirm')
             if os.path.isfile("/usr/bin/vlc"):
                 self.vlc_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1069,7 +1075,7 @@ class iod:
 
     def on_winff_clicked(self, widget):
         if os.path.isfile("/usr/bin/winff"):
-            os.system('xterm -e "sudo pacman -R winff"')
+            os.system('pacman -R winff --noconfirm')
             if not os.path.isfile("/usr/bin/winff"):
                 self.winff_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1077,7 +1083,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S winff"')
+            os.system('pacman -S winff --noconfirm')
             if os.path.isfile("/usr/bin/winff"):
                 self.winff_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1087,7 +1093,7 @@ class iod:
 
     def on_xfburn_clicked(self, widget):
         if os.path.isfile("/usr/bin/xfburn"):
-            os.system('xterm -e "sudo pacman -R xfburn"')
+            os.system('pacman -R xfburn --noconfirm')
             if not os.path.isfile("/usr/bin/xfburn"):
                 self.xfburn_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1095,7 +1101,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S xfburn"')
+            os.system('pacman -S xfburn --noconfirm')
             if os.path.isfile("/usr/bin/xfburn"):
                 self.xfburn_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1106,7 +1112,7 @@ class iod:
     # menu 3 button actions
     def on_chromium_clicked(self, widget):
         if os.path.isfile("/usr/bin/chromium"):
-            os.system('xterm -e "sudo pacman -R chromium"')
+            os.system('pacman -R chromium --noconfirm')
             if not os.path.isfile("/usr/bin/chromium"):
                 self.chromium_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1114,7 +1120,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S chromium"')
+            os.system('pacman -S chromium --noconfirm')
             if os.path.isfile("/usr/bin/chromium"):
                 self.chromium_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1124,7 +1130,7 @@ class iod:
 
     def on_deluge_clicked(self, widget):
         if os.path.isfile("/usr/bin/deluge"):
-            os.system('xterm -e "sudo pacman -R deluge"')
+            os.system('pacman -R deluge --noconfirm')
             if not os.path.isfile("/usr/bin/deluge"):
                 self.deluge_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1132,7 +1138,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S deluge"')
+            os.system('pacman -S deluge --noconfirm')
             if os.path.isfile("/usr/bin/deluge"):
                 self.deluge_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1142,7 +1148,7 @@ class iod:
 
     def on_evolution_clicked(self, widget):
         if os.path.isfile("/usr/bin/evolution"):
-            os.system('xterm -e "sudo pacman -R evolution"')
+            os.system('pacman -R evolution --noconfirm')
             if not os.path.isfile("/usr/bin/evolution"):
                 self.evolution_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1150,7 +1156,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S evolution"')
+            os.system('pacman -S evolution --noconfirm')
             if os.path.isfile("/usr/bin/evolution"):
                 self.evolution_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1160,7 +1166,7 @@ class iod:
 
     def on_filezilla_clicked(self, widget):
         if os.path.isfile("/usr/bin/filezilla"):
-            os.system('xterm -e "sudo pacman -R filezilla"')
+            os.system('pacman -R filezilla --noconfirm')
             if not os.path.isfile("/usr/bin/filezilla"):
                 self.filezilla_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1168,7 +1174,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S filezilla"')
+            os.system('pacman -S filezilla --noconfirm')
             if os.path.isfile("/usr/bin/filezilla"):
                 self.filezilla_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1178,7 +1184,7 @@ class iod:
 
     def on_firefox_clicked(self, widget):
         if os.path.isfile("/usr/bin/firefox"):
-            os.system('xterm -e "sudo pacman -R firefox"')
+            os.system('pacman -R firefox --noconfirm')
             if not os.path.isfile("/usr/bin/firefox"):
                 self.firefox_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1186,7 +1192,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S firefox"')
+            os.system('pacman -S firefox --noconfirm')
             if os.path.isfile("/usr/bin/firefox"):
                 self.firefox_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1196,7 +1202,7 @@ class iod:
 
     def on_chrome_clicked(self, widget):
         if os.path.isfile("/usr/bin/google-chrome-stable"):
-            os.system('xterm -e "yaourt -R google-chrome"')
+            os.system('yaourt -R google-chrome --noconfirm')
             if not os.path.isfile("/usr/bin/google-chrome-stable"):
                 self.chrome_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1204,7 +1210,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "yaourt -S google-chrome"')
+            os.system('yaourt -S google-chrome --noconfirm')
             if os.path.isfile("/usr/bin/google-chrome-stable"):
                 self.chrome_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1214,7 +1220,7 @@ class iod:
 
     def on_xchat_clicked(self, widget):
         if os.path.isfile("/usr/bin/xchat"):
-            os.system('xterm -e "sudo pacman -R xchat"')
+            os.system('pacman -R xchat --noconfirm')
             if not os.path.isfile("/usr/bin/xchat"):
                 self.xchat_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1222,7 +1228,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S xchat"')
+            os.system('pacman -S xchat --noconfirm')
             if os.path.isfile("/usr/bin/xchat"):
                 self.xchat_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1232,7 +1238,7 @@ class iod:
 
     def on_liferea_clicked(self, widget):
         if os.path.isfile("/usr/bin/liferea"):
-            os.system('xterm -e "sudo pacman -R liferea"')
+            os.system('pacman -R liferea --noconfirm')
             if not os.path.isfile("/usr/bin/liferea"):
                 self.liferea_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1240,7 +1246,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S liferea"')
+            os.system('pacman -S liferea --noconfirm')
             if os.path.isfile("/usr/bin/liferea"):
                 self.liferea_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1250,7 +1256,7 @@ class iod:
 
     def on_midori_clicked(self, widget):
         if os.path.isfile("/usr/bin/midori"):
-            os.system('xterm -e "sudo pacman -R midori"')
+            os.system('pacman -R midori --noconfirm')
             if not os.path.isfile("/usr/bin/midori"):
                 self.midori_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1258,7 +1264,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S midori"')
+            os.system('pacman -S midori --noconfirm')
             if os.path.isfile("/usr/bin/midori"):
                 self.midori_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1268,7 +1274,7 @@ class iod:
 
     def on_minitube_clicked(self, widget):
         if os.path.isfile("/usr/bin/minitube"):
-            os.system('xterm -e "sudo pacman -R minitube"')
+            os.system('pacman -R minitube --noconfirm')
             if not os.path.isfile("/usr/bin/minitube"):
                 self.minitube_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1276,7 +1282,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S minitube"')
+            os.system('pacman -S minitube --noconfirm')
             if os.path.isfile("/usr/bin/minitube"):
                 self.minitube_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1286,7 +1292,7 @@ class iod:
 
     def on_opera_clicked(self, widget):
         if os.path.isfile("/usr/bin/opera"):
-            os.system('xterm -e "sudo pacman -R opera"')
+            os.system('pacman -R opera --noconfirm')
             if not os.path.isfile("/usr/bin/opera"):
                 self.opera_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1294,7 +1300,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S opera"')
+            os.system('pacman -S opera --noconfirm')
             if os.path.isfile("/usr/bin/opera"):
                 self.opera_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1304,7 +1310,7 @@ class iod:
 
     def on_pidgin_clicked(self, widget):
         if os.path.isfile("/usr/bin/pidgin"):
-            os.system('xterm -e "sudo pacman -R pidgin"')
+            os.system('pacman -R pidgin --noconfirm')
             if not os.path.isfile("/usr/bin/pidgin"):
                 self.pidgin_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1312,7 +1318,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S pidgin"')
+            os.system('pacman -S pidgin --noconfirm')
             if os.path.isfile("/usr/bin/pidgin"):
                 self.pidgin_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1322,7 +1328,7 @@ class iod:
 
     def on_skyp_clicked(self, widget):
         if os.path.isfile("/usr/bin/skype"):
-            os.system('xterm -e "sudo pacman -R skype"')
+            os.system('pacman -R skype --noconfirm')
             if not os.path.isfile("/usr/bin/skype"):
                 self.skype_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1330,7 +1336,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S skype"')
+            os.system('pacman -S skype --noconfirm')
             if os.path.isfile("/usr/bin/skype"):
                 self.skype_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1340,7 +1346,7 @@ class iod:
 
     def on_steam_clicked(self, widget):
         if os.path.isfile("/usr/bin/steam"):
-            os.system('xterm -e "sudo pacman -R steam"')
+            os.system('pacman -R steam --noconfirm')
             if not os.path.isfile("/usr/bin/steam"):
                 self.steam_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1348,7 +1354,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S steam"')
+            os.system('pacman -S steam --noconfirm')
             if os.path.isfile("/usr/bin/steam"):
                 self.steam_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1358,7 +1364,7 @@ class iod:
 
     def on_thunderbird_clicked(self, widget):
         if os.path.isfile("/usr/bin/thunderbird"):
-            os.system('xterm -e "sudo pacman -R thunderbird"')
+            os.system('pacman -R thunderbird --noconfirm')
             if not os.path.isfile("/usr/bin/thunderbird"):
                 self.thunderbird_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1366,7 +1372,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S thunderbird"')
+            os.system('pacman -S thunderbird --noconfirm')
             if os.path.isfile("/usr/bin/thunderbird"):
                 self.thunderbird_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1376,7 +1382,7 @@ class iod:
 
     def on_transmission_clicked(self, widget):
         if os.path.isfile("/usr/bin/transmission-gtk"):
-            os.system('xterm -e "sudo pacman -R transmission-gtk"')
+            os.system('pacman -R transmission-gtk --noconfirm')
             if not os.path.isfile("/usr/bin/transmission-gtk"):
                 self.transmission_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1384,7 +1390,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S transmission-gtk"')
+            os.system('pacman -S transmission-gtk --noconfirm')
             if os.path.isfile("/usr/bin/transmission-gtk"):
                 self.transmission_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1395,7 +1401,7 @@ class iod:
     # menu 2 button actions
     def on_evince_clicked(self, widget):
         if os.path.isfile("/usr/bin/evince"):
-            os.system('xterm -e "sudo pacman -R evince"')
+            os.system('pacman -R evince --noconfirm')
             if not os.path.isfile("/usr/bin/evince"):
                 self.evince_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1403,7 +1409,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S evince"')
+            os.system('pacman -S evince --noconfirm')
             if os.path.isfile("/usr/bin/evince"):
                 self.evince_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1413,7 +1419,7 @@ class iod:
 
     def on_f_spot_clicked(self, widget):
         if os.path.isfile("/usr/bin/f-spot"):
-            os.system('xterm -e "sudo pacman -R f-spot"')
+            os.system('pacman -R f-spot --noconfirm')
             if not os.path.isfile("/usr/bin/f-spot"):
                 self.f_spot_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1421,7 +1427,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S f-spot"')
+            os.system('pacman -S f-spot --noconfirm')
             if os.path.isfile("/usr/bin/f-spot"):
                 self.f_spot_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1431,7 +1437,7 @@ class iod:
 
     def on_gimp_clicked(self, widget):
         if os.path.isfile("/usr/bin/gimp"):
-            os.system('xterm -e "sudo pacman -R gimp"')
+            os.system('pacman -R gimp --noconfirm')
             if not os.path.isfile("/usr/bin/gimp"):
                 self.gimp_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1439,7 +1445,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S gimp"')
+            os.system('pacman -S gimp --noconfirm')
             if os.path.isfile("/usr/bin/gimp"):
                 self.gimp_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1449,7 +1455,7 @@ class iod:
 
     def on_gwenview_clicked(self, widget):
         if os.path.isfile("/usr/bin/gwenview"):
-            os.system('xterm -e "sudo pacman -R gwenview"')
+            os.system('pacman -R gwenview --noconfirm')
             if not os.path.isfile("/usr/bin/gwenview"):
                 self.gwenview_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1457,7 +1463,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S gwenview"')
+            os.system('pacman -S gwenview --noconfirm')
             if os.path.isfile("/usr/bin/gwenview"):
                 self.gwenview_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1467,7 +1473,7 @@ class iod:
 
     def on_imagemagick_clicked(self, widget):
         if os.path.exists("/usr/share/licenses/imagemagick/"):
-            os.system('xterm -e "sudo pacman -R imagemagick"')
+            os.system('pacman -R imagemagick --noconfirm')
             if not os.path.exists("/usr/share/licenses/imagemagick/"):
                 self.imagemagick_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1475,7 +1481,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S imagemagick"')
+            os.system('pacman -S imagemagick --noconfirm')
             if os.path.exists("/usr/share/licenses/imagemagick/"):
                 self.imagemagick_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1485,7 +1491,7 @@ class iod:
 
     def on_inkscape_clicked(self, widget):
         if os.path.isfile("/usr/bin/inkscape"):
-            os.system('xterm -e "sudo pacman -R inkscape"')
+            os.system('pacman -R inkscape --noconfirm')
             if not os.path.isfile("/usr/bin/inkscape"):
                 self.inkscape_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1493,7 +1499,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S inkscape"')
+            os.system('pacman -S inkscape --noconfirm')
             if os.path.isfile("/usr/bin/inkscape"):
                 self.inkscape_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1503,7 +1509,7 @@ class iod:
 
     def on_mypaint_clicked(self, widget):
         if os.path.isfile("/usr/bin/mypaint"):
-            os.system('xterm -e "sudo pacman -R mypaint"')
+            os.system('pacman -R mypaint --noconfirm')
             if not os.path.isfile("/usr/bin/mypaint"):
                 self.mypaint_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1511,7 +1517,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S mypaint"')
+            os.system('pacman -S mypaint --noconfirm')
             if os.path.isfile("/usr/bin/mypaint"):
                 self.mypaint_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1521,7 +1527,7 @@ class iod:
 
     def on_pinta_clicked(self, widget):
         if os.path.isfile("/usr/bin/pinta"):
-            os.system('xterm -e "sudo pacman -R pinta"')
+            os.system('pacman -R pinta --noconfirm')
             if not os.path.isfile("/usr/bin/pinta"):
                 self.pinta_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1529,7 +1535,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S pinta"')
+            os.system('pacman -S pinta --noconfirm')
             if os.path.isfile("/usr/bin/pinta"):
                 self.pinta_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1539,7 +1545,7 @@ class iod:
 
     def on_shotwell_clicked(self, widget):
         if os.path.isfile("/usr/bin/shotwell"):
-            os.system('xterm -e "sudo pacman -R shotwell"')
+            os.system('pacman -R shotwell --noconfirm')
             if not os.path.isfile("/usr/bin/shotwell"):
                 self.shotwell_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1547,7 +1553,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S shotwell"')
+            os.system('pacman -S shotwell --noconfirm')
             if os.path.isfile("/usr/bin/shotwell"):
                 self.shotwell_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1557,7 +1563,7 @@ class iod:
 
     def on_stellarium_clicked(self, widget):
         if os.path.isfile("/usr/bin/stellarium"):
-            os.system('xterm -e "sudo pacman -R stellarium"')
+            os.system('pacman -R stellarium --noconfirm')
             if not os.path.isfile("/usr/bin/stellarium"):
                 self.stellarium_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1565,7 +1571,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S stellarium"')
+            os.system('pacman -S stellarium --noconfirm')
             if os.path.isfile("/usr/bin/stellarium"):
                 self.stellarium_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1576,7 +1582,7 @@ class iod:
     # menu 1 button actions
     def on_anjuta_clicked(self, widget):
         if os.path.isfile("/usr/bin/anjuta"):
-            os.system('xterm -e "sudo pacman -R anjuta"')
+            os.system('pacman -R anjuta --noconfirm')
             if not os.path.isfile("/usr/bin/anjuta"):
                 self.anjuta_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1584,7 +1590,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S anjuta"')
+            os.system('pacman -S anjuta --noconfirm')
             if os.path.isfile("/usr/bin/anjuta"):
                 self.anjuta_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1594,7 +1600,7 @@ class iod:
 
     def on_blender_clicked(self, widget):
         if os.path.isfile("/usr/bin/anjuta"):
-            os.system('xterm -e "sudo pacman -R blender"')
+            os.system('pacman -R blender --noconfirm')
             if not os.path.isfile("/usr/bin/blender"):
                 self.blender_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1602,7 +1608,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S blender"')
+            os.system('pacman -S blender --noconfirm')
             if os.path.isfile("/usr/bin/blender"):
                 self.blender_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1612,7 +1618,7 @@ class iod:
 
     def on_bluefish_clicked(self, widget):
         if os.path.isfile("/usr/bin/bluefish"):
-            os.system('xterm -e "sudo pacman -R bluefish"')
+            os.system('pacman -R bluefish --noconfirm')
             if not os.path.isfile("/usr/bin/bluefish"):
                 self.bluefish_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1620,7 +1626,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S bluefish"')
+            os.system('pacman -S bluefish --noconfirm')
             if os.path.isfile("/usr/bin/bluefish"):
                 self.bluefish_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1630,7 +1636,7 @@ class iod:
 
     def on_eclipse_clicked(self, widget):
         if os.path.isfile("/usr/bin/eclipse"):
-            os.system('xterm -e "sudo pacman -R eclipse"')
+            os.system('pacman -R eclipse --noconfirm')
             if not os.path.isfile("/usr/bin/eclipse"):
                 self.eclipse_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1638,7 +1644,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S eclipse"')
+            os.system('pacman -S eclipse --noconfirm')
             if os.path.isfile("/usr/bin/eclipse"):
                 self.eclipse_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1648,7 +1654,7 @@ class iod:
 
     def on_geany_clicked(self, widget):
         if os.path.isfile("/usr/bin/geany"):
-            os.system('xterm -e "sudo pacman -R geany"')
+            os.system('pacman -R geany --noconfirm')
             if not os.path.isfile("/usr/bin/geany"):
                 self.geany_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1656,7 +1662,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S geany"')
+            os.system('pacman -S geany --noconfirm')
             if os.path.isfile("/usr/bin/geany"):
                 self.geany_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1666,7 +1672,7 @@ class iod:
 
     def on_glade_clicked(self, widget):
         if os.path.isfile("/usr/bin/glade"):
-            os.system('xterm -e "sudo pacman -R glade"')
+            os.system('pacman -R glade --noconfirm')
             if not os.path.isfile("/usr/bin/glade"):
                 self.glade_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1674,7 +1680,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S glade"')
+            os.system('pacman -S glade --noconfirm')
             if os.path.isfile("/usr/bin/glade"):
                 self.glade_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1684,7 +1690,7 @@ class iod:
 
     def on_openjdk_clicked(self, widget):
         if os.path.exists("/etc/java-7-openjdk/"):
-            os.system('xterm -e "sudo pacman -R jre7-openjdk"')
+            os.system('pacman -R jre7-openjdk --noconfirm')
             if not os.path.exists("/etc/java-7-openjdk/"):
                 self.openjdk_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1692,7 +1698,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S jre7-openjdk"')
+            os.system('pacman -S jre7-openjdk --noconfirm')
             if os.path.exists("/etc/java-7-openjdk/"):
                 self.openjdk_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1702,7 +1708,7 @@ class iod:
 
     def on_meld_clicked(self, widget):
         if os.path.isfile("/usr/bin/meld"):
-            os.system('xterm -e "sudo pacman -R meld"')
+            os.system('pacman -R meld --noconfirm')
             if not os.path.isfile("/usr/bin/meld"):
                 self.meld_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1710,7 +1716,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S meld"')
+            os.system('pacman -S meld --noconfirm')
             if os.path.isfile("/usr/bin/meld"):
                 self.meld_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1720,7 +1726,7 @@ class iod:
 
     def on_netbeans_clicked(self, widget):
         if os.path.isfile("/usr/bin/netbeans"):
-            os.system('xterm -e "sudo pacman -R netbeans"')
+            os.system('pacman -R netbeans --noconfirm')
             if not os.path.isfile("/usr/bin/netbeans"):
                 self.netbeans_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1728,7 +1734,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S netbeans"')
+            os.system('pacman -S netbeans --noconfirm')
             if os.path.isfile("/usr/bin/netbeans"):
                 self.netbeans_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1738,7 +1744,7 @@ class iod:
 
     def on_qt4_clicked(self, widget):
         if os.path.exists("/usr/share/qt4/"):
-            os.system('xterm -e "sudo pacman -R qt4"')
+            os.system('pacman -R qt4 --noconfirm')
             if not os.path.exists("/usr/share/qt4/"):
                 self.qt4_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1746,7 +1752,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S qt4"')
+            os.system('pacman -S qt4 --noconfirm')
             if os.path.exists("/usr/share/qt4/"):
                 self.qt4_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1756,7 +1762,7 @@ class iod:
 
     def on_qt5_clicked(self, widget):
         if os.path.exists("/usr/share/licenses/qt5/"):
-            os.system('xterm -e "sudo pacman -R qt5-base"')
+            os.system('pacman -R qt5-base --noconfirm')
             if not os.path.exists("/usr/share/licenses/qt5/"):
                 self.qt5_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1764,7 +1770,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S qt5-base"')
+            os.system('pacman -S qt5-base --noconfirm')
             if os.path.exists("/usr/share/licenses/qt5/"):
                 self.qt5_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1774,7 +1780,7 @@ class iod:
 
     def on_qtcreator_clicked(self, widget):
         if os.path.isfile("/usr/bin/netbeans"):
-            os.system('xterm -e "sudo pacman -R qtcreator"')
+            os.system('pacman -R qtcreator --noconfirm')
             if not os.path.isfile("/usr/bin/netbeans"):
                 self.qtcreator_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1782,7 +1788,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S qtcreator"')
+            os.system('pacman -S qtcreator --noconfirm')
             if os.path.isfile("/usr/bin/netbeans"):
                 self.qtcreator_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1792,7 +1798,7 @@ class iod:
 
     def on_ninja_ide_clicked(self, widget):
         if os.path.isfile("/usr/bin/ninja-ide"):
-            os.system('xterm -e "sudo pacman -R ninja-ide"')
+            os.system('pacman -R ninja-ide --noconfirm')
             if not os.path.isfile("/usr/bin/ninja-ide"):
                 self.ninja_ide_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1800,7 +1806,7 @@ class iod:
                 dialog.run()
                 dialog.destroy()
         else:
-            os.system('xterm -e "sudo pacman -S ninja-ide"')
+            os.system('pacman -S ninja-ide --noconfirm')
             if os.path.isfile("/usr/bin/ninja-ide"):
                 self.ninja_ide_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
