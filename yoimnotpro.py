@@ -1472,9 +1472,9 @@ class iod:
                 dialog.destroy()
 
     def on_imagemagick_clicked(self, widget):
-        if os.path.exists("/usr/share/licenses/imagemagick/"):
+        if os.path.isfile("/usr/bin/convert"):
             os.system('pacman -R imagemagick --noconfirm')
-            if not os.path.exists("/usr/share/licenses/imagemagick/"):
+            if not os.path.isfile("/usr/bin/convert"):
                 self.imagemagick_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
                     Gtk.ButtonsType.OK, "Imagemagick was removed successfully.")
@@ -1482,7 +1482,7 @@ class iod:
                 dialog.destroy()
         else:
             os.system('pacman -S imagemagick --noconfirm')
-            if os.path.exists("/usr/share/licenses/imagemagick/"):
+            if os.path.isfile("/usr/bin/convert"):
                 self.imagemagick_img.set_from_file('categories/gtk-yes.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
                     Gtk.ButtonsType.OK, "Imagemagick was installed successfully\nPlease note that it\'s operated via command line interface.")
