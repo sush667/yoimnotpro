@@ -1939,7 +1939,7 @@ class iod:
                 self.anjuta.set_tooltip_text("Anjuta is installed.\nClick to remove it.")
 
     def on_blender_clicked(self, widget):
-        if os.path.isfile("/usr/bin/anjuta"):
+        if os.path.isfile("/usr/bin/blender"):
             os.system('pacman -R blender --noconfirm')
             if not os.path.isfile("/usr/bin/blender"):
                 self.blender_img.set_from_file('categories/gtk-no.png')
@@ -2779,10 +2779,10 @@ class iod:
 
         if os.path.isfile("/usr/bin//usr/bin/gnome-system-monitor"):
             self.gnome_system_monitor_img.set_from_file('categories/gtk-yes.png')
-            self.gnome_system_monitor.set_tooltip_text("Gnome system manager is installed.\nClick to remove it.")
+            self.gnome_system_monitor.set_tooltip_text("Gnome system monitor is installed.\nClick to remove it.")
         else:
             self.gnome_system_monitor_img.set_from_file('categories/gtk-no.png')
-            self.gnome_system_monitor.set_tooltip_text("Gnome system manager is not installed.\nClick to install it.")
+            self.gnome_system_monitor.set_tooltip_text("Gnome system monitor is not installed.\nClick to install it.")
         self.vbox.add(self.grid_system)
 
     def on_button6_clicked(self, widget):
@@ -2892,7 +2892,7 @@ class iod:
         aboutdialog.set_comments("Small app center\n")
         aboutdialog.set_website("http://linux.sytes.net/")
         aboutdialog.set_website_label("Developer Website")
-        aboutdialog.set_authors(["Aaron\nhttp://linux.sytes.net/", "\nSuggestions:\nexcalibur1234\nKorrode\ntetrahderon\nAyceman", "\nComments:\nRichad\ndrumBE\nVerandert2.0\nLukimya\naaditya\nHardyH\ndcell\nrfkill 2.0"])
+        aboutdialog.set_authors(["Aaron Caffrey\nhttp://linux.sytes.net/", "\nSuggestions:\nexcalibur1234\nKorrode\ntetrahderon\nAyceman", "\nComments:\nRichad\ndrumBE\nVerandert2.0\nLukimya\naaditya\nHardyH\ndcell\nrfkill 2.0"])
         aboutdialog.set_license('GPLv3 - http://www.gnu.org/licenses/gpl.html\nor read the COPYING file')
         aboutdialog.run()
         aboutdialog.destroy()
