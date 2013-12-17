@@ -2892,7 +2892,7 @@ class iod:
         aboutdialog.set_comments("Small app center\n")
         aboutdialog.set_website("http://linux.sytes.net/")
         aboutdialog.set_website_label("Developer Website")
-        aboutdialog.set_authors(["Aaron\nhttp://linux.sytes.net/"])
+        aboutdialog.set_authors(["Aaron\nhttp://linux.sytes.net/", "\nSuggestions:\nexcalibur1234\nKorrode\ntetrahderon\nAyceman", "\nComments:\nRichad\ndrumBE\nVerandert2.0\nLukimya\naaditya\nHardyH\ndcell\nrfkill 2.0"])
         aboutdialog.set_license('GPLv3 - http://www.gnu.org/licenses/gpl.html\nor read the COPYING file')
         aboutdialog.run()
         aboutdialog.destroy()
