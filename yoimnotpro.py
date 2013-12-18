@@ -2952,7 +2952,7 @@ class iod:
         aboutdialog.destroy()
 
     def draw_transparency(self, widget, cr):
-        cr.set_source_rgba(.1, .1, .1, 0.95)
+        cr.set_source_rgba(.1, .1, .1, 0.8)
         cr.set_operator(cairo.OPERATOR_SOURCE)
         cr.paint()
         cr.set_operator(cairo.OPERATOR_OVER)
