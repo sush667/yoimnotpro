@@ -90,6 +90,12 @@
     <property name="halign">center</property>
     <property name="pixbuf">../apps/multimedia/xfburn.png</property>
   </object>
+  <object class="GtkImage" id="image18">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="halign">center</property>
+    <property name="pixbuf">../apps/multimedia/simplescreenrecorder.png</property>
+  </object>
   <object class="GtkImage" id="image19">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -101,6 +107,12 @@
     <property name="can_focus">False</property>
     <property name="halign">center</property>
     <property name="pixbuf">../apps/multimedia/audacious.png</property>
+  </object>
+  <object class="GtkImage" id="image20">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="halign">center</property>
+    <property name="pixbuf">../apps/multimedia/vokoscreen.png</property>
   </object>
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
@@ -175,6 +187,12 @@
     <property name="can_focus">False</property>
     <property name="pixbuf">../categories/gtk-yes.png</property>
   </object>
+  <object class="GtkImage" id="simplescreenrecorder_img">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="halign">center</property>
+    <property name="pixbuf">../categories/gtk-yes.png</property>
+  </object>
   <object class="GtkImage" id="soundconverter_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -188,6 +206,12 @@
   <object class="GtkImage" id="vlc_img">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="pixbuf">../categories/gtk-yes.png</property>
+  </object>
+  <object class="GtkImage" id="vokoscreen_img">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="halign">center</property>
     <property name="pixbuf">../categories/gtk-yes.png</property>
   </object>
   <object class="GtkImage" id="winff_img">
@@ -204,7 +228,7 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="margin_left">20</property>
-    <property name="column_spacing">20</property>
+    <property name="column_spacing">18</property>
     <child>
       <object class="GtkLabel" id="label1">
         <property name="visible">True</property>
@@ -1194,22 +1218,110 @@ Converter</property>
       </packing>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkLabel" id="label19">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">SSR</property>
+        <attributes>
+          <attribute name="foreground" value="#bababdbdb6b6"/>
+        </attributes>
+      </object>
+      <packing>
+        <property name="left_attach">3</property>
+        <property name="top_attach">9</property>
+        <property name="width">1</property>
+        <property name="height">1</property>
+      </packing>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkLabel" id="label20">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Vokoscreen</property>
+        <attributes>
+          <attribute name="foreground" value="#bababdbdb6b6"/>
+        </attributes>
+      </object>
+      <packing>
+        <property name="left_attach">4</property>
+        <property name="top_attach">9</property>
+        <property name="width">1</property>
+        <property name="height">1</property>
+      </packing>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkToggleButton" id="simplescreenrecorder_icon_tooltip">
+        <property name="visible">True</property>
+        <property name="sensitive">False</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="halign">center</property>
+        <property name="image">image18</property>
+        <property name="relief">none</property>
+        <property name="focus_on_click">False</property>
+        <property name="always_show_image">True</property>
+        <property name="draw_indicator">True</property>
+      </object>
+      <packing>
+        <property name="left_attach">3</property>
+        <property name="top_attach">10</property>
+        <property name="width">1</property>
+        <property name="height">1</property>
+      </packing>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkToggleButton" id="vokoscreen_icon_tooltip">
+        <property name="visible">True</property>
+        <property name="sensitive">False</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="halign">center</property>
+        <property name="image">image20</property>
+        <property name="relief">none</property>
+        <property name="focus_on_click">False</property>
+        <property name="always_show_image">True</property>
+        <property name="draw_indicator">True</property>
+      </object>
+      <packing>
+        <property name="left_attach">4</property>
+        <property name="top_attach">10</property>
+        <property name="width">1</property>
+        <property name="height">1</property>
+      </packing>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkButton" id="simplescreenrecorder">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="halign">center</property>
+        <property name="image">simplescreenrecorder_img</property>
+        <property name="relief">none</property>
+        <property name="always_show_image">True</property>
+      </object>
+      <packing>
+        <property name="left_attach">3</property>
+        <property name="top_attach">11</property>
+        <property name="width">1</property>
+        <property name="height">1</property>
+      </packing>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkButton" id="vokoscreen">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="halign">center</property>
+        <property name="image">vokoscreen_img</property>
+        <property name="relief">none</property>
+        <property name="always_show_image">True</property>
+      </object>
+      <packing>
+        <property name="left_attach">4</property>
+        <property name="top_attach">11</property>
+        <property name="width">1</property>
+        <property name="height">1</property>
+      </packing>
     </child>
   </object>
 </interface>

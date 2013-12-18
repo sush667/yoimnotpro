@@ -1375,6 +1375,46 @@ class iod:
                 dialog.destroy()
                 self.kdenlive.set_tooltip_text("Kdenlive is installed.\nClick to remove it.")
 
+    def on_simplescreenrecorder_clicked(self, widget):
+        if os.path.isfile("/usr/bin/simplescreenrecorder"):
+            os.system('pacman -R simplescreenrecorder --noconfirm')
+            if not os.path.isfile("/usr/bin/simplescreenrecorder"):
+                self.simplescreenrecorder_img.set_from_file('categories/gtk-no.png')
+                dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
+                    Gtk.ButtonsType.OK, "Simple screen recorder was removed successfully.")
+                dialog.run()
+                dialog.destroy()
+                self.simplescreenrecorder.set_tooltip_text("Simple screen recorder is not installed.\nClick to install it.")
+        else:
+            os.system('yaourt -S simplescreenrecorder --noconfirm')
+            if os.path.isfile("/usr/bin/simplescreenrecorder"):
+                self.simplescreenrecorder_img.set_from_file('categories/gtk-yes.png')
+                dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
+                    Gtk.ButtonsType.OK, "Simple screen recorder was installed successfully.")
+                dialog.run()
+                dialog.destroy()
+                self.simplescreenrecorder.set_tooltip_text("Simple screen recorder is installed.\nClick to remove it.")
+
+    def on_vokoscreen_clicked(self, widget):
+        if os.path.isfile("/usr/bin/vokoscreen"):
+            os.system('pacman -R vokoscreen --noconfirm')
+            if not os.path.isfile("/usr/bin/vokoscreen"):
+                self.vokoscreen_img.set_from_file('categories/gtk-no.png')
+                dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
+                    Gtk.ButtonsType.OK, "Vokoscreen was removed successfully.")
+                dialog.run()
+                dialog.destroy()
+                self.vokoscreen.set_tooltip_text("Vokoscreen is not installed.\nClick to install it.")
+        else:
+            os.system('yaourt -S vokoscreen --noconfirm')
+            if os.path.isfile("/usr/bin/vokoscreen"):
+                self.vokoscreen_img.set_from_file('categories/gtk-yes.png')
+                dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
+                    Gtk.ButtonsType.OK, "Vokoscreen was installed successfully.")
+                dialog.run()
+                dialog.destroy()
+                self.vokoscreen.set_tooltip_text("Vokoscreen is installed.\nClick to remove it.")
+
     # menu 3 button actions
     def on_linuxdcpp_clicked(self, widget):
         if os.path.isfile("/usr/bin/linuxdcpp"):
@@ -1498,7 +1538,7 @@ class iod:
 
     def on_chrome_clicked(self, widget):
         if os.path.isfile("/usr/bin/google-chrome-stable"):
-            os.system('yaourt -R google-chrome --noconfirm')
+            os.system('pacman -R google-chrome --noconfirm')
             if not os.path.isfile("/usr/bin/google-chrome-stable"):
                 self.chrome_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -2642,6 +2682,20 @@ class iod:
         else:
             self.kdenlive_img.set_from_file('categories/gtk-no.png')
             self.kdenlive.set_tooltip_text("Kdenlive is not installed.\nClick to install it.")
+
+        if os.path.isfile("/usr/bin/simplescreenrecorder"):
+            self.simplescreenrecorder_img.set_from_file('categories/gtk-yes.png')
+            self.simplescreenrecorder.set_tooltip_text("Simple screen recorder is installed.\nClick to remove it.")
+        else:
+            self.simplescreenrecorder_img.set_from_file('categories/gtk-no.png')
+            self.simplescreenrecorder.set_tooltip_text("Simple screen recorder is not installed.\nClick to install it.")
+
+        if os.path.isfile("/usr/bin/vokoscreen"):
+            self.vokoscreen_img.set_from_file('categories/gtk-yes.png')
+            self.vokoscreen.set_tooltip_text("Vokoscreen is installed.\nClick to remove it.")
+        else:
+            self.vokoscreen_img.set_from_file('categories/gtk-no.png')
+            self.vokoscreen.set_tooltip_text("Vokoscreen is not installed.\nClick to install it.")
         self.vbox.add(self.grid_multimedia)
 
     def on_button5_clicked(self, widget):
@@ -2892,7 +2946,7 @@ class iod:
         aboutdialog.set_comments("Small app center\n")
         aboutdialog.set_website("http://linux.sytes.net/")
         aboutdialog.set_website_label("Developer Website")
-        aboutdialog.set_authors(["Aaron Caffrey\nhttp://linux.sytes.net/", "\nSuggestions:\nexcalibur1234\nKorrode\ntetrahderon\nAyceman", "\nComments:\nRichad\ndrumBE\nVerandert2.0\nLukimya\naaditya\nHardyH\ndcell\nrfkill 2.0"])
+        aboutdialog.set_authors(["Aaron Caffrey\nhttp://linux.sytes.net/", "\nSuggestions:\nexcalibur1234\nKorrode\ntetrahderon\nAyceman\nAJ1000", "\nComments:\nRichad\ndrumBE\nVerandert2.0\nLukimya\naaditya\nHardyH\ndcell\nrfkill 2.0"])
         aboutdialog.set_license('GPLv3 - http://www.gnu.org/licenses/gpl.html\nor read the COPYING file')
         aboutdialog.run()
         aboutdialog.destroy()
@@ -3010,6 +3064,8 @@ class iod:
         self.winff_img = self.builder5.get_object("winff_img")
         self.xfburn_img = self.builder5.get_object("xfburn_img")
         self.kdenlive_img = self.builder5.get_object("kdenlive_img")
+        self.simplescreenrecorder_img = self.builder5.get_object("simplescreenrecorder_img")
+        self.vokoscreen_img = self.builder5.get_object("vokoscreen_img")
         self.gparted_img = self.builder6.get_object("gparted_img")
         self.guake_img = self.builder6.get_object("guake_img")
         self.hardinfo_img = self.builder6.get_object("hardinfo_img")
@@ -3432,6 +3488,8 @@ class iod:
         self.winff.set_tooltip_text("WinFF is a video converter.")
         self.xfburn = self.builder5.get_object("xfburn")
         self.kdenlive = self.builder5.get_object("kdenlive")
+        self.simplescreenrecorder = self.builder5.get_object("simplescreenrecorder")
+        self.vokoscreen = self.builder5.get_object("vokoscreen")
         # add tooltip for each application icon
         self.amarok_icon_tooltip = self.builder5.get_object("amarok_icon_tooltip")
         self.amarok_icon_tooltip.set_tooltip_text("Amarok is a cross-platform free and open source music player.")
@@ -3469,6 +3527,10 @@ class iod:
         self.xfburn_icon_tooltip.set_tooltip_text("Xfburn is a simple CD/DVD burning tool.")
         self.kdenlive_icon_tooltip = self.builder5.get_object("kdenlive_icon_tooltip")
         self.kdenlive_icon_tooltip.set_tooltip_text("Kdenlive (KDE Non-Linear Video Editor) is an open source video editing software")
+        self.simplescreenrecorder_icon_tooltip = self.builder5.get_object("simplescreenrecorder_icon_tooltip")
+        self.simplescreenrecorder_icon_tooltip.set_tooltip_text("SimpleScreenRecorder is capable of recording video from full-screen and window-size captures of Opengl applications(and games).")
+        self.vokoscreen_icon_tooltip = self.builder5.get_object("vokoscreen_icon_tooltip")
+        self.vokoscreen_icon_tooltip.set_tooltip_text("Vokoscreen is an easy to use screencast creator to record educational videos, live recordings of browser, installation, videoconferences, etc.")
         # connect "clicked" signal to those buttons
         self.amarok.connect("clicked", self.on_amarok_clicked)
         self.audacious.connect("clicked", self.on_audacious_clicked)
@@ -3488,6 +3550,9 @@ class iod:
         self.winff.connect("clicked", self.on_winff_clicked)
         self.xfburn.connect("clicked", self.on_xfburn_clicked)
         self.kdenlive.connect("clicked", self.on_kdenlive_clicked)
+        self.simplescreenrecorder.connect("clicked", self.on_simplescreenrecorder_clicked)
+        self.vokoscreen.connect("clicked", self.on_vokoscreen_clicked)
+
 
         # get menu 3 application buttons
         self.chromium = self.builder4.get_object("chromium")
