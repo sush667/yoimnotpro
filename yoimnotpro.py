@@ -1,7 +1,6 @@
 #!/usr/bin/python2
 import os
 import sys
-import cairo
 from gi.repository import Gtk, Gdk, GdkPixbuf
 
 class iod:
@@ -2951,12 +2950,6 @@ class iod:
         aboutdialog.run()
         aboutdialog.destroy()
 
-    def draw_transparency(self, widget, cr):
-        cr.set_source_rgba(.1, .1, .1, 0.8)
-        cr.set_operator(cairo.OPERATOR_SOURCE)
-        cr.paint()
-        cr.set_operator(cairo.OPERATOR_OVER)
-
     def __init__(self):
         self.builder = Gtk.Builder()
         self.builder.add_from_file('ui/main2.ui')
@@ -2996,14 +2989,6 @@ class iod:
         # it's horizontal box, separating the menu buttons from the ui files
         self.vbox = self.builder.get_object("box1")
         self.vbox.add(self.grid_custom)
-
-        # transparancy
-        self.window.screen = self.window.get_screen()
-        self.window.visual = self.window.screen.get_rgba_visual()
-        if self.window.visual is not None and self.window.screen.is_composited():
-            self.window.set_visual(self.window.visual)
-        self.window.set_app_paintable(True)
-        self.window.connect("draw", self.draw_transparency)
 
         # get the applications buttons images, once category or application button is selected or clicked it will check if those applications exist and will display appropriate sign
         self.anjuta_img = self.builder2.get_object("anjuta_img")
