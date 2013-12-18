@@ -2986,6 +2986,7 @@ class iod:
 
         self.window = self.builder.get_object("window1")
         self.window.override_background_color(Gtk.StateFlags.NORMAL, Gdk.RGBA(0, 0, 0, 1))
+        self.window.override_color(Gtk.StateFlags.NORMAL, Gdk.RGBA(0, 0, 0, 1))
         # it's horizontal box, separating the menu buttons from the ui files
         self.vbox = self.builder.get_object("box1")
         self.vbox.add(self.grid_custom)
