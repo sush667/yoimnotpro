@@ -58,6 +58,7 @@
                 <property name="halign">center</property>
                 <property name="image">image1</property>
                 <property name="relief">none</property>
+                <property name="focus_on_click">False</property>
                 <property name="always_show_image">True</property>
                 <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button1_clicked" swapped="no"/>
@@ -76,6 +77,7 @@
                 <property name="halign">center</property>
                 <property name="image">image2</property>
                 <property name="relief">none</property>
+                <property name="focus_on_click">False</property>
                 <property name="always_show_image">True</property>
                 <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button2_clicked" swapped="no"/>
@@ -94,6 +96,7 @@
                 <property name="halign">center</property>
                 <property name="image">image3</property>
                 <property name="relief">none</property>
+                <property name="focus_on_click">False</property>
                 <property name="always_show_image">True</property>
                 <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button3_clicked" swapped="no"/>
@@ -112,6 +115,7 @@
                 <property name="halign">center</property>
                 <property name="image">image4</property>
                 <property name="relief">none</property>
+                <property name="focus_on_click">False</property>
                 <property name="always_show_image">True</property>
                 <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button4_clicked" swapped="no"/>
@@ -130,6 +134,7 @@
                 <property name="halign">center</property>
                 <property name="image">image5</property>
                 <property name="relief">none</property>
+                <property name="focus_on_click">False</property>
                 <property name="always_show_image">True</property>
                 <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button5_clicked" swapped="no"/>
@@ -148,6 +153,7 @@
                 <property name="halign">center</property>
                 <property name="image">image6</property>
                 <property name="relief">none</property>
+                <property name="focus_on_click">False</property>
                 <property name="always_show_image">True</property>
                 <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button6_clicked" swapped="no"/>
@@ -166,6 +172,7 @@
                 <property name="halign">center</property>
                 <property name="image">image7</property>
                 <property name="relief">none</property>
+                <property name="focus_on_click">False</property>
                 <property name="always_show_image">True</property>
                 <property name="draw_indicator">True</property>
                 <signal name="clicked" handler="on_button7_clicked" swapped="no"/>
