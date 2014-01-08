@@ -635,7 +635,7 @@ class iod:
 
     def on_sevenzip_clicked(self, widget):
         if os.path.isfile("/usr/bin/7zFM"):
-            os.system('pacman -R p7zip --noconfirm')
+            os.system('pacman -Rdd p7zip --noconfirm')
             if not os.path.isfile("/usr/bin/7zFM"):
                 self.sevenzip_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -1839,7 +1839,7 @@ class iod:
 
     def on_imagemagick_clicked(self, widget):
         if os.path.isfile("/usr/bin/convert"):
-            os.system('pacman -R imagemagick --noconfirm')
+            os.system('pacman -Rdd imagemagick --noconfirm')
             if not os.path.isfile("/usr/bin/convert"):
                 self.imagemagick_img.set_from_file('categories/gtk-no.png')
                 dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
@@ -2674,7 +2674,7 @@ class iod:
             self.xfburn.set_tooltip_text("Xfburn is installed.\nClick to remove it.")
         else:
             self.xfburn_img.set_from_file('categories/gtk-no.png')
-            self.xfbrun.set_tooltip_text("Xfburn is not installed.\nClick to install it.")
+            self.xfburn.set_tooltip_text("Xfburn is not installed.\nClick to install it.")
 
         if os.path.isfile("/usr/bin/kdenlive"):
             self.kdenlive_img.set_from_file('categories/gtk-yes.png')
