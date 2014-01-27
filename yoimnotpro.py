@@ -2,7 +2,7 @@
 import os
 import sys
 import cairo
-from gi.repository import Gtk, GdkPixbuf
+from gi.repository import Gtk, GdkPixbuf, Gdk
 
 class iod:
 
@@ -3004,6 +3004,14 @@ class iod:
             self.window.set_visual(self.window.visual)
         self.window.set_app_paintable(True)
         self.window.connect("draw", self.draw_transparency)
+
+        # css
+        self.screen = Gdk.Screen.get_default()
+        self.css_provider = Gtk.CssProvider()
+        self.css_provider.load_from_path('ui/style.css')
+        self.priority = Gtk.STYLE_PROVIDER_PRIORITY_USER
+        self.context = Gtk.StyleContext()
+        self.context.add_provider_for_screen(self.screen, self.css_provider, self.priority)
 
         # get the applications buttons images, once category or application button is selected or clicked it will check if those applications exist and will display appropriate sign
         self.anjuta_img = self.builder2.get_object("anjuta_img")
