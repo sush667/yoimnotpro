@@ -17,7 +17,11 @@ GtkButton {
     -moz-border-radius-bottomleft:0px;
     border-bottom-left-radius:0px;
 }
+GtkButton:hover {
+    background: darkgrey;
+}
 GtkMessageDialog {
+    font: Nimbus Roman No9 L Bold Italic 11;
     background: #404040;
     border: none;
     color: black;
@@ -34,7 +38,11 @@ GtkMessageDialog {
     -moz-border-radius-bottomleft:0px;
     border-bottom-left-radius:0px;
 }
+GtkMessageDialog:hover {
+    background: darkgrey;
+}
 GtkAboutDialog {
+    font: Nimbus Roman No9 L Bold Italic 11;
     background: #404040;
     border: none;
     color: black;
