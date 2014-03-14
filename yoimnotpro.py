@@ -1679,12 +1679,8 @@ class iod:
         self.image4.set_from_file('categories/menu4.png')
         self.image5.set_from_file('categories/menu5.xpm')
         self.image6.set_from_file('categories/menu6.png')
-        self.vbox.remove(self.grid_graphics)
-        self.vbox.remove(self.grid_internet)
-        self.vbox.remove(self.grid_multimedia)
-        self.vbox.remove(self.grid_system)
-        self.vbox.remove(self.grid_utilities)
-        self.vbox.remove(self.grid_custom)
+        self.vbox.remove(self.current_category)
+        self.current_category = self.grid_development
         # check if those programs are installed and set appropriate sign
         if os.path.isfile(find.program['anjuta']):
             self.anjuta_img.set_from_file('categories/gtk-yes.png')
@@ -1785,12 +1781,8 @@ class iod:
         self.image4.set_from_file('categories/menu4.png')
         self.image5.set_from_file('categories/menu5.xpm')
         self.image6.set_from_file('categories/menu6.png')
-        self.vbox.remove(self.grid_development)
-        self.vbox.remove(self.grid_internet)
-        self.vbox.remove(self.grid_multimedia)
-        self.vbox.remove(self.grid_system)
-        self.vbox.remove(self.grid_utilities)
-        self.vbox.remove(self.grid_custom)
+        self.vbox.remove(self.current_category)
+        self.current_category = self.grid_graphics
         # check if those programs are installed and set appropriate sign
 
         if os.path.isfile(find.program['evince']):
@@ -1864,12 +1856,8 @@ class iod:
         self.image4.set_from_file('categories/menu4.png')
         self.image5.set_from_file('categories/menu5.xpm')
         self.image6.set_from_file('categories/menu6.png')
-        self.vbox.remove(self.grid_graphics)
-        self.vbox.remove(self.grid_development)
-        self.vbox.remove(self.grid_multimedia)
-        self.vbox.remove(self.grid_system)
-        self.vbox.remove(self.grid_utilities)
-        self.vbox.remove(self.grid_custom)
+        self.vbox.remove(self.current_category)
+        self.current_category = self.grid_internet
         # check if those programs are installed and set appropriate sign
         if os.path.isfile(find.program['chromium']):
             self.chromium_img.set_from_file('categories/gtk-yes.png')
@@ -1998,12 +1986,8 @@ class iod:
         self.image4.set_from_file('categories/menu44.png')
         self.image5.set_from_file('categories/menu5.xpm')
         self.image6.set_from_file('categories/menu6.png')
-        self.vbox.remove(self.grid_graphics)
-        self.vbox.remove(self.grid_development)
-        self.vbox.remove(self.grid_internet)
-        self.vbox.remove(self.grid_system)
-        self.vbox.remove(self.grid_utilities)
-        self.vbox.remove(self.grid_custom)
+        self.vbox.remove(self.current_category)
+        self.current_category = self.grid_multimedia
         # check if those programs are installed and set appropriate sign
         if os.path.isfile(find.program['amarok']):
             self.amarok_img.set_from_file('categories/gtk-yes.png')
@@ -2153,12 +2137,8 @@ class iod:
         self.image4.set_from_file('categories/menu4.png')
         self.image5.set_from_file('categories/menu55.xpm')
         self.image6.set_from_file('categories/menu6.png')
-        self.vbox.remove(self.grid_graphics)
-        self.vbox.remove(self.grid_development)
-        self.vbox.remove(self.grid_internet)
-        self.vbox.remove(self.grid_multimedia)
-        self.vbox.remove(self.grid_utilities)
-        self.vbox.remove(self.grid_custom)
+        self.vbox.remove(self.current_category)
+        self.current_category = self.grid_system
         # check if those programs are installed and set appropriate sign
         if os.path.isfile(find.program['gparted']):
             self.gparted_img.set_from_file('categories/gtk-yes.png')
@@ -2294,12 +2274,8 @@ class iod:
         self.image4.set_from_file('categories/menu4.png')
         self.image5.set_from_file('categories/menu5.xpm')
         self.image6.set_from_file('categories/menu66.png')
-        self.vbox.remove(self.grid_graphics)
-        self.vbox.remove(self.grid_development)
-        self.vbox.remove(self.grid_internet)
-        self.vbox.remove(self.grid_multimedia)
-        self.vbox.remove(self.grid_system)
-        self.vbox.remove(self.grid_custom)
+        self.vbox.remove(self.current_category)
+        self.current_category = self.grid_utilities
         # check if those programs are installed and set appropriate sign
         if os.path.isfile(find.program['docky']):
             self.docky_img.set_from_file('categories/gtk-yes.png')
@@ -2436,6 +2412,8 @@ class iod:
         self.builder8 = Gtk.Builder()
         self.builder8.add_from_file('ui/menu7.ui')
         self.grid_custom = self.builder8.get_object("grid1")
+        
+        self.current_category = self.grid_custom
 
         self.builder.connect_signals(self)
 
