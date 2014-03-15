@@ -1,0 +1,148 @@
+import os
+from mymodules.builder import Builder
+from mymodules.action.find_program import Find
+from mymodules.buttons_images import Img
+
+class Menu1:
+    # get menu 1 application buttons
+    anjuta = Builder.builder2.get_object("anjuta")
+    blender = Builder.builder2.get_object("blender")
+    bluefish = Builder.builder2.get_object("bluefish")
+    eclipse = Builder.builder2.get_object("eclipse")
+    geany = Builder.builder2.get_object("geany")
+    glade = Builder.builder2.get_object("glade")
+    openjdk = Builder.builder2.get_object("openjdk")
+    meld = Builder.builder2.get_object("meld")
+    netbeans = Builder.builder2.get_object("netbeans")
+    qt4 = Builder.builder2.get_object("qt4")
+    qt5 = Builder.builder2.get_object("qt5")
+    qtcreator = Builder.builder2.get_object("qtcreator")
+    ninja_ide = Builder.builder2.get_object("ninja_ide")
+    # add tooltip for each application icon
+    anjuta_icon_tooltip = Builder.builder2.get_object("anjuta_icon_tooltip")
+    anjuta_icon_tooltip.set_tooltip_text("Anjuta is an integrated development environment.")
+    blender_icon_tooltip = Builder.builder2.get_object("blender_icon_tooltip")
+    blender_icon_tooltip.set_tooltip_text("Blender is a free and open-source 3D computer graphics software product used for creating animated films, \nvisual effects, art, 3D printed models and so on.")
+    bluefish_icon_tooltip = Builder.builder2.get_object("bluefish_icon_tooltip")
+    bluefish_icon_tooltip.set_tooltip_text("Bluefish is a free and open source advanced text editor with a variety of tools for programming in general\nand the development of dynamic websites")
+    eclipse_icon_tooltip = Builder.builder2.get_object("eclipse_icon_tooltip")
+    eclipse_icon_tooltip.set_tooltip_text("Eclipse is IDE.")
+    geany_icon_tooltip = Builder.builder2.get_object("geany_icon_tooltip")
+    geany_icon_tooltip.set_tooltip_text("Geany is a small and lightweight integrated development environment.")
+    glade_icon_tooltip = Builder.builder2.get_object("glade_icon_tooltip")
+    glade_icon_tooltip.set_tooltip_text("Glade is a RAD tool to enable quick & easy development of user interfaces for the GTK+ toolkit and the GNOME desktop environment.")
+    openjdk_icon_tooltip = Builder.builder2.get_object("openjdk_icon_tooltip")
+    openjdk_icon_tooltip.set_tooltip_text("OpenJDK (Open Java Development Kit) is a free and open source implementation of the Java Platform, Standard Edition (Java SE).")
+    meld_icon_tooltip = Builder.builder2.get_object("meld_icon_tooltip")
+    meld_icon_tooltip.set_tooltip_text("Meld is a visual diff and merge tool targeted at developers.")
+    netbeans_icon_tooltip = Builder.builder2.get_object("netbeans_icon_tooltip")
+    netbeans_icon_tooltip.set_tooltip_text("Fully-featured Java IDE written completely in Java, with many modules available.")
+    qt4_icon_tooltip = Builder.builder2.get_object("qt4_icon_tooltip")
+    qt4_icon_tooltip.set_tooltip_text("Qt4 is a cross-platform application framework that is widely used\nfor developing application software with a graphical user interface.")
+    qt5_icon_tooltip = Builder.builder2.get_object("qt5_icon_tooltip")
+    qt5_icon_tooltip.set_tooltip_text("Qt5 is a cross-platform application framework that is widely used\nfor developing application software with a graphical user interface.")
+    qtcreator_icon_tooltip = Builder.builder2.get_object("qtcreator_icon_tooltip")
+    qtcreator_icon_tooltip.set_tooltip_text("Qt Creator is a cross-platform C++ IDE")
+    ninja_ide_icon_tooltip = Builder.builder2.get_object("ninja_ide_icon_tooltip")
+    ninja_ide_icon_tooltip.set_tooltip_text("Ninja-IDE is a cross-platform integrated development environment designed to build Python applications.")
+
+    @staticmethod
+    def on_button1_clicked():
+        Img.image1.set_from_file('./categories/menu11.png')
+        Img.image2.set_from_file('./categories/menu2.png')
+        Img.image3.set_from_file('./categories/menu3.png')
+        Img.image4.set_from_file('./categories/menu4.png')
+        Img.image5.set_from_file('./categories/menu5.xpm')
+        Img.image6.set_from_file('./categories/menu6.png')
+
+        # check if those programs are installed and set appropriate sign
+        if os.path.isfile(Find.program['anjuta']):
+            Img.anjuta_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.anjuta.set_tooltip_text("Anjuta is installed.\nClick to remove it.")
+        else:
+            Img.anjuta_img.set_from_file('./categories/gtk-no.png')
+            Menu1.anjuta.set_tooltip_text("Anjuta is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['blender']):
+            Img.blender_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.blender.set_tooltip_text("Blender is installed.\nClick to remove it.")
+        else:
+            Img.blender_img.set_from_file('./categories/gtk-no.png')
+            Menu1.blender.set_tooltip_text("Blender is not installed.\nClick to insall it.")
+
+        if os.path.isfile(Find.program['bluefish']):
+            Img.bluefish_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.bluefish.set_tooltip_text("Bluefish is installed.\nClick to remove it.")
+        else:
+            Img.bluefish_img.set_from_file('./categories/gtk-no.png')
+            Menu1.bluefish.set_tooltip_text("Bluefish is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['eclipse']):
+            Img.eclipse_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.eclipse.set_tooltip_text("Eclipse is installed.\nClick to remove it.")
+        else:
+            Img.eclipse_img.set_from_file('categories/gtk-no.png')
+            Menu1.eclipse.set_tooltip_text("Eclipse is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['geany']):
+            Img.geany_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.geany.set_tooltip_text("Geany is installed.\nClick to install it.")
+        else:
+            Img.geany_img.set_from_file('categories/gtk-no.png')
+            Menu1.geany.set_tooltip_text("Geany is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['glade']):
+            Img.glade_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.glade.set_tooltip_text("Glade is installed.\nClick to remove it.")
+        else:
+            Img.glade_img.set_from_file('./categories/gtk-no.png')
+            Menu1.glade.set_tooltip_text("Glade is not installed.\nClick to install it.")
+
+        if os.path.exists(Find.program['openjdk']):
+            Img.openjdk_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.openjdk.set_tooltip_text("OpenJDK is installed.\nClick to remove it.")
+        else:
+            Img.openjdk_img.set_from_file('./categories/gtk-no.png')
+            Menu1.openjdk.set_tooltip_text("OpenJDK is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['meld']):
+            Img.meld_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.meld.set_tooltip_text("Meld is installed.\nClick to remove it.")
+        else:
+            Img.meld_img.set_from_file('./categories/gtk-no.png')
+            Menu1.meld.set_tooltip_text("Meld is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['netbeans']):
+            Img.netbeans_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.netbeans.set_tooltip_text("NetBeans is installed.\nClick to remove it.")
+        else:
+            Img.netbeans_img.set_from_file('./categories/gtk-no.png')
+            Menu1.netbeans.set_tooltip_text("NetBeans is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['qt4']):
+            Img.qt4_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.qt4.set_tooltip_text("Qt4 is installed.\nClick to remove it.")
+        else:
+            Img.qt4_img.set_from_file('./categories/gtk-no.png')
+            Menu1.qt4.set_tooltip_text("Qt4 is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['qt5']):
+            Img.qt5_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.qt5.set_tooltip_text("Qt5 is installed.\nClick to remove it.")
+        else:
+            Img.qt5_img.set_from_file('./categories/gtk-no.png')
+            Menu1.qt5.set_tooltip_text("Qt5 is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['qtcreator']):
+            Img.qtcreator_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.qtcreator.set_tooltip_text("QtCreator is installed.\nClick to remove it.")
+        else:
+            Img.qtcreator_img.set_from_file('./categories/gtk-no.png')
+            Menu1.qtcreator.set_tooltip_text("QtCreator is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['ninja-ide']):
+            Img.ninja_ide_img.set_from_file('./categories/gtk-yes.png')
+            Menu1.ninja_ide.set_tooltip_text("Ninja-IDE is installed.\nClick to remove it.")
+        else:
+            Img.ninja_ide_img.set_from_file('./categories/gtk-no.png')
+            Menu1.ninja_ide.set_tooltip_text("Ninja-IDE is not installed.\nClick to install it.")
