@@ -291,6 +291,7 @@ class iod:
         Menu1.qtcreator.connect("clicked", OPC.on_qtcreator_clicked)
         Menu1.ninja_ide.connect("clicked", OPC.on_ninja_ide_clicked)
 
+        Menu7.load_icons_n_tooltips_at_startup()
         Builder.set_menu_categories_tooltip_names()
 
         self.window.connect("delete-event", Gtk.main_quit)
