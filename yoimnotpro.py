@@ -1,10 +1,7 @@
 #!/usr/bin/env python2
 import os
 import sys
-from mymodules.builder import Builder
-from mymodules.buttons_images import Img
-from mymodules.action.find_program import Find
-from mymodules.action.dial import dial
+from mymodules.builder import Builder, SetMenuCategoriesTooltipNames
 from mymodules.action.on_program_clicked import OPC
 from mymodules.categories.menu7_button import Menu7
 from mymodules.categories.menu6_button import Menu6
@@ -13,6 +10,7 @@ from mymodules.categories.menu4_button import Menu4
 from mymodules.categories.menu3_button import Menu3
 from mymodules.categories.menu2_button import Menu2
 from mymodules.categories.menu1_button import Menu1
+from mymodules.action.dial import action
 import cairo
 from gi.repository import Gtk, GdkPixbuf, Gdk
 
@@ -122,14 +120,16 @@ class iod:
 
     def on_button7_clicked(self, widget):
         aboutdialog = Gtk.AboutDialog()
-        aboutdialog.set_program_name("1.0")
-        aboutdialog.set_version("Yo I\'m not pro")
+        aboutdialog.set_program_name("1.4")
+        aboutdialog.set_version(action.program_name)
         aboutdialog.set_logo(GdkPixbuf.Pixbuf.new_from_file("ui/yoimnotpro_icon.png"))
-        aboutdialog.set_comments("Small app center")
+        aboutdialog.set_comments(action.program_description)
         aboutdialog.set_website("http://linux.sytes.net/")
-        aboutdialog.set_website_label("Developer Website")
-        aboutdialog.set_authors(["Aaron Caffrey\nhttp://linux.sytes.net/", "\nSuggestions:\nexcalibur1234\nKorrode\ntetrahderon\nAyceman\nAJ1000", "\nComments:\nRichad\ndrumBE\nVerandert2.0\nLukimya\naaditya\nHardyH\ndcell\nrfkill 2.0"])
-        aboutdialog.set_copyright('License: GPLv3 - http://www.gnu.org/licenses/gpl.html')
+        aboutdialog.set_website_label(action.dev_website)
+        aboutdialog.set_authors(["Aaron Caffrey\nhttp://linux.sytes.net/",\
+         "\n{Suggestions}:\nexcalibur1234\nKorrode\ntetrahderon\nAyceman\nAJ1000".format(Suggestions=action.suggestions), \
+         "\n{Comments}:\nRichad\ndrumBE\nVerandert2.0\nLukimya\naaditya\nHardyH\ndcell\nrfkill 2.0".format(Comments=action.comments)])
+        aboutdialog.set_copyright('{License}: GPLv3 - http://www.gnu.org/licenses/gpl.html'.format(License=action.license))
         aboutdialog.run()
         aboutdialog.destroy()
 
@@ -292,7 +292,7 @@ class iod:
         Menu1.ninja_ide.connect("clicked", OPC.on_ninja_ide_clicked)
 
         Menu7.load_icons_n_tooltips_at_startup()
-        Builder.set_menu_categories_tooltip_names()
+        SetMenuCategoriesTooltipNames()
 
         self.window.connect("delete-event", Gtk.main_quit)
         self.window.show_all()

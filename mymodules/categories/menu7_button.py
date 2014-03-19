@@ -2,6 +2,7 @@ import os
 from mymodules.buttons_images import Img
 from mymodules.builder import Builder
 from mymodules.action.find_program import Find
+from mymodules.action.dial import SetToolTip, action
 
 class Menu7:
     # get menu 7 application buttons
@@ -65,147 +66,147 @@ class Menu7:
     xchat_icon_tooltip_ = Builder.builder8.get_object("xchat_icon_tooltip_")
     xchat_icon_tooltip_.set_tooltip_text("XChat is a popular Internet Relay Chat (IRC) client.")
     gedit_icon_tooltip_ = Builder.builder8.get_object("gedit_icon_tooltip_")
-    gedit_icon_tooltip_.set_tooltip_text("gedit is lightweight text editor.")
+    gedit_icon_tooltip_.set_tooltip_text("Gedit is lightweight text editor.")
 
     @staticmethod
     def load_icons_n_tooltips_at_startup():
         # check if those programs are installed and set appropriate sign
         if os.path.isfile(Find.program['geany']):
-            Img.geany__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.geany_.set_tooltip_text("Geany is installed.\nClick to remove it.")
+            Img.geany__img.set_from_file(action.gtk_yes)
+            Menu7.geany_.set_tooltip_text(format(SetToolTip('geany', action.installed, action.remove_it)))
         else:
-            Img.geany__img.set_from_file('./categories/gtk-no.png')
-            Menu7.geany_.set_tooltip_text("Geany is not installed.\nClick to install it.")
+            Img.geany__img.set_from_file(action.gtk_no)
+            Menu7.geany_.set_tooltip_text(format(SetToolTip('geany', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['blender']):
-            Img.blender__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.blender_.set_tooltip_text("Blender is installed.\nClick to remove it.")
+            Img.blender__img.set_from_file(action.gtk_yes)
+            Menu7.blender_.set_tooltip_text(format(SetToolTip('blnder', action.installed, action.remove_it)))
         else:
-            Img.blender__img.set_from_file('./categories/gtk-no.png')
-            Menu7.blender_.set_tooltip_text("Blender is not installed.\nClick to install it.")
+            Img.blender__img.set_from_file(action.gtk_no)
+            Menu7.blender_.set_tooltip_text(format(SetToolTip('blender', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['ninja-ide']):
-            Img.ninja_ide__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.ninja_ide_.set_tooltip_text("Ninja-IDE is installed.\nClick to remove it.")
+            Img.ninja_ide__img.set_from_file(action.gtk_yes)
+            Menu7.ninja_ide_.set_tooltip_text(format(SetToolTip('ninja-IDE', action.installed, action.remove_it)))
         else:
-            Img.ninja_ide__img.set_from_file('./categories/gtk-no.png')
-            Menu7.ninja_ide_.set_tooltip_text("Ninja-IDE is not installed.\nClick to install it.")
+            Img.ninja_ide__img.set_from_file(action.gtk_no)
+            Menu7.ninja_ide_.set_tooltip_text(format(SetToolTip('ninja-IDE', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['glade']):
-            Img.glade__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.glade_.set_tooltip_text("Glade is installed.\nClick to remove it.")
+            Img.glade__img.set_from_file(action.gtk_yes)
+            Menu7.glade_.set_tooltip_text(format(SetToolTip('glade', action.installed, action.remove_it)))
         else:
-            Img.glade__img.set_from_file('./categories/gtk-no.png')
-            Menu7.glade_.set_tooltip_text("Glade is not installed.\nClick to install it.")
+            Img.glade__img.set_from_file(action.gtk_no)
+            Menu7.glade_.set_tooltip_text(format(SetToolTip('glade', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['audacious']):
-            Img.audacious__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.audacious_.set_tooltip_text("Audacious is installed.\nClick to remove it.")
+            Img.audacious__img.set_from_file(action.gtk_yes)
+            Menu7.audacious_.set_tooltip_text(format(SetToolTip('audacious', action.installed, action.remove_it)))
         else:
-            Img.audacious__img.set_from_file('./categories/gtk-no.png')
-            Menu7.audacious_.set_tooltip_text("Audacious is not installed.\nClick to install it.")
+            Img.audacious__img.set_from_file(action.gtk_no)
+            Menu7.audacious_.set_tooltip_text(format(SetToolTip('audacious', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gimp']):
-            Img.gimp__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.gimp_.set_tooltip_text("Gimp is installed.\nClick to remove it.")
+            Img.gimp__img.set_from_file(action.gtk_yes)
+            Menu7.gimp_.set_tooltip_text(format(SetToolTip('gimp', action.installed, action.remove_it)))
         else:
-            Img.gimp__img.set_from_file('./categories/gtk-no.png')
-            Menu7.gimp_.set_tooltip_text("Gimp is not installed.\nClick to install it.")
+            Img.gimp__img.set_from_file(action.gtk_no)
+            Menu7.gimp_.set_tooltip_text(format(SetToolTip('gimp', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['evince']):
-            Img.evince__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.evince_.set_tooltip_text("Evince is installed.\nClick to remove it.")
+            Img.evince__img.set_from_file(action.gtk_yes)
+            Menu7.evince_.set_tooltip_text(format(SetToolTip('evince', action.installed, action.remove_it)))
         else:
-            Img.evince__img.set_from_file('./categories/gtk-no.png')
-            Menu7.evince_.set_tooltip_text("Evince is not installed.\nClick to install it.")
+            Img.evince__img.set_from_file(action.gtk_no)
+            Menu7.evince_.set_tooltip_text(format(SetToolTip('evince', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['xfburn']):
-            Img.xfburn__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.xfburn_.set_tooltip_text("Xfburn is installed.\nClick to remove it.")
+            Img.xfburn__img.set_from_file(action.gtk_yes)
+            Menu7.xfburn_.set_tooltip_text(format(SetToolTip('xfburn', action.installed, action.remove_it)))
         else:
-            Img.xfburn__img.set_from_file('./categories/gtk-no.png')
-            Menu7.xfburn_.set_tooltip_text("Xfburn is installed.\nClick to install it.")
+            Img.xfburn__img.set_from_file(action.gtk_no)
+            Menu7.xfburn_.set_tooltip_text(format(SetToolTip('xfburn', action.not_here, action.install_it)))
 
-        if os.path.isfile(Find.program['flash-player']):
-            Img.flashplayer__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.flashplayer_.set_tooltip_text("Flashplayer is installed.\nClick to remove it.")
+        if os.path.isfile(Find.program['flashplugin']):
+            Img.flashplayer__img.set_from_file(action.gtk_yes)
+            Menu7.flashplayer_.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.installed, action.remove_it)))
         else:
-            Img.flashplayer__img.set_from_file('./categories/gtk-no.png')
-            Menu7.flashplayer_.set_tooltip_text("Flashplayer is not installed.\nClick to install it.")
+            Img.flashplayer__img.set_from_file(action.gtk_no)
+            Menu7.flashplayer_.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['openshot']):
-            Img.openshot__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.openshot_.set_tooltip_text("Openshot is installed.\nClick to remove it.")
+            Img.openshot__img.set_from_file(action.gtk_yes)
+            Menu7.openshot_.set_tooltip_text(format(SetToolTip('openShot', action.installed, action.remove_it)))
         else:
-            Img.openshot__img.set_from_file('./categories/gtk-no.png')
-            Menu7.openshot_.set_tooltip_text("Openshot is not installed.\nClick to install it.")
+            Img.openshot__img.set_from_file(action.gtk_no)
+            Menu7.openshot_.set_tooltip_text(format(SetToolTip('openShot', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['chromium']):
-            Img.chromium__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.chromium_.set_tooltip_text("Chromium is installed.\nClick to remove it.")
+            Img.chromium__img.set_from_file(action.gtk_yes)
+            Menu7.chromium_.set_tooltip_text(format(SetToolTip('chromium', action.installed, action.remove_it)))
         else:
-            Img.chromium__img.set_from_file('./categories/gtk-no.png')
-            Menu7.chromium_.set_tooltip_text("Chromium is not installed.\nClick to install it.")
+            Img.chromium__img.set_from_file(action.gtk_no)
+            Menu7.chromium_.set_tooltip_text(format(SetToolTip('chromium', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['deluge']):
-            Img.deluge__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.deluge_.set_tooltip_text("Deluge is installed.\nClick to remove it.")
+            Img.deluge__img.set_from_file(action.gtk_yes)
+            Menu7.deluge_.set_tooltip_text(format(SetToolTip('deluge', action.installed, action.remove_it)))
         else:
-            Img.deluge__img.set_from_file('./categories/gtk-no.png')
-            Menu7.deluge_.set_tooltip_text("Deluge is notinstalled.\nClick to insall it.")
+            Img.deluge__img.set_from_file(action.gtk_no)
+            Menu7.deluge_.set_tooltip_text(format(SetToolTip('deluge', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['liferea']):
-            Img.liferea__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.liferea_.set_tooltip_text("Liferea is installed.\nClick to remove it.")
+            Img.liferea__img.set_from_file(action.gtk_yes)
+            Menu7.liferea_.set_tooltip_text(format(SetToolTip('liferea', action.installed, action.remove_it)))
         else:
-            Img.liferea__img.set_from_file('./categories/gtk-no.png')
-            Menu7.liferea_.set_tooltip_text("Liferea is not installed.\nClick to install it.")
+            Img.liferea__img.set_from_file(action.gtk_no)
+            Menu7.liferea_.set_tooltip_text(format(SetToolTip('liferea', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['htop']):
-            Img.htop__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.htop_.set_tooltip_text("Htop is installed.\nClick to remove it.")
+            Img.htop__img.set_from_file(action.gtk_yes)
+            Menu7.htop_.set_tooltip_text(format(SetToolTip('htop', action.installed, action.remove_it)))
         else:
-            Img.htop__img.set_from_file('./categories/gtk-no.png')
-            Menu7.htop_.set_tooltip_text("Htop is not installed.\nClick to install it.")
+            Img.htop__img.set_from_file(action.gtk_no)
+            Menu7.htop_.set_tooltip_text(format(SetToolTip('htop', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['skype']):
-            Img.skype__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.skype_.set_tooltip_text("Skype is installed.\nClick to remove it.")
+            Img.skype__img.set_from_file(action.gtk_yes)
+            Menu7.skype_.set_tooltip_text(format(SetToolTip('skype', action.installed, action.remove_it)))
         else:
-            Img.skype__img.set_from_file('./categories/gtk-no.png')
-            Menu7.skype_.set_tooltip_text("Skype is not installed.\nClick to install it.")
+            Img.skype__img.set_from_file(action.gtk_no)
+            Menu7.skype_.set_tooltip_text(format(SetToolTip('skype', action.not_here, action.install_it)))
 
-        if os.path.isfile(Find.program['wireshark']):
-            Img.wireshark__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.wireshark_.set_tooltip_text("Wireshark is installed.\nClick to remove it.")
+        if os.path.isfile(Find.program['wireshark-gtk']):
+            Img.wireshark__img.set_from_file(action.gtk_yes)
+            Menu7.wireshark_.set_tooltip_text(format(SetToolTip('wireshark', action.installed, action.remove_it)))
         else:
-            Img.wireshark__img.set_from_file('./categories/gtk-no.png')
-            Menu7.wireshark_.set_tooltip_text("Wireshark is not installed.\nClick to install it.")
+            Img.wireshark__img.set_from_file(action.gtk_no)
+            Menu7.wireshark_.set_tooltip_text(format(SetToolTip('wireshark', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['virtualbox']):
-            Img.virtualbox__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.virtualbox_.set_tooltip_text("Virtualbox is installed.\nClick to remove it.")
+            Img.virtualbox__img.set_from_file(action.gtk_yes)
+            Menu7.virtualbox_.set_tooltip_text(format(SetToolTip('virtualbox', action.installed, action.remove_it)))
         else:
-            Img.virtualbox__img.set_from_file('./categories/gtk-no.png')
-            Menu7.virtualbox_.set_tooltip_text("Virtualbox is not installed.\nClick to install it.")
+            Img.virtualbox__img.set_from_file(action.gtk_no)
+            Menu7.virtualbox_.set_tooltip_text(format(SetToolTip('virtualbox', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['steam']):
-            Img.steam__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.steam_.set_tooltip_text("Steam is installed.\nClick to remove it.")
+            Img.steam__img.set_from_file(action.gtk_yes)
+            Menu7.steam_.set_tooltip_text(format(SetToolTip('steam', action.installed, action.remove_it)))
         else:
-            Img.steam__img.set_from_file('./categories/gtk-no.png')
-            Menu7.steam_.set_tooltip_text("Steam is not installed.\nClick to insall it.")
+            Img.steam__img.set_from_file(action.gtk_no)
+            Menu7.steam_.set_tooltip_text(format(SetToolTip('steam', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['xchat']):
-            Img.xchat__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.xchat_.set_tooltip_text("Xchat is installed.\nClick to remove it.")
+            Img.xchat__img.set_from_file(action.gtk_yes)
+            Menu7.xchat_.set_tooltip_text(format(SetToolTip('xchat', action.installed, action.remove_it)))
         else:
-            Img.xchat__img.set_from_file('./categories/gtk-no.png')
-            Menu7.xchat_.set_tooltip_text("Xchat is not installed.\nClick to install it.")
+            Img.xchat__img.set_from_file(action.gtk_no)
+            Menu7.xchat_.set_tooltip_text(format(SetToolTip('xchat', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gedit']):
-            Img.gedit__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.gedit_.set_tooltip_text("Gedit is installed.\nClick to remove it.")
+            Img.gedit__img.set_from_file(action.gtk_yes)
+            Menu7.gedit_.set_tooltip_text(format(SetToolTip('gedit', action.installed, action.remove_it)))
         else:
-            Img.gedit__img.set_from_file('./categories/gtk-no.png')
-            Menu7.gedit_.set_tooltip_text("Gedit is not installed.\nClick to install it.")
+            Img.gedit__img.set_from_file(action.gtk_no)
+            Menu7.gedit_.set_tooltip_text(format(SetToolTip('gedit', action.not_here, action.install_it)))

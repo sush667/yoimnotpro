@@ -2,6 +2,7 @@ import os
 from mymodules.action.find_program import Find
 from mymodules.buttons_images import Img
 from mymodules.builder import Builder
+from mymodules.action.dial import SetToolTip, action
 
 class Menu4:
     # get menu 4 application buttons
@@ -70,150 +71,150 @@ class Menu4:
 
     @staticmethod
     def on_button4_clicked():
-        Img.image1.set_from_file('./categories/menu1.png')
-        Img.image2.set_from_file('./categories/menu2.png')
-        Img.image3.set_from_file('./categories/menu3.png')
-        Img.image4.set_from_file('./categories/menu44.png')
-        Img.image5.set_from_file('./categories/menu5.xpm')
-        Img.image6.set_from_file('./categories/menu6.png')
+        Img.image1.set_from_file(action.menu_img_1)
+        Img.image2.set_from_file(action.menu_img_2)
+        Img.image3.set_from_file(action.menu_img_3)
+        Img.image4.set_from_file(action.menu_img_44)
+        Img.image5.set_from_file(action.menu_img_5)
+        Img.image6.set_from_file(action.menu_img_6)
 
         # check if those programs are installed and set appropriate sign
         if os.path.isfile(Find.program['amarok']):
-            Img.amarok_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.amarok.set_tooltip_text("Amarok is installed.\nClick to remove it.")
+            Img.amarok_img.set_from_file(action.gtk_yes)
+            Menu4.amarok.set_tooltip_text(format(SetToolTip('amarok', action.installed, action.remove_it)))
         else:
-            Img.amarok_img.set_from_file('./categories/gtk-no.png')
-            Menu4.amarok.set_tooltip_text("Amarok is not installed.\nClick to install it.")
+            Img.amarok_img.set_from_file(action.gtk_no)
+            Menu4.amarok.set_tooltip_text(format(SetToolTip('amarok', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['audacious']):
-            Img.audacious_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.audacious.set_tooltip_text("Audacious is installed.\nClick to remove it.")
+            Img.audacious_img.set_from_file(action.gtk_yes)
+            Menu4.audacious.set_tooltip_text(format(SetToolTip('audacious', action.installed, action.remove_it)))
         else:
-            Img.audacious_img.set_from_file('./categories/gtk-no.png')
-            Menu4.audacious.set_tooltip_text("Audacious is not installed.\nClick to install it.")
+            Img.audacious_img.set_from_file(action.gtk_no)
+            Menu4.audacious.set_tooltip_text(format(SetToolTip('audacious', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['banshee']):
-            Img.banshee_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.banshee.set_tooltip_text("Banshee is installed.\nClick to remove it.")
+            Img.banshee_img.set_from_file(action.gtk_yes)
+            Menu4.banshee.set_tooltip_text(format(SetToolTip('banshee', action.installed, action.remove_it)))
         else:
-            Img.banshee_img.set_from_file('./categories/gtk-no.png')
-            Menu4.banshee.set_tooltip_text("Banshee is not installed.\nClick to install it.")
+            Img.banshee_img.set_from_file(action.gtk_no)
+            Menu4.banshee.set_tooltip_text(format(SetToolTip('banshee', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['cheese']):
-            Img.cheese_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.cheese.set_tooltip_text("Cheese is installed.\nClick to remove it.")
+            Img.cheese_img.set_from_file(action.gtk_yes)
+            Menu4.cheese.set_tooltip_text(format(SetToolTip('cheese', action.installed, action.remove_it)))
         else:
-            Img.cheese_img.set_from_file('./categories/gtk-no.png')
-            Menu4.cheese.set_tooltip_text("Cheese is not installed.\nClick to install it.")
+            Img.cheese_img.set_from_file(action.gtk_no)
+            Menu4.cheese.set_tooltip_text(format(SetToolTip('cheese', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['clementine']):
-            Img.clementine_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.clementine.set_tooltip_text("Clementine is installed.\nClick to remove it.")
+            Img.clementine_img.set_from_file(action.gtk_yes)
+            Menu4.clementine.set_tooltip_text(format(SetToolTip('clementine', action.installed, action.remove_it)))
         else:
-            Img.clementine_img.set_from_file('./categories/gtk-no.png')
-            Menu4.clementine.set_tooltip_text("Clementine is not installed.\nClick to install it.")
+            Img.clementine_img.set_from_file(action.gtk_no)
+            Menu4.clementine.set_tooltip_text(format(SetToolTip('clementine', action.not_here, action.install_it)))
 
-        if os.path.isfile(Find.program['flash-player']):
-            Img.flashplayer_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.flashplayer.set_tooltip_text("Flashplayer is installed.\nClick to remove it.")
+        if os.path.isfile(Find.program['flashplugin']):
+            Img.flashplayer_img.set_from_file(action.gtk_yes)
+            Menu4.flashplayer.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.installed, action.remove_it)))
         else:
-            Menu4.flashplayer_img.set_from_file('./categories/gtk-no.png')
-            Menu4.flashplayer.set_tooltip_text("Flashplayer is not installed.\nClick to install it.")
+            Menu4.flashplayer_img.set_from_file(action.gtk_no)
+            Menu4.flashplayer.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.not_here, action.install_it)))
 
-        if os.path.isfile(Find.program['recordmydesktop']):
-            Img.recordmydesktop_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.recordmydesktop.set_tooltip_text("RecordMyDesktop is installed.\nClick to remove it.")
+        if os.path.isfile(Find.program['gtk-recordmydesktop']):
+            Img.recordmydesktop_img.set_from_file(action.gtk_yes)
+            Menu4.recordmydesktop.set_tooltip_text(format(SetToolTip('recordmydesktop', action.installed, action.remove_it)))
         else:
-            Img.recordmydesktop_img.set_from_file('./categories/gtk-no.png')
-            Menu4.recordmydesktop.set_tooltip_text("RecordMyDesktop is not installed.\nClick to install it.")
+            Img.recordmydesktop_img.set_from_file(action.gtk_no)
+            Menu4.recordmydesktop.set_tooltip_text(format(SetToolTip('recordmydesktop', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['guayadeque']):
-            Img.guayadeque_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.guayadeque.set_tooltip_text("Guayadeque is installed.\nClick to remove it.")
+            Img.guayadeque_img.set_from_file(action.gtk_yes)
+            Menu4.guayadeque.set_tooltip_text(format(SetToolTip('guayadeque', action.installed, action.remove_it)))
         else:
-            Img.guayadeque_img.set_from_file('./categories/gtk-no.png')
-            Menu4.guayadeque.set_tooltip_text("Guayadeque is not installed.\nClick to install it.")
+            Img.guayadeque_img.set_from_file(action.gtk_no)
+            Menu4.guayadeque.set_tooltip_text(format(SetToolTip('guayadeque', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['mplayer']):
-            Img.mplayer_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.mplayer.set_tooltip_text("Mplayer is installed.\nClick to remove it.")
+            Img.mplayer_img.set_from_file(action.gtk_yes)
+            Menu4.mplayer.set_tooltip_text(format(SetToolTip('mplayer', action.installed, action.remove_it)))
         else:
-            Img.mplayer_img.set_from_file('./categories/gtk-no.png')
-            Menu4.mplayer.set_tooltip_text("Mplayer is not installed.\nClick to install it.")
+            Img.mplayer_img.set_from_file(action.gtk_no)
+            Menu4.mplayer.set_tooltip_text(format(SetToolTip('mplayer', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['openshot']):
-            Img.openshot_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.openshot.set_tooltip_text("Openshot is installed.\nClick to remove it.")
+            Img.openshot_img.set_from_file(action.gtk_yes)
+            Menu4.openshot.set_tooltip_text(format(SetToolTip('openshot', action.installed, action.remove_it)))
         else:
-            Img.openshot_img.set_from_file('./categories/gtk-no.png')
-            Menu4.openshot.set_tooltip_text("Openshot is not installed.\nClick to install it.")
+            Img.openshot_img.set_from_file(action.gtk_no)
+            Menu4.openshot.set_tooltip_text(format(SetToolTip('openshot', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['pitivi']):
-            Img.pitivi_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.pitivi.set_tooltip_text("PiTiVi is installed.\nClick to install it.")
+            Img.pitivi_img.set_from_file(action.gtk_yes)
+            Menu4.pitivi.set_tooltip_text(format(SetToolTip('pitivi', action.installed, action.remove_it)))
         else:
-            Img.pitivi_img.set_from_file('./categories/gtk-no.png')
-            Menu4.pitivi.set_tooltip_text("PiTiVi is not installed.\nClick to remove it.")
+            Img.pitivi_img.set_from_file(action.gtk_no)
+            Menu4.pitivi.set_tooltip_text(format(SetToolTip('pitivi', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['rhythmbox']):
-            Img.rhythmbox_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.rhythmbox.set_tooltip_text("Rhythmbox is installed.\nClick to remove it.")
+            Img.rhythmbox_img.set_from_file(action.gtk_yes)
+            Menu4.rhythmbox.set_tooltip_text(format(SetToolTip('rhythmbox', action.installed, action.remove_it)))
         else:
-            Img.rhythmbox_img.set_from_file('./categories/gtk-no.png')
-            Menu4.rhythmbox.set_tooltip_text("Rhythmbox is not installed.\nClick to install it.")
+            Img.rhythmbox_img.set_from_file(action.gtk_no)
+            Menu4.rhythmbox.set_tooltip_text(format(SetToolTip('rhythmbox', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['soundconverter']):
-            Img.soundconverter_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.soundconverter.set_tooltip_text("Soundconverter is installed.\nClick to remove it.")
+            Img.soundconverter_img.set_from_file(action.gtk_yes)
+            Menu4.soundconverter.set_tooltip_text(format(SetToolTip('soundconverter', action.installed, action.remove_it)))
         else:
-            Img.soundconverter_img.set_from_file('./categories/gtk-no.png')
-            Menu4.soundconverter.set_tooltip_text("Soundconverter is not installed.\nClick to install it.")
+            Img.soundconverter_img.set_from_file(action.gtk_no)
+            Menu4.soundconverter.set_tooltip_text(format(SetToolTip('soundconverter', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['totem']):
-            Img.totem_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.totem.set_tooltip_text("Totem is installed.\nClick to remove it.")
+            Img.totem_img.set_from_file(action.gtk_yes)
+            Menu4.totem.set_tooltip_text(format(SetToolTip('totem', action.installed, action.remove_it)))
         else:
-            Img.totem_img.set_from_file('./categories/gtk-no.png')
-            Menu4.totem.set_tooltip_text("Totem is not installed.\nClick to install it.")
+            Img.totem_img.set_from_file(action.gtk_no)
+            Menu4.totem.set_tooltip_text(format(SetToolTip('totem', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['vlc']):
-            Img.vlc_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.vlc.set_tooltip_text("Vlc is installed.\nClick to remove it.")
+            Img.vlc_img.set_from_file(action.gtk_yes)
+            Menu4.vlc.set_tooltip_text(format(SetToolTip('vlc', action.installed, action.remove_it)))
         else:
-            Img.vlc_img.set_from_file('./categories/gtk-no.png')
-            Menu4.vlc.set_tooltip_text("Vlc is not installed.\nClick to install it.")
+            Img.vlc_img.set_from_file(action.gtk_no)
+            Menu4.vlc.set_tooltip_text(format(SetToolTip('vlc', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['winff']):
-            Img.winff_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.winff.set_tooltip_text("Winff is installed.\nClick to remove it.")
+            Img.winff_img.set_from_file(action.gtk_yes)
+            Menu4.winff.set_tooltip_text(format(SetToolTip('winff', action.installed, action.remove_it)))
         else:
-            Img.winff_img.set_from_file('./categories/gtk-no.png')
-            Menu4.winff.set_tooltip_text("Winff is not installed.\nClick to install it.")
+            Img.winff_img.set_from_file(action.gtk_no)
+            Menu4.winff.set_tooltip_text(format(SetToolTip('winff', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['xfburn']):
-            Img.xfburn_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.xfburn.set_tooltip_text("Xfburn is installed.\nClick to remove it.")
+            Img.xfburn_img.set_from_file(action.gtk_yes)
+            Menu4.xfburn.set_tooltip_text(format(SetToolTip('xfburn', action.installed, action.remove_it)))
         else:
-            Img.xfburn_img.set_from_file('./categories/gtk-no.png')
-            Menu4.xfburn.set_tooltip_text("Xfburn is not installed.\nClick to install it.")
+            Img.xfburn_img.set_from_file(action.gtk_no)
+            Menu4.xfburn.set_tooltip_text(format(SetToolTip('xfburn', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['kdenlive']):
-            Img.kdenlive_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.kdenlive.set_tooltip_text("Kdenlive is installed.\nClick to remove it.")
+            Img.kdenlive_img.set_from_file(action.gtk_yes)
+            Menu4.kdenlive.set_tooltip_text(format(SetToolTip('kdenlive', action.installed, action.remove_it)))
         else:
-            Img.kdenlive_img.set_from_file('./categories/gtk-no.png')
-            Menu4.kdenlive.set_tooltip_text("Kdenlive is not installed.\nClick to install it.")
+            Img.kdenlive_img.set_from_file(action.gtk_no)
+            Menu4.kdenlive.set_tooltip_text(format(SetToolTip('kdenlive', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['simplescreenrecorder']):
-            Img.simplescreenrecorder_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.simplescreenrecorder.set_tooltip_text("Simple screen recorder is installed.\nClick to remove it.")
+            Img.simplescreenrecorder_img.set_from_file(action.gtk_yes)
+            Menu4.simplescreenrecorder.set_tooltip_text(format(SetToolTip('simple screen recorder', action.installed, action.remove_it)))
         else:
-            Img.simplescreenrecorder_img.set_from_file('./categories/gtk-no.png')
-            Menu4.simplescreenrecorder.set_tooltip_text("Simple screen recorder is not installed.\nClick to install it.")
+            Img.simplescreenrecorder_img.set_from_file(action.gtk_no)
+            Menu4.simplescreenrecorder.set_tooltip_text(format(SetToolTip('simple screen recorder', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['vokoscreen']):
-            Img.vokoscreen_img.set_from_file('./categories/gtk-yes.png')
-            Menu4.vokoscreen.set_tooltip_text("Vokoscreen is installed.\nClick to remove it.")
+            Img.vokoscreen_img.set_from_file(action.gtk_yesaction.gtk_yes)
+            Menu4.vokoscreen.set_tooltip_text(format(SetToolTip('vokoscreen', action.installed, action.remove_it)))
         else:
-            Img.vokoscreen_img.set_from_file('./categories/gtk-no.png')
-            Menu4.vokoscreen.set_tooltip_text("Vokoscreen is not installed.\nClick to install it.")
+            Img.vokoscreen_img.set_from_file(action.gtk_no)
+            Menu4.vokoscreen.set_tooltip_text(format(SetToolTip('vokoscreen', action.not_here, action.install_it)))
