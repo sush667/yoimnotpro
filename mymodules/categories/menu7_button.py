@@ -126,7 +126,7 @@ class Menu7:
             Img.xfburn__img.set_from_file('./categories/gtk-no.png')
             Menu7.xfburn_.set_tooltip_text("Xfburn is installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['flash-player']):
+        if os.path.isfile(Find.program['flashplugin']):
             Img.flashplayer__img.set_from_file('./categories/gtk-yes.png')
             Menu7.flashplayer_.set_tooltip_text("Flashplayer is installed.\nClick to remove it.")
         else:
@@ -175,7 +175,7 @@ class Menu7:
             Img.skype__img.set_from_file('./categories/gtk-no.png')
             Menu7.skype_.set_tooltip_text("Skype is not installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['wireshark']):
+        if os.path.isfile(Find.program['wireshark-gtk']):
             Img.wireshark__img.set_from_file('./categories/gtk-yes.png')
             Menu7.wireshark_.set_tooltip_text("Wireshark is installed.\nClick to remove it.")
         else:

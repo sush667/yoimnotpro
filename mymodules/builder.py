@@ -41,8 +41,8 @@ class Builder:
     button6 = builder.get_object("button6")
     button7 = builder.get_object("button7")
 
-    @staticmethod
-    def set_menu_categories_tooltip_names():
+class SetMenuCategoriesTooltipNames:
+    def __init__(self):
         Builder.button1.set_tooltip_text("Development")
         Builder.button2.set_tooltip_text("Graphics")
         Builder.button3.set_tooltip_text("Internet")

@@ -111,3 +111,10 @@ class Menu2:
         else:
             Img.shotwell_img.set_from_file('./categories/gtk-no.png')
             Menu2.shotwell.set_tooltip_text("Shotwell is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['stellarium']):
+            Img.stellarium_img.set_from_file('./categories/gtk-yes.png')
+            Menu2.stellarium.set_tooltip_text("Stellarium is installed.\nClick to remove it.")
+        else:
+            Img.stellarium_img.set_from_file('./categories/gtk-no.png')
+            Menu2.stellarium.set_tooltip_text("Stellarium is not installed.\nClick to install it.")

@@ -88,7 +88,7 @@ class Menu6:
             Img.gedit_img.set_from_file('./categories/gtk-no.png')
             Menu6.gedit.set_tooltip_text("gedit is not installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['gloobus']):
+        if os.path.isfile(Find.program['gloobus-preview']):
             Img.gloobus_img.set_from_file('./categories/gtk-yes.png')
             Menu6.gloobus.set_tooltip_text("Gloobus is installed.\nClick to remove it.")
         else:

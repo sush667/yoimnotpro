@@ -126,7 +126,7 @@ class Menu1:
             Img.qt4_img.set_from_file('./categories/gtk-no.png')
             Menu1.qt4.set_tooltip_text("Qt4 is not installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['qt5']):
+        if os.path.isfile(Find.program['qt5-base']):
             Img.qt5_img.set_from_file('./categories/gtk-yes.png')
             Menu1.qt5.set_tooltip_text("Qt5 is installed.\nClick to remove it.")
         else:

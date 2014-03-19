@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 import os
 import sys
-from mymodules.builder import Builder
+from mymodules.builder import Builder, SetMenuCategoriesTooltipNames
 from mymodules.buttons_images import Img
 from mymodules.action.find_program import Find
 from mymodules.action.dial import dial
@@ -122,7 +122,7 @@ class iod:
 
     def on_button7_clicked(self, widget):
         aboutdialog = Gtk.AboutDialog()
-        aboutdialog.set_program_name("1.0")
+        aboutdialog.set_program_name("1.3")
         aboutdialog.set_version("Yo I\'m not pro")
         aboutdialog.set_logo(GdkPixbuf.Pixbuf.new_from_file("ui/yoimnotpro_icon.png"))
         aboutdialog.set_comments("Small app center")
@@ -292,7 +292,7 @@ class iod:
         Menu1.ninja_ide.connect("clicked", OPC.on_ninja_ide_clicked)
 
         Menu7.load_icons_n_tooltips_at_startup()
-        Builder.set_menu_categories_tooltip_names()
+        SetMenuCategoriesTooltipNames()
 
         self.window.connect("delete-event", Gtk.main_quit)
         self.window.show_all()

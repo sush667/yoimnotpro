@@ -16,3 +16,5 @@ Archlinux users can install the program directly from AUR, without the need to d
 * python2-gobject
 * webkitgtk
 * pywebkitgtk
+* gnome-themes-standard  (set Adwaita theme after that)
+* gtk-engines

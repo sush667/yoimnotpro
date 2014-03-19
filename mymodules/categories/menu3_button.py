@@ -104,7 +104,7 @@ class Menu3:
             Img.firefox_img.set_from_file('./categories/gtk-no.png')
             Menu3.firefox.set_tooltip_text("Firefox is not installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['chrome']):
+        if os.path.isfile(Find.program['google-chrome']):
             Img.chrome_img.set_from_file('./categories/gtk-yes.png')
             Menu3.chrome.set_tooltip_text("Google Chrome is installed.\nClick to remove it.")
         else:
@@ -174,7 +174,7 @@ class Menu3:
             Img.thunderbird_img.set_from_file('./categories/gtk-no.png')
             Menu3.thunderbird.set_tooltip_text("Thunderbird is not installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['transmission']):
+        if os.path.isfile(Find.program['transmission-gtk']):
             Img.transmission_img.set_from_file('./categories/gtk-yes.png')
             Menu3.transmission.set_tooltip_text("Transmission is installed.\nClick to remove it.")
         else:

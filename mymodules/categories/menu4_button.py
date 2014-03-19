@@ -113,14 +113,14 @@ class Menu4:
             Img.clementine_img.set_from_file('./categories/gtk-no.png')
             Menu4.clementine.set_tooltip_text("Clementine is not installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['flash-player']):
+        if os.path.isfile(Find.program['flashplugin']):
             Img.flashplayer_img.set_from_file('./categories/gtk-yes.png')
             Menu4.flashplayer.set_tooltip_text("Flashplayer is installed.\nClick to remove it.")
         else:
             Menu4.flashplayer_img.set_from_file('./categories/gtk-no.png')
             Menu4.flashplayer.set_tooltip_text("Flashplayer is not installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['recordmydesktop']):
+        if os.path.isfile(Find.program['gtk-recordmydesktop']):
             Img.recordmydesktop_img.set_from_file('./categories/gtk-yes.png')
             Menu4.recordmydesktop.set_tooltip_text("RecordMyDesktop is installed.\nClick to remove it.")
         else:

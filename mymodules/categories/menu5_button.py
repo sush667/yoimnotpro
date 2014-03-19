@@ -155,7 +155,7 @@ class Menu5:
             Img.wine_img.set_from_file('./categories/gtk-no.png')
             Menu5.wine.set_tooltip_text("Wine is not installed.\nClick to install it.")
 
-        if os.path.isfile(Find.program['wireshark']):
+        if os.path.isfile(Find.program['wireshark-gtk']):
             Img.wireshark_img.set_from_file('./categories/gtk-yes.png')
             Menu5.wireshark.set_tooltip_text("Wireshark is installed.\nClick to remove it.")
         else:
