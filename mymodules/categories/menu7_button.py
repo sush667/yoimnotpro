@@ -128,13 +128,8 @@ class Menu7:
             Menu7.xfburn_.set_tooltip_text(format(SetToolTip('xfburn', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['flashplugin']):
-<<<<<<< HEAD
             Img.flashplayer__img.set_from_file(action.gtk_yes)
             Menu7.flashplayer_.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.installed, action.remove_it)))
-=======
-            Img.flashplayer__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.flashplayer_.set_tooltip_text("Flashplayer is installed.\nClick to remove it.")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Img.flashplayer__img.set_from_file(action.gtk_no)
             Menu7.flashplayer_.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.not_here, action.install_it)))
@@ -182,13 +177,8 @@ class Menu7:
             Menu7.skype_.set_tooltip_text(format(SetToolTip('skype', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['wireshark-gtk']):
-<<<<<<< HEAD
             Img.wireshark__img.set_from_file(action.gtk_yes)
             Menu7.wireshark_.set_tooltip_text(format(SetToolTip('wireshark', action.installed, action.remove_it)))
-=======
-            Img.wireshark__img.set_from_file('./categories/gtk-yes.png')
-            Menu7.wireshark_.set_tooltip_text("Wireshark is installed.\nClick to remove it.")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Img.wireshark__img.set_from_file(action.gtk_no)
             Menu7.wireshark_.set_tooltip_text(format(SetToolTip('wireshark', action.not_here, action.install_it)))

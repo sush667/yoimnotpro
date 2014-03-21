@@ -128,13 +128,8 @@ class Menu1:
             Menu1.qt4.set_tooltip_text(format(SetToolTip('qt4', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['qt5-base']):
-<<<<<<< HEAD
             Img.qt5_img.set_from_file(action.gtk_yes)
             Menu1.qt5.set_tooltip_text(format(SetToolTip('qt5', action.installed, action.remove_it)))
-=======
-            Img.qt5_img.set_from_file('./categories/gtk-yes.png')
-            Menu1.qt5.set_tooltip_text("Qt5 is installed.\nClick to remove it.")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Img.qt5_img.set_from_file(action.gtk_no)
             Menu1.qt5.set_tooltip_text(format(SetToolTip('qt5', action.not_here, action.install_it)))

@@ -11,10 +11,7 @@ from mymodules.categories.menu3_button import Menu3
 from mymodules.categories.menu2_button import Menu2
 from mymodules.categories.menu1_button import Menu1
 from mymodules.action.OPC_related.apply_decoration import StartKickingSomeNinjas
-<<<<<<< HEAD
 from mymodules.action.dial import SetToolTip, action
-=======
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
 
 class OPC:
 
@@ -187,27 +184,15 @@ class OPC:
         if os.path.isfile(find.program['7zip']):
             os.system('pacman -Rdd p7zip --noconfirm')
             if not os.path.isfile(find.program['7zip']):
-<<<<<<< HEAD
                 Img.sevenzip_img.set_from_file(action.gtk_no)
                 dial('7zip', action.remove_it)
                 Menu6.sevenzip.set_tooltip_text(format(SetToolTip('7-zip', action.not_here, action.install_it)))
-=======
-                Img.sevenzip_img.set_from_file('./categories/gtk-no.png')
-                dial('7zip','removed')
-                Menu6.sevenzip.set_tooltip_text("7-zip is not installed.\nClick to install it.")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             os.system('pacman -S p7zip --noconfirm')
             if os.path.isfile(find.program['7zip']):
-<<<<<<< HEAD
                 Img.sevenzip_img.set_from_file(action.gtk_yes)
                 dial('7zip', action.installed)
                 Menu6.sevenzip.set_tooltip_text(format(SetToolTip('7-zip', action.installed, action.remove_it)))
-=======
-                Img.sevenzip_img.set_from_file('./categories/gtk-yes.png')
-                dial('7zip','installed')
-                Menu6.sevenzip.set_tooltip_text("7-zip is installed.\nClick to remove it.")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
 
     @staticmethod
     @batmans_decorator
@@ -513,28 +498,15 @@ class OPC:
         if os.path.isfile(find.program['imagemagick']):
             os.system('pacman -Rdd imagemagick --noconfirm')
             if not os.path.isfile(find.program['imagemagick']):
-<<<<<<< HEAD
                 Img.imagemagick_img.set_from_file(action.gtk_no)
                 dial('ImageMagick', action.remove_it)
                 Menu2.imagemagick.set_tooltip_text(format(SetToolTip('imageMagick', action.not_here, action.install_it)))
-=======
-                Img.imagemagick_img.set_from_file('./categories/gtk-no.png')
-                dial('ImageMagick', 'removed')
-                Menu2.imagemagick.set_tooltip_text("ImageMagick is not installed.\nClick to install it.")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             os.system('pacman -S imagemagick --noconfirm')
             if os.path.isfile(find.program['imagemagick']):
-<<<<<<< HEAD
                 Img.imagemagick_img.set_from_file(action.gtk_yes)
                 dial('ImageMagick', action.installed)
                 Menu2.imagemagick.set_tooltip_text(format(SetToolTip('imageMagick', action.installed, action.remove_it)))
-=======
-                Img.imagemagick_img.set_from_file('./categories/gtk-yes.png')
-                dial('ImageMagick', 'installed')
-                Menu2.imagemagick.set_tooltip_text("ImageMagick is installed.\nClick to remove it.")
-
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
     @staticmethod
     @batmans_decorator
     def on_inkscape_clicked(self):
@@ -596,27 +568,15 @@ class OPC:
         if os.path.exists(find.program['openjdk']):
             os.system('pacman -R jre7-openjdk --noconfirm')
             if not os.path.exists(find.program['openjdk']):
-<<<<<<< HEAD
                 Img.openjdk_img.set_from_file(action.gtk_no)
                 dial('OpenJDK', action.remove_it)
                 Menu1.openjdk.set_tooltip_text(format(SetToolTip('openJDK', action.not_here, action.install_it)))
-=======
-                Img.openjdk_img.set_from_file('./categories/gtk-no.png')
-                dial('OpenJDK', 'removed')
-                Menu1.openjdk.set_tooltip_text("OpenJDK is not installed.\nClick to install it.")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             os.system('pacman -S jre7-openjdk --noconfirm')
             if os.path.exists(find.program['openjdk']):
-<<<<<<< HEAD
                 Img.openjdk_img.set_from_file(action.gtk_yes)
                 dial('OpenJDK', action.installed)
                 Menu1.openjdk.set_tooltip_text(format(SetToolTip('openJDK', action.installed, action.remove_it)))
-=======
-                Img.openjdk_img.set_from_file('./categories/gtk-yes.png')
-                dial('OpenJDK', 'installed')
-                Menu1.openjdk.set_tooltip_text("OpenJDK is installed.\nClick to remove it.")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
 
     @staticmethod
     @batmans_decorator

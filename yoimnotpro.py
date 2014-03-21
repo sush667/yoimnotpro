@@ -2,12 +2,6 @@
 import os
 import sys
 from mymodules.builder import Builder, SetMenuCategoriesTooltipNames
-<<<<<<< HEAD
-=======
-from mymodules.buttons_images import Img
-from mymodules.action.find_program import Find
-from mymodules.action.dial import dial
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
 from mymodules.action.on_program_clicked import OPC
 from mymodules.categories.menu7_button import Menu7
 from mymodules.categories.menu6_button import Menu6
@@ -126,13 +120,8 @@ class iod:
 
     def on_button7_clicked(self, widget):
         aboutdialog = Gtk.AboutDialog()
-<<<<<<< HEAD
         aboutdialog.set_program_name("1.4")
         aboutdialog.set_version(action.program_name)
-=======
-        aboutdialog.set_program_name("1.3")
-        aboutdialog.set_version("Yo I\'m not pro")
->>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         aboutdialog.set_logo(GdkPixbuf.Pixbuf.new_from_file("ui/yoimnotpro_icon.png"))
         aboutdialog.set_comments(action.program_description)
         aboutdialog.set_website("http://linux.sytes.net/")
