@@ -1,7 +1,11 @@
 from random import choice
+<<<<<<< HEAD
 #from string import Template
+=======
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
 from gi.repository import Gtk
 
+<<<<<<< HEAD
 class dial:
     def __init__(self, *arg):
         self._name = arg[0]
@@ -75,3 +79,27 @@ class action:
     menu_img_33 = './categories/menu33.png'
     menu_img_44 = './categories/menu44.png'
     menu_img_6 = './categories/menu6.png'
+=======
+def dial(name, action):
+    dict_with_phrases = {
+    'installed': ('good choice', 'that\'s my boy', 'I like it too',
+                '- Cheers !', '>:-)'),
+    'removed': (', how dare you ?', 'pitty to see it go', '>:-(', 'was douchebag...',
+                'LMAO', 'LOL')}
+    if action == "installed":
+        dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
+            Gtk.ButtonsType.OK, "{program_name} was installed successfully."
+                .format(program_name=name),
+                title="{program_name} {random_message}"
+                .format(program_name=name, random_message=choice(dict_with_phrases['installed'])))
+        dialog.run()
+        dialog.destroy()
+    else:
+        dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
+            Gtk.ButtonsType.OK, "{program_name} was removed successfully."
+                .format(program_name=name),
+                title="{program_name} {random_message}"
+                .format(program_name=name, random_message=choice(dict_with_phrases['removed'])))
+        dialog.run()
+        dialog.destroy()
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro

@@ -157,8 +157,13 @@ class Menu5:
             Menu5.wine.set_tooltip_text(format(SetToolTip('wine', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['wireshark-gtk']):
+<<<<<<< HEAD
             Img.wireshark_img.set_from_file(action.gtk_yes)
             Menu5.wireshark.set_tooltip_text(format(SetToolTip('wireshark', action.installed, action.remove_it)))
+=======
+            Img.wireshark_img.set_from_file('./categories/gtk-yes.png')
+            Menu5.wireshark.set_tooltip_text("Wireshark is installed.\nClick to remove it.")
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Img.wireshark_img.set_from_file(action.gtk_no)
             Menu5.wireshark.set_tooltip_text(format(SetToolTip('wireshark', action.not_here, action.install_it)))

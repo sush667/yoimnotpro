@@ -115,15 +115,25 @@ class Menu4:
             Menu4.clementine.set_tooltip_text(format(SetToolTip('clementine', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['flashplugin']):
+<<<<<<< HEAD
             Img.flashplayer_img.set_from_file(action.gtk_yes)
             Menu4.flashplayer.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.installed, action.remove_it)))
+=======
+            Img.flashplayer_img.set_from_file('./categories/gtk-yes.png')
+            Menu4.flashplayer.set_tooltip_text("Flashplayer is installed.\nClick to remove it.")
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Menu4.flashplayer_img.set_from_file(action.gtk_no)
             Menu4.flashplayer.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gtk-recordmydesktop']):
+<<<<<<< HEAD
             Img.recordmydesktop_img.set_from_file(action.gtk_yes)
             Menu4.recordmydesktop.set_tooltip_text(format(SetToolTip('recordmydesktop', action.installed, action.remove_it)))
+=======
+            Img.recordmydesktop_img.set_from_file('./categories/gtk-yes.png')
+            Menu4.recordmydesktop.set_tooltip_text("RecordMyDesktop is installed.\nClick to remove it.")
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Img.recordmydesktop_img.set_from_file(action.gtk_no)
             Menu4.recordmydesktop.set_tooltip_text(format(SetToolTip('recordmydesktop', action.not_here, action.install_it)))

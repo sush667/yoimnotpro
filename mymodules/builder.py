@@ -44,6 +44,7 @@ class Builder:
 
 class SetMenuCategoriesTooltipNames:
     def __init__(self):
+<<<<<<< HEAD
         Builder.button1.set_tooltip_text(action.development)
         Builder.button2.set_tooltip_text(action.graphics)
         Builder.button3.set_tooltip_text(action.internet)
@@ -51,3 +52,12 @@ class SetMenuCategoriesTooltipNames:
         Builder.button5.set_tooltip_text(action.system)
         Builder.button6.set_tooltip_text(action.utilities)
         Builder.button7.set_tooltip_text(action.about)
+=======
+        Builder.button1.set_tooltip_text("Development")
+        Builder.button2.set_tooltip_text("Graphics")
+        Builder.button3.set_tooltip_text("Internet")
+        Builder.button4.set_tooltip_text("Multimedia")
+        Builder.button5.set_tooltip_text("System")
+        Builder.button6.set_tooltip_text("Utilities")
+        Builder.button7.set_tooltip_text("About")
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro

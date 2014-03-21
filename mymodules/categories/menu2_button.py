@@ -110,6 +110,7 @@ class Menu2:
             Img.shotwell_img.set_from_file(action.gtk_yes)
             Menu2.shotwell.set_tooltip_text(format(SetToolTip('shotwell', action.installed, action.remove_it)))
         else:
+<<<<<<< HEAD
             Img.shotwell_img.set_from_file(action.gtk_no)
             Menu2.shotwell.set_tooltip_text(format(SetToolTip('shotwell', action.not_here, action.install_it)))
 
@@ -119,3 +120,14 @@ class Menu2:
         else:
             Img.stellarium_img.set_from_file(action.gtk_no)
             Menu2.stellarium.set_tooltip_text(format(SetToolTip('stellarium', action.not_here, action.install_it)))
+=======
+            Img.shotwell_img.set_from_file('./categories/gtk-no.png')
+            Menu2.shotwell.set_tooltip_text("Shotwell is not installed.\nClick to install it.")
+
+        if os.path.isfile(Find.program['stellarium']):
+            Img.stellarium_img.set_from_file('./categories/gtk-yes.png')
+            Menu2.stellarium.set_tooltip_text("Stellarium is installed.\nClick to remove it.")
+        else:
+            Img.stellarium_img.set_from_file('./categories/gtk-no.png')
+            Menu2.stellarium.set_tooltip_text("Stellarium is not installed.\nClick to install it.")
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro

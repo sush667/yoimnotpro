@@ -106,8 +106,13 @@ class Menu3:
             Menu3.firefox.set_tooltip_text(format(SetToolTip('firefox', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['google-chrome']):
+<<<<<<< HEAD
             Img.chrome_img.set_from_file(action.gtk_yes)
             Menu3.chrome.set_tooltip_text(format(SetToolTip('google Chrome', action.installed, action.remove_it)))
+=======
+            Img.chrome_img.set_from_file('./categories/gtk-yes.png')
+            Menu3.chrome.set_tooltip_text("Google Chrome is installed.\nClick to remove it.")
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Img.chrome_img.set_from_file(action.gtk_no)
             Menu3.chrome.set_tooltip_text(format(SetToolTip('google Chrome', action.not_here, action.install_it)))
@@ -176,8 +181,13 @@ class Menu3:
             Menu3.thunderbird.set_tooltip_text(format(SetToolTip('thunderbird', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['transmission-gtk']):
+<<<<<<< HEAD
             Img.transmission_img.set_from_file(action.gtk_yes)
             Menu3.transmission.set_tooltip_text(format(SetToolTip('transmission', action.installed, action.remove_it)))
+=======
+            Img.transmission_img.set_from_file('./categories/gtk-yes.png')
+            Menu3.transmission.set_tooltip_text("Transmission is installed.\nClick to remove it.")
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Img.transmission_img.set_from_file(action.gtk_no)
             Menu3.transmission.set_tooltip_text(format(SetToolTip('transmission', action.not_here, action.install_it)))

@@ -90,8 +90,13 @@ class Menu6:
             Menu6.gedit.set_tooltip_text(format(SetToolTip('gedit', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gloobus-preview']):
+<<<<<<< HEAD
             Img.gloobus_img.set_from_file(action.gtk_yes)
             Menu6.gloobus.set_tooltip_text(format(SetToolTip('gloobus', action.installed, action.remove_it)))
+=======
+            Img.gloobus_img.set_from_file('./categories/gtk-yes.png')
+            Menu6.gloobus.set_tooltip_text("Gloobus is installed.\nClick to remove it.")
+>>>>>>> branch 'master' of https://github.com/wifiextender/yoimnotpro
         else:
             Img.gloobus_img.set_from_file(action.gtk_no)
             Menu6.gloobus.set_tooltip_text(format(SetToolTip('gloobus', action.not_here, action.install_it)))
