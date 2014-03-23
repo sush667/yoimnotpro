@@ -79,142 +79,144 @@ class Menu4:
         Img.image6.set_from_file(action.menu_img_6)
 
         # check if those programs are installed and set appropriate sign
+        no = action.gtk_no
+        yes = action.gtk_yes
         if os.path.isfile(Find.program['amarok']):
-            Img.amarok_img.set_from_file(action.gtk_yes)
+            Img.amarok_img.set_from_file(yes)
             Menu4.amarok.set_tooltip_text(format(SetToolTip('amarok', action.installed, action.remove_it)))
         else:
-            Img.amarok_img.set_from_file(action.gtk_no)
+            Img.amarok_img.set_from_file(no)
             Menu4.amarok.set_tooltip_text(format(SetToolTip('amarok', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['audacious']):
-            Img.audacious_img.set_from_file(action.gtk_yes)
+            Img.audacious_img.set_from_file(yes)
             Menu4.audacious.set_tooltip_text(format(SetToolTip('audacious', action.installed, action.remove_it)))
         else:
-            Img.audacious_img.set_from_file(action.gtk_no)
+            Img.audacious_img.set_from_file(no)
             Menu4.audacious.set_tooltip_text(format(SetToolTip('audacious', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['banshee']):
-            Img.banshee_img.set_from_file(action.gtk_yes)
+            Img.banshee_img.set_from_file(yes)
             Menu4.banshee.set_tooltip_text(format(SetToolTip('banshee', action.installed, action.remove_it)))
         else:
-            Img.banshee_img.set_from_file(action.gtk_no)
+            Img.banshee_img.set_from_file(no)
             Menu4.banshee.set_tooltip_text(format(SetToolTip('banshee', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['cheese']):
-            Img.cheese_img.set_from_file(action.gtk_yes)
+            Img.cheese_img.set_from_file(yes)
             Menu4.cheese.set_tooltip_text(format(SetToolTip('cheese', action.installed, action.remove_it)))
         else:
-            Img.cheese_img.set_from_file(action.gtk_no)
+            Img.cheese_img.set_from_file(no)
             Menu4.cheese.set_tooltip_text(format(SetToolTip('cheese', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['clementine']):
-            Img.clementine_img.set_from_file(action.gtk_yes)
+            Img.clementine_img.set_from_file(yes)
             Menu4.clementine.set_tooltip_text(format(SetToolTip('clementine', action.installed, action.remove_it)))
         else:
-            Img.clementine_img.set_from_file(action.gtk_no)
+            Img.clementine_img.set_from_file(no)
             Menu4.clementine.set_tooltip_text(format(SetToolTip('clementine', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['flashplugin']):
-            Img.flashplayer_img.set_from_file(action.gtk_yes)
+            Img.flashplayer_img.set_from_file(yes)
             Menu4.flashplayer.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.installed, action.remove_it)))
         else:
-            Menu4.flashplayer_img.set_from_file(action.gtk_no)
+            Menu4.flashplayer_img.set_from_file(no)
             Menu4.flashplayer.set_tooltip_text(format(SetToolTip('adobe Flashplayer', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gtk-recordmydesktop']):
-            Img.recordmydesktop_img.set_from_file(action.gtk_yes)
+            Img.recordmydesktop_img.set_from_file(yes)
             Menu4.recordmydesktop.set_tooltip_text(format(SetToolTip('recordmydesktop', action.installed, action.remove_it)))
         else:
-            Img.recordmydesktop_img.set_from_file(action.gtk_no)
+            Img.recordmydesktop_img.set_from_file(no)
             Menu4.recordmydesktop.set_tooltip_text(format(SetToolTip('recordmydesktop', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['guayadeque']):
-            Img.guayadeque_img.set_from_file(action.gtk_yes)
+            Img.guayadeque_img.set_from_file(yes)
             Menu4.guayadeque.set_tooltip_text(format(SetToolTip('guayadeque', action.installed, action.remove_it)))
         else:
-            Img.guayadeque_img.set_from_file(action.gtk_no)
+            Img.guayadeque_img.set_from_file(no)
             Menu4.guayadeque.set_tooltip_text(format(SetToolTip('guayadeque', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['mplayer']):
-            Img.mplayer_img.set_from_file(action.gtk_yes)
+            Img.mplayer_img.set_from_file(yes)
             Menu4.mplayer.set_tooltip_text(format(SetToolTip('mplayer', action.installed, action.remove_it)))
         else:
-            Img.mplayer_img.set_from_file(action.gtk_no)
+            Img.mplayer_img.set_from_file(no)
             Menu4.mplayer.set_tooltip_text(format(SetToolTip('mplayer', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['openshot']):
-            Img.openshot_img.set_from_file(action.gtk_yes)
+            Img.openshot_img.set_from_file(yes)
             Menu4.openshot.set_tooltip_text(format(SetToolTip('openshot', action.installed, action.remove_it)))
         else:
-            Img.openshot_img.set_from_file(action.gtk_no)
+            Img.openshot_img.set_from_file(no)
             Menu4.openshot.set_tooltip_text(format(SetToolTip('openshot', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['pitivi']):
-            Img.pitivi_img.set_from_file(action.gtk_yes)
+            Img.pitivi_img.set_from_file(yes)
             Menu4.pitivi.set_tooltip_text(format(SetToolTip('pitivi', action.installed, action.remove_it)))
         else:
-            Img.pitivi_img.set_from_file(action.gtk_no)
+            Img.pitivi_img.set_from_file(no)
             Menu4.pitivi.set_tooltip_text(format(SetToolTip('pitivi', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['rhythmbox']):
-            Img.rhythmbox_img.set_from_file(action.gtk_yes)
+            Img.rhythmbox_img.set_from_file(yes)
             Menu4.rhythmbox.set_tooltip_text(format(SetToolTip('rhythmbox', action.installed, action.remove_it)))
         else:
-            Img.rhythmbox_img.set_from_file(action.gtk_no)
+            Img.rhythmbox_img.set_from_file(no)
             Menu4.rhythmbox.set_tooltip_text(format(SetToolTip('rhythmbox', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['soundconverter']):
-            Img.soundconverter_img.set_from_file(action.gtk_yes)
+            Img.soundconverter_img.set_from_file(yes)
             Menu4.soundconverter.set_tooltip_text(format(SetToolTip('soundconverter', action.installed, action.remove_it)))
         else:
-            Img.soundconverter_img.set_from_file(action.gtk_no)
+            Img.soundconverter_img.set_from_file(no)
             Menu4.soundconverter.set_tooltip_text(format(SetToolTip('soundconverter', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['totem']):
-            Img.totem_img.set_from_file(action.gtk_yes)
+            Img.totem_img.set_from_file(yes)
             Menu4.totem.set_tooltip_text(format(SetToolTip('totem', action.installed, action.remove_it)))
         else:
-            Img.totem_img.set_from_file(action.gtk_no)
+            Img.totem_img.set_from_file(no)
             Menu4.totem.set_tooltip_text(format(SetToolTip('totem', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['vlc']):
-            Img.vlc_img.set_from_file(action.gtk_yes)
+            Img.vlc_img.set_from_file(yes)
             Menu4.vlc.set_tooltip_text(format(SetToolTip('vlc', action.installed, action.remove_it)))
         else:
-            Img.vlc_img.set_from_file(action.gtk_no)
+            Img.vlc_img.set_from_file(no)
             Menu4.vlc.set_tooltip_text(format(SetToolTip('vlc', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['winff']):
-            Img.winff_img.set_from_file(action.gtk_yes)
+            Img.winff_img.set_from_file(yes)
             Menu4.winff.set_tooltip_text(format(SetToolTip('winff', action.installed, action.remove_it)))
         else:
-            Img.winff_img.set_from_file(action.gtk_no)
+            Img.winff_img.set_from_file(no)
             Menu4.winff.set_tooltip_text(format(SetToolTip('winff', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['xfburn']):
-            Img.xfburn_img.set_from_file(action.gtk_yes)
+            Img.xfburn_img.set_from_file(yes)
             Menu4.xfburn.set_tooltip_text(format(SetToolTip('xfburn', action.installed, action.remove_it)))
         else:
-            Img.xfburn_img.set_from_file(action.gtk_no)
+            Img.xfburn_img.set_from_file(no)
             Menu4.xfburn.set_tooltip_text(format(SetToolTip('xfburn', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['kdenlive']):
-            Img.kdenlive_img.set_from_file(action.gtk_yes)
+            Img.kdenlive_img.set_from_file(yes)
             Menu4.kdenlive.set_tooltip_text(format(SetToolTip('kdenlive', action.installed, action.remove_it)))
         else:
-            Img.kdenlive_img.set_from_file(action.gtk_no)
+            Img.kdenlive_img.set_from_file(no)
             Menu4.kdenlive.set_tooltip_text(format(SetToolTip('kdenlive', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['simplescreenrecorder']):
-            Img.simplescreenrecorder_img.set_from_file(action.gtk_yes)
+            Img.simplescreenrecorder_img.set_from_file(yes)
             Menu4.simplescreenrecorder.set_tooltip_text(format(SetToolTip('simple screen recorder', action.installed, action.remove_it)))
         else:
-            Img.simplescreenrecorder_img.set_from_file(action.gtk_no)
+            Img.simplescreenrecorder_img.set_from_file(no)
             Menu4.simplescreenrecorder.set_tooltip_text(format(SetToolTip('simple screen recorder', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['vokoscreen']):
-            Img.vokoscreen_img.set_from_file(action.gtk_yesaction.gtk_yes)
+            Img.vokoscreen_img.set_from_file(yes)
             Menu4.vokoscreen.set_tooltip_text(format(SetToolTip('vokoscreen', action.installed, action.remove_it)))
         else:
-            Img.vokoscreen_img.set_from_file(action.gtk_no)
+            Img.vokoscreen_img.set_from_file(no)
             Menu4.vokoscreen.set_tooltip_text(format(SetToolTip('vokoscreen', action.not_here, action.install_it)))

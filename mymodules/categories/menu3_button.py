@@ -70,121 +70,123 @@ class Menu3:
         Img.image6.set_from_file(action.menu_img_6)
 
         # check if those programs are installed and set appropriate sign
+        no = action.gtk_no
+        yes = action.gtk_yes
         if os.path.isfile(Find.program['chromium']):
-            Img.chromium_img.set_from_file(action.gtk_yes)
+            Img.chromium_img.set_from_file(yes)
             Menu3.chromium.set_tooltip_text(format(SetToolTip('chromium', action.installed, action.remove_it)))
         else:
-            Img.chromium_img.set_from_file(action.gtk_no)
+            Img.chromium_img.set_from_file(no)
             Menu3.chromium.set_tooltip_text(format(SetToolTip('chromium', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['deluge']):
-            Img.deluge_img.set_from_file(action.gtk_yes)
+            Img.deluge_img.set_from_file(yes)
             Menu3.deluge.set_tooltip_text(format(SetToolTip('deluge', action.installed, action.remove_it)))
         else:
-            Img.deluge_img.set_from_file(action.gtk_no)
+            Img.deluge_img.set_from_file(no)
             Menu3.deluge.set_tooltip_text(format(SetToolTip('deluge', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['evolution']):
-            Img.evolution_img.set_from_file(action.gtk_yes)
+            Img.evolution_img.set_from_file(yes)
             Menu3.evolution.set_tooltip_text(format(SetToolTip('evolution', action.installed, action.remove_it)))
         else:
-            Img.evolution_img.set_from_file(action.gtk_no)
+            Img.evolution_img.set_from_file(no)
             Menu3.evolution.set_tooltip_text(format(SetToolTip('evolution', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['filezilla']):
-            Img.filezilla_img.set_from_file(action.gtk_yes)
+            Img.filezilla_img.set_from_file(yes)
             Menu3.filezilla.set_tooltip_text(format(SetToolTip('filezilla', action.installed, action.remove_it)))
         else:
-            Img.filezilla_img.set_from_file(action.gtk_no)
+            Img.filezilla_img.set_from_file(no)
             Menu3.filezilla.set_tooltip_text(format(SetToolTip('filezilla', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['firefox']):
-            Img.firefox_img.set_from_file(action.gtk_yes)
+            Img.firefox_img.set_from_file(yes)
             Menu3.firefox.set_tooltip_text(format(SetToolTip('firefox', action.installed, action.remove_it)))
         else:
-            Img.firefox_img.set_from_file(action.gtk_no)
+            Img.firefox_img.set_from_file(no)
             Menu3.firefox.set_tooltip_text(format(SetToolTip('firefox', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['google-chrome']):
-            Img.chrome_img.set_from_file(action.gtk_yes)
+            Img.chrome_img.set_from_file(yes)
             Menu3.chrome.set_tooltip_text(format(SetToolTip('google Chrome', action.installed, action.remove_it)))
         else:
-            Img.chrome_img.set_from_file(action.gtk_no)
+            Img.chrome_img.set_from_file(no)
             Menu3.chrome.set_tooltip_text(format(SetToolTip('google Chrome', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['xchat']):
-            Img.xchat_img.set_from_file(action.gtk_yes)
+            Img.xchat_img.set_from_file(yes)
             Menu3.xchat.set_tooltip_text(format(SetToolTip('xchat', action.installed, action.remove_it)))
         else:
-            Img.xchat_img.set_from_file(action.gtk_no)
+            Img.xchat_img.set_from_file(no)
             Menu3.xchat.set_tooltip_text(format(SetToolTip('xchat', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['liferea']):
-            Img.liferea_img.set_from_file(action.gtk_yes)
+            Img.liferea_img.set_from_file(yes)
             Menu3.liferea.set_tooltip_text(format(SetToolTip('liferea', action.installed, action.remove_it)))
         else:
-            Img.liferea_img.set_from_file(action.gtk_no)
+            Img.liferea_img.set_from_file(no)
             Menu3.liferea.set_tooltip_text(format(SetToolTip('liferea', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['midori']):
-            Img.midori_img.set_from_file(action.gtk_yes)
+            Img.midori_img.set_from_file(yes)
             Menu3.midori.set_tooltip_text(format(SetToolTip('midori', action.installed, action.remove_it)))
         else:
-            Img.midori_img.set_from_file(action.gtk_no)
+            Img.midori_img.set_from_file(no)
             Menu3.midori.set_tooltip_text(format(SetToolTip('midori', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['minitube']):
-            Img.minitube_img.set_from_file(action.gtk_yes)
+            Img.minitube_img.set_from_file(yes)
             Menu3.minitube.set_tooltip_text(format(SetToolTip('minitube', action.installed, action.remove_it)))
         else:
-            Img.minitube_img.set_from_file(action.gtk_no)
+            Img.minitube_img.set_from_file(no)
             Menu3.minitube.set_tooltip_text(format(SetToolTip('minitube', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['opera']):
-            Img.opera_img.set_from_file(action.gtk_yes)
+            Img.opera_img.set_from_file(yes)
             Menu3.opera.set_tooltip_text(format(SetToolTip('opera', action.installed, action.remove_it)))
         else:
-            Img.opera_img.set_from_file(action.gtk_no)
+            Img.opera_img.set_from_file(no)
             Menu3.opera.set_tooltip_text(format(SetToolTip('opera', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['pidgin']):
-            Img.pidgin_img.set_from_file(action.gtk_yes)
+            Img.pidgin_img.set_from_file(yes)
             Menu3.pidgin.set_tooltip_text(format(SetToolTip('pidgin', action.installed, action.remove_it)))
         else:
-            Img.pidgin_img.set_from_file(action.gtk_no)
+            Img.pidgin_img.set_from_file(no)
             Menu3.pidgin.set_tooltip_text(format(SetToolTip('pidgin', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['skype']):
-            Img.skype_img.set_from_file(action.gtk_yes)
+            Img.skype_img.set_from_file(yes)
             Menu3.skyp.set_tooltip_text(format(SetToolTip('skype', action.installed, action.remove_it)))
         else:
-            Img.skype_img.set_from_file(action.gtk_no)
+            Img.skype_img.set_from_file(no)
             Menu3.skyp.set_tooltip_text(format(SetToolTip('skype', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['steam']):
-            Img.steam_img.set_from_file(action.gtk_yes)
+            Img.steam_img.set_from_file(yes)
             Menu3.steam.set_tooltip_text(format(SetToolTip('steam', action.installed, action.remove_it)))
         else:
-            Img.steam_img.set_from_file(action.gtk_no)
+            Img.steam_img.set_from_file(no)
             Menu3.steam.set_tooltip_text(format(SetToolTip('steam', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['thunderbird']):
-            Img.thunderbird_img.set_from_file(action.gtk_yes)
+            Img.thunderbird_img.set_from_file(yes)
             Menu3.thunderbird.set_tooltip_text(format(SetToolTip('thunderbird', action.installed, action.remove_it)))
         else:
-            Img.thunderbird_img.set_from_file(action.gtk_no)
+            Img.thunderbird_img.set_from_file(no)
             Menu3.thunderbird.set_tooltip_text(format(SetToolTip('thunderbird', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['transmission-gtk']):
-            Img.transmission_img.set_from_file(action.gtk_yes)
+            Img.transmission_img.set_from_file(yes)
             Menu3.transmission.set_tooltip_text(format(SetToolTip('transmission', action.installed, action.remove_it)))
         else:
-            Img.transmission_img.set_from_file(action.gtk_no)
+            Img.transmission_img.set_from_file(no)
             Menu3.transmission.set_tooltip_text(format(SetToolTip('transmission', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['linuxdcpp']):
-            Img.linuxdcpp_img.set_from_file(action.gtk_yes)
+            Img.linuxdcpp_img.set_from_file(yes)
             Menu3.linuxdcpp.set_tooltip_text(format(SetToolTip('linuxdcpp', action.installed, action.remove_it)))
         else:
-            Img.linuxdcpp_img.set_from_file(action.gtk_no)
+            Img.linuxdcpp_img.set_from_file(no)
             Menu3.linuxdcpp.set_tooltip_text(format(SetToolTip('linuxdcpp', action.not_here, action.install_it)))

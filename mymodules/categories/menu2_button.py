@@ -49,73 +49,74 @@ class Menu2:
         Img.image6.set_from_file(action.menu_img_6)
 
         # check if those programs are installed and set appropriate sign
-
+        no = action.gtk_no
+        yes = action.gtk_yes
         if os.path.isfile(Find.program['evince']):
-            Img.evince_img.set_from_file(action.gtk_yes)
+            Img.evince_img.set_from_file(yes)
             Menu2.evince.set_tooltip_text(format(SetToolTip('evince', action.installed, action.remove_it)))
         else:
-            Img.evince_img.set_from_file(action.gtk_no)
+            Img.evince_img.set_from_file(no)
             Menu2.evince.set_tooltip_text(format(SetToolTip('evince', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['f-spot']):
-            Img.f_spot_img.set_from_file(action.gtk_yes)
+            Img.f_spot_img.set_from_file(yes)
             Menu2.f_spot.set_tooltip_text(format(SetToolTip('f-Spot', action.installed, action.remove_it)))
         else:
-            Img.f_spot_img.set_from_file(action.gtk_no)
+            Img.f_spot_img.set_from_file(no)
             Menu2.f_spot.set_tooltip_text(format(SetToolTip('f-Spot', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gimp']):
-            Img.gimp_img.set_from_file(action.gtk_yes)
+            Img.gimp_img.set_from_file(yes)
             Menu2.gimp.set_tooltip_text(format(SetToolTip('gimp', action.installed, action.remove_it)))
         else:
-            Img.gimp_img.set_from_file(action.gtk_no)
+            Img.gimp_img.set_from_file(no)
             Menu2.gimp.set_tooltip_text(format(SetToolTip('gimp', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gwenview']):
-            Img.gwenview_img.set_from_file(action.gtk_yes)
+            Img.gwenview_img.set_from_file(yes)
             Menu2.gwenview.set_tooltip_text(format(SetToolTip('gwenview', action.installed, action.remove_it)))
         else:
-            Img.gwenview_img.set_from_file(action.gtk_no)
+            Img.gwenview_img.set_from_file(no)
             Menu2.gwenview.set_tooltip_text(format(SetToolTip('gwenview', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['imagemagick']):
-            Img.imagemagick_img.set_from_file(action.gtk_yes)
+            Img.imagemagick_img.set_from_file(yes)
             Menu2.imagemagick.set_tooltip_text(format(SetToolTip('imageMagick', action.installed, action.remove_it)))
         else:
-            Img.imagemagick_img.set_from_file(action.gtk_no)
+            Img.imagemagick_img.set_from_file(no)
             Menu2.imagemagick.set_tooltip_text(format(SetToolTip('imageMagick', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['inkscape']):
-            Img.inkscape_img.set_from_file(action.gtk_yes)
+            Img.inkscape_img.set_from_file(yes)
             Menu2.inkscape.set_tooltip_text(format(SetToolTip('inkscape', action.installed, action.remove_it)))
         else:
-            Img.inkscape_img.set_from_file(action.gtk_no)
+            Img.inkscape_img.set_from_file(no)
             Menu2.inkscape.set_tooltip_text(format(SetToolTip('inkscape', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['mypaint']):
-            Img.mypaint_img.set_from_file(action.gtk_yes)
+            Img.mypaint_img.set_from_file(yes)
             Menu2.mypaint.set_tooltip_text(format(SetToolTip('mypaint', action.installed, action.remove_it)))
         else:
-            Img.mypaint_img.set_from_file(action.gtk_no)
+            Img.mypaint_img.set_from_file(no)
             Menu2.mypaint.set_tooltip_text(format(SetToolTip('mypaint', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['pinta']):
-            Img.pinta_img.set_from_file(action.gtk_yes)
+            Img.pinta_img.set_from_file(yes)
             Menu2.pinta.set_tooltip_text(format(SetToolTip('pinta', action.installed, action.remove_it)))
         else:
-            Img.pinta_img.set_from_file(action.gtk_no)
+            Img.pinta_img.set_from_file(no)
             Menu2.pinta.set_tooltip_text(format(SetToolTip('pinta', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['shotwell']):
-            Img.shotwell_img.set_from_file(action.gtk_yes)
+            Img.shotwell_img.set_from_file(yes)
             Menu2.shotwell.set_tooltip_text(format(SetToolTip('shotwell', action.installed, action.remove_it)))
         else:
-            Img.shotwell_img.set_from_file(action.gtk_no)
+            Img.shotwell_img.set_from_file(no)
             Menu2.shotwell.set_tooltip_text(format(SetToolTip('shotwell', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['stellarium']):
-            Img.stellarium_img.set_from_file(action.gtk_yes)
+            Img.stellarium_img.set_from_file(yes)
             Menu2.stellarium.set_tooltip_text(format(SetToolTip('stellarium', action.installed, action.remove_it)))
         else:
-            Img.stellarium_img.set_from_file(action.gtk_no)
+            Img.stellarium_img.set_from_file(no)
             Menu2.stellarium.set_tooltip_text(format(SetToolTip('stellarium', action.not_here, action.install_it)))

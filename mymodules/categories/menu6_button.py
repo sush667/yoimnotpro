@@ -54,86 +54,88 @@ class Menu6:
         Img.image6.set_from_file(action.menu_img_66)
 
         # check if those programs are installed and set appropriate sign
+        no = action.gtk_no
+        yes = action.gtk_yes
         if os.path.isfile(Find.program['docky']):
-            Img.docky_img.set_from_file(action.gtk_yes)
+            Img.docky_img.set_from_file(yes)
             Menu6.docky.set_tooltip_text(format(SetToolTip('docky', action.installed, action.remove_it)))
         else:
-            Img.docky_img.set_from_file(action.gtk_no)
+            Img.docky_img.set_from_file(no)
             Menu6.docky.set_tooltip_text(format(SetToolTip('docky', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['emacs']):
-            Img.emacs_img.set_from_file(action.gtk_yes)
+            Img.emacs_img.set_from_file(yes)
             Menu6.emacs.set_tooltip_text(format(SetToolTip('emacs', action.installed, action.remove_it)))
         else:
-            Img.emacs_img.set_from_file(action.gtk_no)
+            Img.emacs_img.set_from_file(no)
             Menu6.emacs.set_tooltip_text(format(SetToolTip('emacs', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['vim']):
-            Img.vim_img.set_from_file(action.gtk_yes)
+            Img.vim_img.set_from_file(yes)
             Menu6.vim.set_tooltip_text(format(SetToolTip('vim', action.installed, action.remove_it)))
         else:
-            Img.vim_img.set_from_file(action.gtk_no)
+            Img.vim_img.set_from_file(no)
             Menu6.vim.set_tooltip_text(format(SetToolTip('vim', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['galculator']):
-            Img.galculator_img.set_from_file(action.gtk_yes)
+            Img.galculator_img.set_from_file(yes)
             Menu6.galculator.set_tooltip_text(format(SetToolTip('galculator', action.installed, action.remove_it)))
         else:
-            Img.galculator_img.set_from_file(action.gtk_no)
+            Img.galculator_img.set_from_file(no)
             Menu6.galculator.set_tooltip_text(format(SetToolTip('galculator', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gedit']):
-            Img.gedit_img.set_from_file(action.gtk_yes)
+            Img.gedit_img.set_from_file(yes)
             Menu6.gedit.set_tooltip_text(format(SetToolTip('gedit', action.installed, action.remove_it)))
         else:
-            Img.gedit_img.set_from_file(action.gtk_no)
+            Img.gedit_img.set_from_file(no)
             Menu6.gedit.set_tooltip_text(format(SetToolTip('gedit', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gloobus-preview']):
-            Img.gloobus_img.set_from_file(action.gtk_yes)
+            Img.gloobus_img.set_from_file(yes)
             Menu6.gloobus.set_tooltip_text(format(SetToolTip('gloobus', action.installed, action.remove_it)))
         else:
-            Img.gloobus_img.set_from_file(action.gtk_no)
+            Img.gloobus_img.set_from_file(no)
             Menu6.gloobus.set_tooltip_text(format(SetToolTip('gloobus', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['leafpad']):
-            Img.leafpad_img.set_from_file(action.gtk_yes)
+            Img.leafpad_img.set_from_file(yes)
             Menu6.leafpad.set_tooltip_text(format(SetToolTip('leafpad', action.installed, action.remove_it)))
         else:
-            Img.leafpad_img.set_from_file(action.gtk_no)
+            Img.leafpad_img.set_from_file(no)
             Menu6.leafpad.set_tooltip_text(format(SetToolTip('leafpad', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['scribes']):
-            Img.scribes_img.set_from_file(action.gtk_yes)
+            Img.scribes_img.set_from_file(yes)
             Menu6.scribes.set_tooltip_text(format(SetToolTip('scribes', action.installed, action.remove_it)))
         else:
-            Img.scribes_img.set_from_file(action.gtk_no)
+            Img.scribes_img.set_from_file(no)
             Menu6.scribes.set_tooltip_text(format(SetToolTip('scribes', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['tomboy']):
-            Img.tomboy_img.set_from_file(action.gtk_yes)
+            Img.tomboy_img.set_from_file(yes)
             Menu6.tomboy.set_tooltip_text(format(SetToolTip('tomboy', action.installed, action.remove_it)))
         else:
-            Img.tomboy_img.set_from_file(action.gtk_no)
+            Img.tomboy_img.set_from_file(no)
             Menu6.tomboy.set_tooltip_text(format(SetToolTip('tomboy', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['tuxcards']):
-            Img.tuxcards_img.set_from_file(action.gtk_yes)
+            Img.tuxcards_img.set_from_file(yes)
             Menu6.tuxcards.set_tooltip_text(format(SetToolTip('tuxcards', action.installed, action.remove_it)))
         else:
-            Img.tuxcards_img.set_from_file(action.gtk_no)
+            Img.tuxcards_img.set_from_file(no)
             Menu6.tuxcards.set_tooltip_text(format(SetToolTip('tuxcards', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['imagewriter']):
-            Img.imagewriter_img.set_from_file(action.gtk_yes)
+            Img.imagewriter_img.set_from_file(yes)
             Menu6.imagewriter.set_tooltip_text(format(SetToolTip('imagewriter', action.installed, action.remove_it)))
         else:
-            Img.imagewriter_img.set_from_file(action.gtk_no)
+            Img.imagewriter_img.set_from_file(no)
             Menu6.imagewriter.set_tooltip_text(format(SetToolTip('imagewriter', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['7zip']):
-            Img.sevenzip_img.set_from_file(action.gtk_yes)
+            Img.sevenzip_img.set_from_file(yes)
             Menu6.sevenzip.set_tooltip_text(format(SetToolTip('7zip', action.installed, action.remove_it)))
         else:
-            Img.sevenzip_img.set_from_file(action.gtk_no)
+            Img.sevenzip_img.set_from_file(no)
             Menu6.sevenzip.set_tooltip_text(format(SetToolTip('7zip', action.not_here, action.install_it)))

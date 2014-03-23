@@ -72,128 +72,130 @@ class Menu5:
         Img.image6.set_from_file(action.menu_img_6)
 
         # check if those programs are installed and set appropriate sign
+        no = action.gtk_no
+        yes = action.gtk_yes
         if os.path.isfile(Find.program['gparted']):
-            Img.gparted_img.set_from_file(action.gtk_yes)
+            Img.gparted_img.set_from_file(yes)
             Menu5.gparted.set_tooltip_text(format(SetToolTip('gparted', action.installed, action.remove_it)))
         else:
-            Img.gparted_img.set_from_file(action.gtk_no)
+            Img.gparted_img.set_from_file(no)
             Menu5.gparted.set_tooltip_text(format(SetToolTip('gparted', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['guake']):
-            Img.guake_img.set_from_file(action.gtk_yes)
+            Img.guake_img.set_from_file(yes)
             Menu5.guake.set_tooltip_text(format(SetToolTip('guake', action.installed, action.remove_it)))
         else:
-            Img.guake_img.set_from_file(action.gtk_no)
+            Img.guake_img.set_from_file(no)
             Menu5.guake.set_tooltip_text(format(SetToolTip('guake', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['hardinfo']):
-            Img.hardinfo_img.set_from_file(action.gtk_yes)
+            Img.hardinfo_img.set_from_file(yes)
             Menu5.hardinfo.set_tooltip_text(format(SetToolTip('hardinfo', action.installed, action.remove_it)))
         else:
-            Img.hardinfo_img.set_from_file(action.gtk_no)
+            Img.hardinfo_img.set_from_file(no)
             Menu5.hardinfo.set_tooltip_text(format(SetToolTip('hardinfo', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['htop']):
-            Img.htop_img.set_from_file(action.gtk_yes)
+            Img.htop_img.set_from_file(yes)
             Menu5.htop.set_tooltip_text(format(SetToolTip('htop', action.installed, action.remove_it)))
         else:
-            Img.htop_img.set_from_file(action.gtk_no)
+            Img.htop_img.set_from_file(no)
             Menu5.htop.set_tooltip_text(format(SetToolTip('htop', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['keepassx']):
-            Img.keepassx_img.set_from_file(action.gtk_yes)
+            Img.keepassx_img.set_from_file(yes)
             Menu5.keepassx.set_tooltip_text(format(SetToolTip('keepassx', action.installed, action.remove_it)))
         else:
-            Img.keepassx_img.set_from_file(action.gtk_no)
+            Img.keepassx_img.set_from_file(no)
             Menu5.keepassx.set_tooltip_text(format(SetToolTip('keepassx', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['playonlinux']):
-            Img.playonlinux_img.set_from_file(action.gtk_yes)
+            Img.playonlinux_img.set_from_file(yes)
             Menu5.playonlinux.set_tooltip_text(format(SetToolTip('playonlinux', action.installed, action.remove_it)))
         else:
-            Img.playonlinux_img.set_from_file(action.gtk_no)
+            Img.playonlinux_img.set_from_file(no)
             Menu5.playonlinux.set_tooltip_text(format(SetToolTip('playonlinux', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['terminator']):
-            Img.terminator_img.set_from_file(action.gtk_yes)
+            Img.terminator_img.set_from_file(yes)
             Menu5.terminator.set_tooltip_text(format(SetToolTip('terminator', action.installed, action.remove_it)))
         else:
-            Img.terminator_img.set_from_file(action.gtk_no)
+            Img.terminator_img.set_from_file(no)
             Menu5.terminator.set_tooltip_text(format(SetToolTip('terminator', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['thunar']):
-            Img.thunar_img.set_from_file(action.gtk_yes)
+            Img.thunar_img.set_from_file(yes)
             Menu5.thunar.set_tooltip_text(format(SetToolTip('thunar', action.installed, action.remove_it)))
         else:
-            Img.thunar_img.set_from_file(action.gtk_no)
+            Img.thunar_img.set_from_file(no)
             Menu5.thunar.set_tooltip_text(format(SetToolTip('thunar', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['truecrypt']):
-            Img.truecrypt_img.set_from_file(action.gtk_yes)
+            Img.truecrypt_img.set_from_file(yes)
             Menu5.truecrypt.set_tooltip_text(format(SetToolTip('truecrypt', action.installed, action.remove_it)))
         else:
-            Img.truecrypt_img.set_from_file(action.gtk_no)
+            Img.truecrypt_img.set_from_file(no)
             Menu5.truecrypt.set_tooltip_text(format(SetToolTip('truecrypt', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['unetbootin']):
-            Img.unetbootin_img.set_from_file(action.gtk_yes)
+            Img.unetbootin_img.set_from_file(yes)
             Menu5.unetbootin.set_tooltip_text(format(SetToolTip('unetbootin', action.installed, action.remove_it)))
         else:
-            Img.unetbootin_img.set_from_file(action.gtk_no)
+            Img.unetbootin_img.set_from_file(no)
             Menu5.unetbootin.set_tooltip_text(format(SetToolTip('unetbootin', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['virtualbox']):
-            Img.virtualbox_img.set_from_file(action.gtk_yes)
+            Img.virtualbox_img.set_from_file(yes)
             Menu5.virtualbox.set_tooltip_text(format(SetToolTip('virtualbox', action.installed, action.remove_it)))
         else:
-            Img.virtualbox_img.set_from_file(action.gtk_no)
+            Img.virtualbox_img.set_from_file(no)
             Menu5.virtualbox.set_tooltip_text(format(SetToolTip('virtualbox', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['wine']):
-            Img.wine_img.set_from_file(action.gtk_yes)
+            Img.wine_img.set_from_file(yes)
             Menu5.wine.set_tooltip_text(format(SetToolTip('wine', action.installed, action.remove_it)))
         else:
-            Img.wine_img.set_from_file(action.gtk_no)
+            Img.wine_img.set_from_file(no)
             Menu5.wine.set_tooltip_text(format(SetToolTip('wine', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['wireshark-gtk']):
-            Img.wireshark_img.set_from_file(action.gtk_yes)
+            Img.wireshark_img.set_from_file(yes)
             Menu5.wireshark.set_tooltip_text(format(SetToolTip('wireshark', action.installed, action.remove_it)))
         else:
-            Img.wireshark_img.set_from_file(action.gtk_no)
+            Img.wireshark_img.set_from_file(no)
             Menu5.wireshark.set_tooltip_text(format(SetToolTip('wireshark', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['xbmc']):
-            Img.xbmc_img.set_from_file(action.gtk_yes)
+            Img.xbmc_img.set_from_file(yes)
             Menu5.xbmc.set_tooltip_text(format(SetToolTip('xbmc', action.installed, action.remove_it)))
         else:
-            Img.xbmc_img.set_from_file(action.gtk_no)
+            Img.xbmc_img.set_from_file(no)
             Menu5.xbmc.set_tooltip_text(format(SetToolTip('xbmc', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['gufw']):
-            Img.gufw_img.set_from_file(action.gtk_yes)
+            Img.gufw_img.set_from_file(yes)
             Menu5.gufw.set_tooltip_text(format(SetToolTip('gufw', action.installed, action.remove_it)))
         else:
-            Img.gufw_img.set_from_file(action.gtk_no)
+            Img.gufw_img.set_from_file(no)
             Menu5.gufw.set_tooltip_text(format(SetToolTip('gufw', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['octopi']):
-            Img.octopi_img.set_from_file(action.gtk_yes)
+            Img.octopi_img.set_from_file(yes)
             Menu5.octopi.set_tooltip_text(format(SetToolTip('octopi', action.installed, action.remove_it)))
         else:
-            Img.octopi_img.set_from_file(action.gtk_no)
+            Img.octopi_img.set_from_file(no)
             Menu5.octopi.set_tooltip_text(format(SetToolTip('octopi', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['pamac']):
-            Img.pamac_img.set_from_file(action.gtk_yes)
+            Img.pamac_img.set_from_file(yes)
             Menu5.pamac.set_tooltip_text(format(SetToolTip('pamac', action.installed, action.remove_it)))
         else:
-            Img.pamac_img.set_from_file(action.gtk_no)
+            Img.pamac_img.set_from_file(no)
             Menu5.pamac.set_tooltip_text(format(SetToolTip('pamac', action.installed, action.remove_it)))
 
         if os.path.isfile(Find.program['gnome-system-monitor']):
-            Img.gnome_system_monitor_img.set_from_file(action.gtk_yes)
+            Img.gnome_system_monitor_img.set_from_file(yes)
             Menu5.gnome_system_monitor.set_tooltip_text(format(SetToolTip('Gnome system monitor', action.installed, action.remove_it)))
         else:
-            Img.gnome_system_monitor_img.set_from_file(action.gtk_no)
+            Img.gnome_system_monitor_img.set_from_file(no)
             Menu5.gnome_system_monitor.set_tooltip_text(format(SetToolTip('Gnome system monitor', action.not_here, action.install_it)))

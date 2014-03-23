@@ -57,93 +57,95 @@ class Menu1:
         Img.image6.set_from_file(action.menu_img_6)
 
         # check if those programs are installed and set appropriate sign
+        no = action.gtk_no
+        yes = action.gtk_yes
         if os.path.isfile(Find.program['anjuta']):
-            Img.anjuta_img.set_from_file(action.gtk_yes)
+            Img.anjuta_img.set_from_file(yes)
             Menu1.anjuta.set_tooltip_text(format(SetToolTip('anjuta', action.installed, action.remove_it)))
         else:
-            Img.anjuta_img.set_from_file(action.gtk_no)
+            Img.anjuta_img.set_from_file(no)
             Menu1.anjuta.set_tooltip_text(format(SetToolTip('anjuta', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['blender']):
-            Img.blender_img.set_from_file(action.gtk_yes)
+            Img.blender_img.set_from_file(yes)
             Menu1.blender.set_tooltip_text(format(SetToolTip('blender', action.installed, action.remove_it)))
         else:
-            Img.blender_img.set_from_file(action.gtk_no)
+            Img.blender_img.set_from_file(no)
             Menu1.blender.set_tooltip_text(format(SetToolTip('blender', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['bluefish']):
-            Img.bluefish_img.set_from_file(action.gtk_yes)
+            Img.bluefish_img.set_from_file(yes)
             Menu1.bluefish.set_tooltip_text(format(SetToolTip('bluefish', action.installed, action.remove_it)))
         else:
-            Img.bluefish_img.set_from_file(action.gtk_no)
+            Img.bluefish_img.set_from_file(no)
             Menu1.bluefish.set_tooltip_text(format(SetToolTip('bluefish', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['eclipse']):
-            Img.eclipse_img.set_from_file(action.gtk_yes)
+            Img.eclipse_img.set_from_file(yes)
             Menu1.eclipse.set_tooltip_text(format(SetToolTip('eclipse', action.installed, action.remove_it)))
         else:
-            Img.eclipse_img.set_from_file(action.gtk_no)
+            Img.eclipse_img.set_from_file(no)
             Menu1.eclipse.set_tooltip_text(format(SetToolTip('eclipse', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['geany']):
-            Img.geany_img.set_from_file(action.gtk_yes)
+            Img.geany_img.set_from_file(yes)
             Menu1.geany.set_tooltip_text(format(SetToolTip('geany', action.installed, action.remove_it)))
         else:
-            Img.geany_img.set_from_file(action.gtk_no)
+            Img.geany_img.set_from_file(no)
             Menu1.geany.set_tooltip_text(format(SetToolTip('geany', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['glade']):
-            Img.glade_img.set_from_file(action.gtk_yes)
+            Img.glade_img.set_from_file(yes)
             Menu1.glade.set_tooltip_text(format(SetToolTip('glade', action.installed, action.remove_it)))
         else:
-            Img.glade_img.set_from_file(action.gtk_no)
+            Img.glade_img.set_from_file(no)
             Menu1.glade.set_tooltip_text(format(SetToolTip('glade', action.not_here, action.install_it)))
 
         if os.path.exists(Find.program['openjdk']):
-            Img.openjdk_img.set_from_file(action.gtk_yes)
+            Img.openjdk_img.set_from_file(yes)
             Menu1.openjdk.set_tooltip_text(format(SetToolTip('openJDK', action.installed, action.remove_it)))
         else:
-            Img.openjdk_img.set_from_file(action.gtk_no)
+            Img.openjdk_img.set_from_file(no)
             Menu1.openjdk.set_tooltip_text(format(SetToolTip('openJDK', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['meld']):
-            Img.meld_img.set_from_file(action.gtk_yes)
+            Img.meld_img.set_from_file(yes)
             Menu1.meld.set_tooltip_text(format(SetToolTip('meld', action.installed, action.remove_it)))
         else:
-            Img.meld_img.set_from_file(action.gtk_no)
+            Img.meld_img.set_from_file(no)
             Menu1.meld.set_tooltip_text(format(SetToolTip('meld', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['netbeans']):
-            Img.netbeans_img.set_from_file(action.gtk_yes)
+            Img.netbeans_img.set_from_file(yes)
             Menu1.netbeans.set_tooltip_text(format(SetToolTip('netbeans', action.installed, action.remove_it)))
         else:
-            Img.netbeans_img.set_from_file(action.gtk_no)
+            Img.netbeans_img.set_from_file(no)
             Menu1.netbeans.set_tooltip_text(format(SetToolTip('netbeans', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['qt4']):
-            Img.qt4_img.set_from_file(action.gtk_yes)
+            Img.qt4_img.set_from_file(yes)
             Menu1.qt4.set_tooltip_text(format(SetToolTip('qt4', action.installed, action.remove_it)))
         else:
-            Img.qt4_img.set_from_file(action.gtk_no)
+            Img.qt4_img.set_from_file(no)
             Menu1.qt4.set_tooltip_text(format(SetToolTip('qt4', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['qt5-base']):
-            Img.qt5_img.set_from_file(action.gtk_yes)
+            Img.qt5_img.set_from_file(yes)
             Menu1.qt5.set_tooltip_text(format(SetToolTip('qt5', action.installed, action.remove_it)))
         else:
-            Img.qt5_img.set_from_file(action.gtk_no)
+            Img.qt5_img.set_from_file(no)
             Menu1.qt5.set_tooltip_text(format(SetToolTip('qt5', action.not_here, action.install_it)))
 
         if os.path.isfile(Find.program['qtcreator']):
-            Img.qtcreator_img.set_from_file(action.gtk_yes)
+            Img.qtcreator_img.set_from_file(yes)
             Menu1.qtcreator.set_tooltip_text(format(SetToolTip('qtcreator', action.installed, action.remove_it)))
         else:
-            Img.qtcreator_img.set_from_file(action.gtk_no)
+            Img.qtcreator_img.set_from_file(no)
             Menu1.qtcreator.set_tooltip_text(format(SetToolTip('qtcreator', action.installed, action.remove_it)))
 
         if os.path.isfile(Find.program['ninja-ide']):
-            Img.ninja_ide_img.set_from_file(action.gtk_yes)
+            Img.ninja_ide_img.set_from_file(yes)
             Menu1.ninja_ide.set_tooltip_text(format(SetToolTip('ninja-IDE', action.installed, action.remove_it)))
         else:
-            Img.ninja_ide_img.set_from_file(action.gtk_no)
+            Img.ninja_ide_img.set_from_file(no)
             Menu1.ninja_ide.set_tooltip_text(format(SetToolTip('ninja-IDE', action.not_here, action.install_it)))
