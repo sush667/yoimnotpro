@@ -11,7 +11,7 @@ class dial:
                     '- Cheers !', '>:-)'),
         'removed': (', how dare you ?', 'pitty to see it go', '>:-(', 'was douchebag...',
                     'LMAO', 'LOL')}
-        if self._action == "installed":
+        if self._action == action.installed:
             dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
                 Gtk.ButtonsType.OK, "{program_name} was installed successfully."
                     .format(program_name=self._name),
@@ -40,7 +40,7 @@ class SetToolTip:
     def __init__(self, *arg):
         self._arg = arg
     def __repr__(self):
-        return '{program_name} is {maybe_here}.\nClick to {apply_some_action_to} it.'\
+        return '<b><i>{program_name}</i></b> is {maybe_here}.\nClick to {apply_some_action_to} it.'\
         .format(program_name=self._arg[0].capitalize(), maybe_here=self._arg[1], apply_some_action_to=self._arg[2])
 
 class action:
@@ -50,17 +50,17 @@ class action:
     suggestions = 'Suggestions'
     comments = 'Comments'
     program_name = "Yo I\'m not pro"
-    not_here = 'not installed'
+    not_here = '<span foreground="red" weight="bold">not installed</span>'
     install_it = 'install'
     remove_it = 'remove'
-    installed = 'installed'
-    development = "Development"
-    graphics = "Graphics"
-    internet = "Internet"
-    multimedia = "Multimedia"
-    system = "System"
-    utilities = "Utilities"
-    about = "About"
+    installed = '<span foreground="green" weight="bold">installed</span>'
+    development = "<b>Development</b>"
+    graphics = "<b>Graphics</b>"
+    internet = "<b>Internet</b>"
+    multimedia = "<b>Multimedia</b>"
+    system = "<b>System</b>"
+    utilities = "<b>Utilities</b>"
+    about = "<b>About</b>"
     gtk_yes = './categories/gtk-yes.png'
     gtk_no = './categories/gtk-no.png'
     menu_img_66 = './categories/menu66.png'

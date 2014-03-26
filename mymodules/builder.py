@@ -44,10 +44,10 @@ class Builder:
 
 class SetMenuCategoriesTooltipNames:
     def __init__(self):
-        Builder.button1.set_tooltip_text(action.development)
-        Builder.button2.set_tooltip_text(action.graphics)
-        Builder.button3.set_tooltip_text(action.internet)
-        Builder.button4.set_tooltip_text(action.multimedia)
-        Builder.button5.set_tooltip_text(action.system)
-        Builder.button6.set_tooltip_text(action.utilities)
-        Builder.button7.set_tooltip_text(action.about)
+        Builder.button1.set_tooltip_markup(action.development)
+        Builder.button2.set_tooltip_markup(action.graphics)
+        Builder.button3.set_tooltip_markup(action.internet)
+        Builder.button4.set_tooltip_markup(action.multimedia)
+        Builder.button5.set_tooltip_markup(action.system)
+        Builder.button6.set_tooltip_markup(action.utilities)
+        Builder.button7.set_tooltip_markup(action.about)
