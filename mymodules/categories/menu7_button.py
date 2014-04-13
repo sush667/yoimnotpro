@@ -4,6 +4,7 @@ from mymodules.builder import Builder
 from mymodules.action.find_program import Find
 from mymodules.action.dial import SetToolTip, action
 
+
 class Menu7:
 
     # get menu 7 application buttons

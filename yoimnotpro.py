@@ -2,7 +2,6 @@
 import os
 import sys
 from mymodules.builder import Builder, SetMenuCategoriesTooltipNames
-from mymodules.action.on_program_clicked import OPC
 from mymodules.categories.menu7_button import Menu7
 from mymodules.categories.menu6_button import Menu6
 from mymodules.categories.menu5_button import Menu5
