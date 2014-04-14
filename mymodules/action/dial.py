@@ -1,8 +1,17 @@
 from random import choice
-#from string import Template
 from gi.repository import Gtk
 
 class dial:
+    def display_message(self, action):
+        dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
+            Gtk.ButtonsType.OK, "{program_name} was {inst_or_rem} successfully."
+                .format(program_name=self._name, inst_or_rem=action),
+                title="{program_name} {random_message}"
+                .format(program_name=self._name,
+                    random_message=choice(self._dict_with_phrases[action])))
+        dialog.run()
+        dialog.destroy()
+
     def __init__(self, *arg):
         self._name = arg[0]
         self._action = arg[1]
@@ -11,30 +20,8 @@ class dial:
                     '- Cheers !', '>:-)'),
         'removed': (', how dare you ?', 'pitty to see it go', '>:-(', 'was douchebag...',
                     'LMAO', 'LOL')}
-        if self._action == action.installed:
-            dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
-                Gtk.ButtonsType.OK, "{program_name} was installed successfully."
-                    .format(program_name=self._name),
-                    title="{program_name} {random_message}"
-                    .format(program_name=self._name, random_message=choice(self._dict_with_phrases['installed'])))
-            dialog.run()
-            dialog.destroy()
-        else:
-            dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
-                Gtk.ButtonsType.OK, "{program_name} was removed successfully."
-                    .format(program_name=self._name),
-                    title="{program_name} {random_message}"
-                    .format(program_name=self._name, random_message=choice(self._dict_with_phrases['removed'])))
-            dialog.run()
-            dialog.destroy()
-
-#class SpamSpamBaby(type):
-    #def __call__(self, *arg):
-        #return Template('$program_name is $maybe_here.\nClick to $apply_some_action_to it.')\
-        #.substitute(program_name=arg[0], maybe_here=arg[1], apply_some_action_to=arg[2])
-
-#class SetToolTip(metaclass=SpamSpamBaby):
-    #pass
+        self.display_message('installed' 
+                        if self._action == action.installed else 'removed')
 
 class SetToolTip:
     def __init__(self, *arg):
