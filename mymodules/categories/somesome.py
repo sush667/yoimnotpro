@@ -60,7 +60,7 @@ class menu6:
     "tomboy": ("/usr/bin/tomboy", Img.tomboy_img, Menu6.tomboy, "Tomboy"),
     "tuxcards": ("/usr/bin/tuxcards", Img.tuxcards_img, Menu6.tuxcards, "Tuxcards"),
     "imagewriter": ("/usr/bin/imagewriter", Img.imagewriter_img, Menu6.imagewriter, "Imagewriter"),
-    "7zip": ("/usr/bin/7zFM", Img.sevenzip_img, Menu6.sevenzip, "7zip")
+    "p7zip": ("/usr/bin/7zFM", Img.sevenzip_img, Menu6.sevenzip, "7zip")
     }
     @staticmethod
     def load():
@@ -190,7 +190,7 @@ class menu1:
     "qt5-base": ("/usr/lib/qt/bin/designer", Img.qt5_img, Menu1.qt5, 'Qt5'),
     "qtcreator": ("/usr/bin/qtcreator", Img.qtcreator_img, Menu1.qtcreator, 'QtCreator'),
     "ninja-ide": ("/usr/bin/ninja-ide", Img.ninja_ide_img, Menu1.ninja_ide, 'Ninja-IDE'),
-    "openjdk": ("/etc/java-7-openjdk/", Img.openjdk_img, Menu1.openjdk, "OpenJDK")
+    "openjdk": ("/usr/share/licenses/jre7-openjdk/", Img.openjdk_img, Menu1.openjdk, "OpenJDK")
     }
     @staticmethod
     def load():

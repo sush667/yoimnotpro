@@ -1,6 +1,5 @@
 from mymodules.builder import Builder
-from mymodules.action.on_program_clicked import OPC
-from mymodules.action.OPC_related.apply_decoration import StartKickingSomeNinjas
+from mymodules.action.install_remove import StartKickingSomeNinjas
 from mymodules.categories.menu7_button import Menu7
 from mymodules.categories.menu6_button import Menu6
 from mymodules.categories.menu5_button import Menu5
@@ -50,7 +49,7 @@ class InitConnectMeSignals:
         Menu6.tomboy.connect("clicked", ninja, 'tomboy', m6)
         Menu6.tuxcards.connect("clicked", ninja, 'tuxcards', m6)
         Menu6.imagewriter.connect("clicked", ninja, 'imagewriter', m6)
-        Menu6.sevenzip.connect("clicked", OPC.on_sevenzip_clicked)
+        Menu6.sevenzip.connect("clicked", ninja, 'p7zip', m6)
 
         m5 = 'Menu5'
         # connect "clicked" signal to those Menu5 buttons
@@ -122,7 +121,7 @@ class InitConnectMeSignals:
         Menu2.f_spot.connect("clicked", ninja, 'f-spot', m2)
         Menu2.gimp.connect("clicked", ninja, 'gimp', m2)
         Menu2.gwenview.connect("clicked", ninja, 'gwenview', m2)
-        Menu2.imagemagick.connect("clicked", OPC.on_imagemagick_clicked)
+        Menu2.imagemagick.connect("clicked", ninja, 'imagemagick', m2)
         Menu2.inkscape.connect("clicked", ninja, 'inkscape', m2)
         Menu2.mypaint.connect("clicked", ninja, 'mypaint', m2)
         Menu2.pinta.connect("clicked", ninja, 'pinta', m2)
@@ -137,7 +136,7 @@ class InitConnectMeSignals:
         Menu1.eclipse.connect("clicked", ninja, 'eclipse', m1)
         Menu1.geany.connect("clicked", ninja, 'geany', m1)
         Menu1.glade.connect("clicked", ninja, 'glade', m1)
-        Menu1.openjdk.connect("clicked", OPC.on_openjdk_clicked, m1)
+        Menu1.openjdk.connect("clicked", ninja, 'openjdk', m1)
         Menu1.meld.connect("clicked", ninja, 'meld', m1)
         Menu1.netbeans.connect("clicked", ninja, 'netbeans', m1)
         Menu1.qt4.connect("clicked", ninja, 'qt4', m1)

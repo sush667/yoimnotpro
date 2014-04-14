@@ -59,7 +59,7 @@ class iod:
 
     def on_button7_clicked(self, widget):
         aboutdialog = Gtk.AboutDialog()
-        aboutdialog.set_program_name("1.4")
+        aboutdialog.set_program_name("1.5")
         aboutdialog.set_version(action.program_name)
         aboutdialog.set_logo(GdkPixbuf.Pixbuf.new_from_file("ui/yoimnotpro_icon.png"))
         aboutdialog.set_comments(action.program_description)
