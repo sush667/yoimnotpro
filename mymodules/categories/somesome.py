@@ -192,13 +192,6 @@ class menu1:
     "ninja-ide": ("/usr/bin/ninja-ide", Img.ninja_ide_img, Menu1.ninja_ide, 'Ninja-IDE'),
     "openjdk": ("/etc/java-7-openjdk/", Img.openjdk_img, Menu1.openjdk, "OpenJDK")
     }
-    def openjdk_method():
-        if not os.path.exists(menu1.dicti['openjdk']):
-            Img.openjdk_img.set_from_file(action.gtk_no)
-            Menu1.openjdk.set_tooltip_markup(format(SetToolTip('openJDK', action.not_here, action.install_it)))
-        else:
-            Img.openjdk_img.set_from_file(action.gtk_yes)
-            Menu1.openjdk.set_tooltip_markup(format(SetToolTip('openJDK', action.installed, action.remove_it)))
     @staticmethod
     def load():
         men1 = menu1.dicti
@@ -215,4 +208,4 @@ class menu1:
                 else:
                     val[1].set_from_file(no)
                     val[2].set_tooltip_markup(format(SetToolTip(val[3],
-                        action.installed, action.remove_it)))
+                        action.not_here, action.install_it)))
