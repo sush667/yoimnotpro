@@ -67,5 +67,5 @@ class Menu7:
 
     @staticmethod
     def load_icons_n_tooltips_at_startup():
-        from somesome import menu7
+        from mymodules.categories.somesome import menu7
         menu7.load()

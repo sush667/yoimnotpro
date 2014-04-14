@@ -70,5 +70,5 @@ class Menu5:
         Img.image5.set_from_file(action.menu_img_55)
         Img.image6.set_from_file(action.menu_img_6)
 
-        from somesome import menu5
+        from mymodules.categories.somesome import menu5
         menu5.load()
