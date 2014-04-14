@@ -40,16 +40,9 @@ class StartKickingSomeNinjas:
 
         def if_robin_has_spare_bike(*kill_mister_freeze):
             arg = kill_mister_freeze
-            if not len(batman.Find) > 4:
-                batman.Find[1].set_from_file(arg[0])
-                batman.Find[2].set_tooltip_markup(arg[1])
-                dial(batman.Find[3], arg[2])
-            else:
-                batman.Find[1].set_from_file(arg[0])
-                batman.Find[2].set_from_file(arg[0])
-                batman.Find[3].set_tooltip_markup(arg[1])
-                batman.Find[4].set_tooltip_markup(arg[1])
-                dial(batman.Find[5], arg[2])
+            batman.Find[1].set_from_file(arg[0])
+            batman.Find[2].set_tooltip_markup(arg[1])
+            dial(batman.Find[3], arg[2])
 
         if os.path.isfile(batman.Find[0]):
             os.system('pacman -R {program} --noconfirm'.format(program=batman.freeze))
