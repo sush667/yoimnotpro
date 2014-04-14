@@ -1,8 +1,6 @@
-import os
 from mymodules.builder import Builder
-from mymodules.action.find_program import Find
 from mymodules.buttons_images import Img
-from mymodules.action.dial import SetToolTip, action
+from mymodules.action.dial import action
 
 class Menu1:
 
@@ -57,96 +55,5 @@ class Menu1:
         Img.image5.set_from_file(action.menu_img_5)
         Img.image6.set_from_file(action.menu_img_6)
 
-        # check if those programs are installed and set appropriate sign
-        no = action.gtk_no
-        yes = action.gtk_yes
-        if os.path.isfile(Find.program['anjuta']):
-            Img.anjuta_img.set_from_file(yes)
-            Menu1.anjuta.set_tooltip_markup(format(SetToolTip('anjuta', action.installed, action.remove_it)))
-        else:
-            Img.anjuta_img.set_from_file(no)
-            Menu1.anjuta.set_tooltip_markup(format(SetToolTip('anjuta', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['blender']):
-            Img.blender_img.set_from_file(yes)
-            Menu1.blender.set_tooltip_markup(format(SetToolTip('blender', action.installed, action.remove_it)))
-        else:
-            Img.blender_img.set_from_file(no)
-            Menu1.blender.set_tooltip_markup(format(SetToolTip('blender', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['bluefish']):
-            Img.bluefish_img.set_from_file(yes)
-            Menu1.bluefish.set_tooltip_markup(format(SetToolTip('bluefish', action.installed, action.remove_it)))
-        else:
-            Img.bluefish_img.set_from_file(no)
-            Menu1.bluefish.set_tooltip_markup(format(SetToolTip('bluefish', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['eclipse']):
-            Img.eclipse_img.set_from_file(yes)
-            Menu1.eclipse.set_tooltip_markup(format(SetToolTip('eclipse', action.installed, action.remove_it)))
-        else:
-            Img.eclipse_img.set_from_file(no)
-            Menu1.eclipse.set_tooltip_markup(format(SetToolTip('eclipse', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['geany']):
-            Img.geany_img.set_from_file(yes)
-            Menu1.geany.set_tooltip_markup(format(SetToolTip('geany', action.installed, action.remove_it)))
-        else:
-            Img.geany_img.set_from_file(no)
-            Menu1.geany.set_tooltip_markup(format(SetToolTip('geany', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['glade']):
-            Img.glade_img.set_from_file(yes)
-            Menu1.glade.set_tooltip_markup(format(SetToolTip('glade', action.installed, action.remove_it)))
-        else:
-            Img.glade_img.set_from_file(no)
-            Menu1.glade.set_tooltip_markup(format(SetToolTip('glade', action.not_here, action.install_it)))
-
-        if os.path.exists(Find.program['openjdk']):
-            Img.openjdk_img.set_from_file(yes)
-            Menu1.openjdk.set_tooltip_markup(format(SetToolTip('openJDK', action.installed, action.remove_it)))
-        else:
-            Img.openjdk_img.set_from_file(no)
-            Menu1.openjdk.set_tooltip_markup(format(SetToolTip('openJDK', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['meld']):
-            Img.meld_img.set_from_file(yes)
-            Menu1.meld.set_tooltip_markup(format(SetToolTip('meld', action.installed, action.remove_it)))
-        else:
-            Img.meld_img.set_from_file(no)
-            Menu1.meld.set_tooltip_markup(format(SetToolTip('meld', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['netbeans']):
-            Img.netbeans_img.set_from_file(yes)
-            Menu1.netbeans.set_tooltip_markup(format(SetToolTip('netbeans', action.installed, action.remove_it)))
-        else:
-            Img.netbeans_img.set_from_file(no)
-            Menu1.netbeans.set_tooltip_markup(format(SetToolTip('netbeans', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['qt4']):
-            Img.qt4_img.set_from_file(yes)
-            Menu1.qt4.set_tooltip_markup(format(SetToolTip('qt4', action.installed, action.remove_it)))
-        else:
-            Img.qt4_img.set_from_file(no)
-            Menu1.qt4.set_tooltip_markup(format(SetToolTip('qt4', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['qt5-base']):
-            Img.qt5_img.set_from_file(yes)
-            Menu1.qt5.set_tooltip_markup(format(SetToolTip('qt5', action.installed, action.remove_it)))
-        else:
-            Img.qt5_img.set_from_file(no)
-            Menu1.qt5.set_tooltip_markup(format(SetToolTip('qt5', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['qtcreator']):
-            Img.qtcreator_img.set_from_file(yes)
-            Menu1.qtcreator.set_tooltip_markup(format(SetToolTip('qtcreator', action.installed, action.remove_it)))
-        else:
-            Img.qtcreator_img.set_from_file(no)
-            Menu1.qtcreator.set_tooltip_markup(format(SetToolTip('qtcreator', action.installed, action.remove_it)))
-
-        if os.path.isfile(Find.program['ninja-ide']):
-            Img.ninja_ide_img.set_from_file(yes)
-            Menu1.ninja_ide.set_tooltip_markup(format(SetToolTip('ninja-IDE', action.installed, action.remove_it)))
-        else:
-            Img.ninja_ide_img.set_from_file(no)
-            Menu1.ninja_ide.set_tooltip_markup(format(SetToolTip('ninja-IDE', action.not_here, action.install_it)))
+        from somesome import menu1
+        menu1.load()

@@ -1,8 +1,6 @@
-import os
-from mymodules.action.find_program import Find
 from mymodules.buttons_images import Img
 from mymodules.builder import Builder
-from mymodules.action.dial import SetToolTip, action
+from mymodules.action.dial import action
 
 class Menu2:
 
@@ -48,75 +46,5 @@ class Menu2:
         Img.image5.set_from_file(action.menu_img_5)
         Img.image6.set_from_file(action.menu_img_6)
 
-        # check if those programs are installed and set appropriate sign
-        no = action.gtk_no
-        yes = action.gtk_yes
-        if os.path.isfile(Find.program['evince']):
-            Img.evince_img.set_from_file(yes)
-            Menu2.evince.set_tooltip_markup(format(SetToolTip('evince', action.installed, action.remove_it)))
-        else:
-            Img.evince_img.set_from_file(no)
-            Menu2.evince.set_tooltip_markup(format(SetToolTip('evince', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['f-spot']):
-            Img.f_spot_img.set_from_file(yes)
-            Menu2.f_spot.set_tooltip_markup(format(SetToolTip('f-Spot', action.installed, action.remove_it)))
-        else:
-            Img.f_spot_img.set_from_file(no)
-            Menu2.f_spot.set_tooltip_markup(format(SetToolTip('f-Spot', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['gimp']):
-            Img.gimp_img.set_from_file(yes)
-            Menu2.gimp.set_tooltip_markup(format(SetToolTip('gimp', action.installed, action.remove_it)))
-        else:
-            Img.gimp_img.set_from_file(no)
-            Menu2.gimp.set_tooltip_markup(format(SetToolTip('gimp', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['gwenview']):
-            Img.gwenview_img.set_from_file(yes)
-            Menu2.gwenview.set_tooltip_markup(format(SetToolTip('gwenview', action.installed, action.remove_it)))
-        else:
-            Img.gwenview_img.set_from_file(no)
-            Menu2.gwenview.set_tooltip_markup(format(SetToolTip('gwenview', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['imagemagick']):
-            Img.imagemagick_img.set_from_file(yes)
-            Menu2.imagemagick.set_tooltip_markup(format(SetToolTip('imageMagick', action.installed, action.remove_it)))
-        else:
-            Img.imagemagick_img.set_from_file(no)
-            Menu2.imagemagick.set_tooltip_markup(format(SetToolTip('imageMagick', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['inkscape']):
-            Img.inkscape_img.set_from_file(yes)
-            Menu2.inkscape.set_tooltip_markup(format(SetToolTip('inkscape', action.installed, action.remove_it)))
-        else:
-            Img.inkscape_img.set_from_file(no)
-            Menu2.inkscape.set_tooltip_markup(format(SetToolTip('inkscape', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['mypaint']):
-            Img.mypaint_img.set_from_file(yes)
-            Menu2.mypaint.set_tooltip_markup(format(SetToolTip('mypaint', action.installed, action.remove_it)))
-        else:
-            Img.mypaint_img.set_from_file(no)
-            Menu2.mypaint.set_tooltip_markup(format(SetToolTip('mypaint', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['pinta']):
-            Img.pinta_img.set_from_file(yes)
-            Menu2.pinta.set_tooltip_markup(format(SetToolTip('pinta', action.installed, action.remove_it)))
-        else:
-            Img.pinta_img.set_from_file(no)
-            Menu2.pinta.set_tooltip_markup(format(SetToolTip('pinta', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['shotwell']):
-            Img.shotwell_img.set_from_file(yes)
-            Menu2.shotwell.set_tooltip_markup(format(SetToolTip('shotwell', action.installed, action.remove_it)))
-        else:
-            Img.shotwell_img.set_from_file(no)
-            Menu2.shotwell.set_tooltip_markup(format(SetToolTip('shotwell', action.not_here, action.install_it)))
-
-        if os.path.isfile(Find.program['stellarium']):
-            Img.stellarium_img.set_from_file(yes)
-            Menu2.stellarium.set_tooltip_markup(format(SetToolTip('stellarium', action.installed, action.remove_it)))
-        else:
-            Img.stellarium_img.set_from_file(no)
-            Menu2.stellarium.set_tooltip_markup(format(SetToolTip('stellarium', action.not_here, action.install_it)))
+        from somesome import menu2
+        menu2.load()
