@@ -6,7 +6,9 @@ class set_file_n_tooltip:
     def __init__(self, *args):
         no = action.gtk_no
         yes = action.gtk_yes
-        if os.path.isfile(args[0]):
+        if (os.path.isfile(args[0]) if not args[0]
+            == menu1.dicti['openjdk'][0] else
+            os.path.exists(args[0])):
             args[1].set_from_file(yes)
             args[2].set_tooltip_markup(format(SetToolTip(args[3],
                 action.installed, action.remove_it)))
@@ -195,17 +197,5 @@ class menu1:
     @staticmethod
     def load():
         men1 = menu1.dicti
-        no = action.gtk_no
-        yes = action.gtk_yes
-        for key, val in men1.items():
-            if not key == 'openjdk':
-                set_file_n_tooltip(val[0], val[1], val[2], val[3])
-            else:
-                if os.path.exists(val[0]):
-                    val[1].set_from_file(yes)
-                    val[2].set_tooltip_markup(format(SetToolTip(val[3],
-                        action.installed, action.remove_it)))
-                else:
-                    val[1].set_from_file(no)
-                    val[2].set_tooltip_markup(format(SetToolTip(val[3],
-                        action.not_here, action.install_it)))
+        for val in men1.values():
+            set_file_n_tooltip(val[0], val[1], val[2], val[3])
