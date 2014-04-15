@@ -2,9 +2,12 @@ import os
 from mymodules.buttons_images import Img
 from mymodules.action.dial import SetToolTip, action, CurrentCategoryDict
 
-class Inherit:
+class Inherit(object):
     def __init__(self, dicti):
         self.dicti = dicti
+    def init_set_file_n_tooltip(*args):
+        for val in args[1].values():
+            set_file_n_tooltip(val[0], val[1], val[2], val[3])
 
 class set_file_n_tooltip(object):
     def __init__(self, *args):
@@ -49,8 +52,7 @@ class menu7(Inherit):
         "virtualbox": ("/usr/bin/virtualbox", Img.virtualbox__img, Menu7.virtualbox_, 'Virtualbox'),
         "wireshark-gtk": ("/usr/bin/wireshark", Img.wireshark__img, Menu7.wireshark_, 'Wireshark')})
         attr = getattr(men7, 'dicti')
-        for val in attr.values():
-            set_file_n_tooltip(val[0], val[1], val[2], val[3])
+        men7.init_set_file_n_tooltip(attr)
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu6(Inherit):
@@ -72,8 +74,7 @@ class menu6(Inherit):
         "imagewriter": ("/usr/bin/imagewriter", Img.imagewriter_img, Menu6.imagewriter, "Imagewriter"),
         "p7zip": ("/usr/bin/7zFM", Img.sevenzip_img, Menu6.sevenzip, "7zip")})
         attr = getattr(men6, 'dicti')
-        for val in attr.values():
-            set_file_n_tooltip(val[0], val[1], val[2], val[3])
+        men6.init_set_file_n_tooltip(attr)
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu5(Inherit):
@@ -102,8 +103,7 @@ class menu5(Inherit):
         "gnome-system-monitor": ("/usr/bin//usr/bin/gnome-system-monitor", Img.gnome_system_monitor_img, 
             Menu5.gnome_system_monitor, 'Gnome System Monitor')})
         attr = getattr(men5, 'dicti')
-        for val in attr.values():
-            set_file_n_tooltip(val[0], val[1], val[2], val[3])
+        men5.init_set_file_n_tooltip(attr)
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu4(Inherit):
@@ -134,8 +134,7 @@ class menu4(Inherit):
             Menu4.simplescreenrecorder, 'Simple Screen Recorder'),
         "vokoscreen": ("/usr/bin/vokoscreen", Img.vokoscreen_img, Menu4.vokoscreen, 'Vokoscreen')})
         attr = getattr(men4, 'dicti')
-        for val in attr.values():
-            set_file_n_tooltip(val[0], val[1], val[2], val[3])
+        men4.init_set_file_n_tooltip(attr)
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu3(Inherit):
@@ -162,8 +161,7 @@ class menu3(Inherit):
         "transmission-gtk": ("/usr/bin/transmission-gtk", Img.transmission_img, Menu3.transmission, 'Transmission'),
         "linuxdcpp": ("/usr/bin/linuxdcpp", Img.linuxdcpp_img, Menu3.linuxdcpp, 'Linuxdcpp')})
         attr = getattr(men3, 'dicti')
-        for val in attr.values():
-            set_file_n_tooltip(val[0], val[1], val[2], val[3])
+        men3.init_set_file_n_tooltip(attr)
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu2(Inherit):
@@ -183,8 +181,7 @@ class menu2(Inherit):
         "stellarium": ("/usr/bin/stellarium", Img.stellarium_img, Menu2.stellarium, 'Stellarium'),
         "imagemagick": ("/usr/bin/convert", Img.imagemagick_img, Menu2.imagemagick,"ImageMagick")})
         attr = getattr(men2, 'dicti')
-        for val in attr.values():
-            set_file_n_tooltip(val[0], val[1], val[2], val[3])
+        men2.init_set_file_n_tooltip(attr)
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu1(Inherit):
@@ -207,6 +204,5 @@ class menu1(Inherit):
         "ninja-ide": ("/usr/bin/ninja-ide", Img.ninja_ide_img, Menu1.ninja_ide, 'Ninja-IDE'),
         "openjdk": ("/usr/share/licenses/jre7-openjdk/", Img.openjdk_img, Menu1.openjdk, "OpenJDK")})
         attr = getattr(men1, 'dicti')
-        for val in attr.values():
-            set_file_n_tooltip(val[0], val[1], val[2], val[3])
+        men1.init_set_file_n_tooltip(attr)
         setattr(CurrentCategoryDict, 'dicti', attr)
