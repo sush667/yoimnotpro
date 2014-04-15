@@ -1,7 +1,10 @@
 from random import choice
 from gi.repository import Gtk
 
-class dial:
+class CurrentCategoryDict(object):
+    pass
+
+class dial(object):
     def display_message(self, action):
         dialog = Gtk.MessageDialog(None, 0, Gtk.MessageType.INFO,
             Gtk.ButtonsType.OK, "{program_name} was {inst_or_rem} successfully."
@@ -23,14 +26,14 @@ class dial:
         self.display_message('installed' 
                         if self._action == action.installed else 'removed')
 
-class SetToolTip:
+class SetToolTip(object):
     def __init__(self, *arg):
         self._arg = arg
     def __repr__(self):
         return '<b><i>{program_name}</i></b> is {maybe_here}.\nClick to {apply_some_action_to} it.'\
         .format(program_name=self._arg[0].capitalize(), maybe_here=self._arg[1], apply_some_action_to=self._arg[2])
 
-class action:
+class action(object):
     program_description = 'Small app center'
     dev_website = "Developer Website"
     license = 'License'
