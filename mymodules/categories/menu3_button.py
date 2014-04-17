@@ -1,63 +1,8 @@
 from mymodules.buttons_images import Img
-from mymodules.builder import Builder
 from mymodules.action.dial import action
 
-class Menu3:
-
-    # get menu 3 application buttons
-    chromium = Builder.builder4.get_object("chromium")
-    deluge = Builder.builder4.get_object("deluge")
-    evolution = Builder.builder4.get_object("evolution")
-    filezilla = Builder.builder4.get_object("filezilla")
-    firefox = Builder.builder4.get_object("firefox")
-    chrome = Builder.builder4.get_object("chrome")
-    xchat = Builder.builder4.get_object("xchat")
-    liferea = Builder.builder4.get_object("liferea")
-    midori = Builder.builder4.get_object("midori")
-    minitube = Builder.builder4.get_object("minitube")
-    opera = Builder.builder4.get_object("opera")
-    pidgin = Builder.builder4.get_object("pidgin")
-    skyp = Builder.builder4.get_object("skyp")
-    steam = Builder.builder4.get_object("steam")
-    thunderbird = Builder.builder4.get_object("thunderbird")
-    transmission = Builder.builder4.get_object("transmission")
-    linuxdcpp = Builder.builder4.get_object("linuxdcpp")
-    # add tooltip for each application icon
-    chromium_icon_tooltip = Builder.builder4.get_object("chromium_icon_tooltip")
-    chromium_icon_tooltip.set_tooltip_text("Chromium is the open source web browser project from which Google Chrome draws its source code.")
-    deluge_icon_tooltip = Builder.builder4.get_object("deluge_icon_tooltip")
-    deluge_icon_tooltip.set_tooltip_text("Open source, cross-platform BitTorrent client.")
-    evolution_icon_tooltip = Builder.builder4.get_object("evolution_icon_tooltip")
-    evolution_icon_tooltip.set_tooltip_text("Evolution is a fully featured open source powerful, flexible and generally great email client.")
-    filezilla_icon_tooltip = Builder.builder4.get_object("filezilla_icon_tooltip")
-    filezilla_icon_tooltip.set_tooltip_text("Open-source FTP client.")
-    firefox_icon_tooltip = Builder.builder4.get_object("firefox_icon_tooltip")
-    firefox_icon_tooltip.set_tooltip_text("Firefox is a free and open-source web browser")
-    chrome_icon_tooltip = Builder.builder4.get_object("chrome_icon_tooltip")
-    chrome_icon_tooltip.set_tooltip_text("Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer and easier.")
-    xchat_icon_tooltip = Builder.builder4.get_object("xchat_icon_tooltip")
-    xchat_icon_tooltip.set_tooltip_text("XChat is a popular Internet Relay Chat (IRC) client.")
-    liferea_icon_tooltip = Builder.builder4.get_object("liferea_icon_tooltip")
-    liferea_icon_tooltip.set_tooltip_text("Liferea is an abbreviation for Linux Feed Reader, a news aggregator for online news feeds.")
-    midori_icon_tooltip = Builder.builder4.get_object("midori_icon_tooltip")
-    midori_icon_tooltip.set_tooltip_text("Midori is a lightweight Webkit-based web browser.")
-    minitube_icon_tooltip = Builder.builder4.get_object("minitube_icon_tooltip")
-    minitube_icon_tooltip.set_tooltip_text("Minitube is a native YouTube client. With it you can watch YouTube videos in a new way.")
-    opera_icon_tooltip = Builder.builder4.get_object("opera_icon_tooltip")
-    opera_icon_tooltip.set_tooltip_text("Opera is a web browser.")
-    pidgin_icon_tooltip = Builder.builder4.get_object("pidgin_icon_tooltip")
-    pidgin_icon_tooltip.set_tooltip_text("Pidgin is universal chat client.")
-    skype_icon_tooltip = Builder.builder4.get_object("skype_icon_tooltip")
-    skype_icon_tooltip.set_tooltip_text("Skype is a freemium voice-over-IP service and instant messaging client.")
-    steam_icon_tooltip = Builder.builder4.get_object("steam_icon_tooltip")
-    steam_icon_tooltip.set_tooltip_text("Steam is a digital distribution, digital rights management, multiplayer, and communications platform developed by\nValve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses.")
-    thunderbird_icon_tooltip = Builder.builder4.get_object("thunderbird_icon_tooltip")
-    thunderbird_icon_tooltip.set_tooltip_text("Thunderbird is an email program.")
-    transmission_icon_tooltip = Builder.builder4.get_object("transmission_icon_tooltip")
-    transmission_icon_tooltip.set_tooltip_text("Transmission is a BitTorrent client.")
-    linuxdcpp_icon_tooltip = Builder.builder4.get_object("linuxdcpp_icon_tooltip")
-    linuxdcpp_icon_tooltip.set_tooltip_text("A port of DC++ to GNU/Linux")
-
+class Menu3(object):
+    pass
     @staticmethod
     def on_button3_clicked():
         Img.image1.set_from_file(action.menu_img_1)

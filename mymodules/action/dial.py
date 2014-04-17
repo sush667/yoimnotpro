@@ -20,9 +20,9 @@ class dial(object):
         self._action = arg[1]
         self._dict_with_phrases = {
         'installed': ('good choice', 'that\'s my boy', 'I like it too',
-                    '- Cheers !', '>:-)'),
+                    '- Cheers !', '>:-)', ' - Eyecandy ;-]'),
         'removed': (', how dare you ?', 'pitty to see it go', '>:-(', 'was douchebag...',
-                    'LMAO', 'LOL')}
+                    'LMAO', 'LOL', 'Damn You BRO !')}
         self.display_message('installed' 
                         if self._action == action.installed else 'removed')
 

@@ -2,14 +2,13 @@
 import os
 import sys
 from mymodules.builder import Builder, SetMenuCategoriesTooltipNames
-from mymodules.categories.menu7_button import Menu7
+from mymodules.categories.menu7_button import Menu7, InitConnectMeSignals
 from mymodules.categories.menu6_button import Menu6
 from mymodules.categories.menu5_button import Menu5
 from mymodules.categories.menu4_button import Menu4
 from mymodules.categories.menu3_button import Menu3
 from mymodules.categories.menu2_button import Menu2
 from mymodules.categories.menu1_button import Menu1
-from mymodules.connect_signals import InitConnectMeSignals
 from mymodules.action.dial import action
 import cairo
 from gi.repository import Gtk, GdkPixbuf, Gdk

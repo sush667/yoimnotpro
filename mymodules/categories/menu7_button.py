@@ -1,7 +1,34 @@
 from mymodules.builder import Builder
+from mymodules.action.install_remove import StartKickingSomeNinjas
 
-class Menu7:
+class InitConnectMeSignals(object):
+    def __init__(self):
+        ninja = StartKickingSomeNinjas
+        Builder.builder.connect_signals(self)
 
+        # connect "clicked" signal to those Menu7 buttons
+        Menu7.geany_.connect("clicked", ninja, 'geany')
+        Menu7.blender_.connect("clicked", ninja, 'blender')
+        Menu7.ninja_ide_.connect("clicked", ninja, 'ninja-ide')
+        Menu7.glade_.connect("clicked", ninja, 'glade')
+        Menu7.audacious_.connect("clicked", ninja, 'audacious')
+        Menu7.gimp_.connect("clicked", ninja, 'gimp')
+        Menu7.evince_.connect("clicked", ninja, 'evince')
+        Menu7.xfburn_.connect("clicked", ninja, 'xfburn')
+        Menu7.flashplayer_.connect("clicked", ninja, 'flashplugin')
+        Menu7.openshot_.connect("clicked", ninja, 'openshot')
+        Menu7.chromium_.connect("clicked", ninja, 'chromium')
+        Menu7.deluge_.connect("clicked", ninja, 'deluge')
+        Menu7.liferea_.connect("clicked", ninja, 'liferea')
+        Menu7.htop_.connect("clicked", ninja, 'htop')
+        Menu7.skype_.connect("clicked", ninja, 'skype')
+        Menu7.wireshark_.connect("clicked", ninja, 'wireshark')
+        Menu7.virtualbox_.connect("clicked", ninja, 'virtualbox')
+        Menu7.steam_.connect("clicked", ninja, 'steam')
+        Menu7.xchat_.connect("clicked", ninja, 'xchat')
+        Menu7.gedit_.connect("clicked", ninja, 'gedit')
+
+class Menu7(object):
     # get menu 7 application buttons
     geany_ = Builder.builder8.get_object("geany_")
     blender_ = Builder.builder8.get_object("blender_")
