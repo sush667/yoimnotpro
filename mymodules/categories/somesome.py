@@ -8,9 +8,9 @@ from mymodules.action.dial import SetToolTip, action, CurrentCategoryDict
 class Inherit(object):
     def __init__(self, dicti):
         self.dicti = dicti
-        self.first_run = str()
-    def init_set_file_n_tooltip(*args):
-        for val in args[1].values():
+    def init_set_file_n_tooltip(self):
+    	args = self.dicti
+        for val in args.values():
             if (os.path.isfile(val[0]) if not val[0]
                 == "/usr/share/licenses/jre7-openjdk/" else
                 os.path.exists(val[0])):
@@ -50,7 +50,7 @@ class menu7(Inherit):
         "virtualbox": ("/usr/bin/virtualbox", Img.virtualbox__img, Menu7.virtualbox_, 'Virtualbox'),
         "wireshark-gtk": ("/usr/bin/wireshark", Img.wireshark__img, Menu7.wireshark_, 'Wireshark')})
         attr = getattr(men7, 'dicti')
-        men7.init_set_file_n_tooltip(attr)
+        men7.init_set_file_n_tooltip()
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu6(Inherit):
@@ -92,7 +92,7 @@ class menu6(Inherit):
             menu6.first_run = 'not first run'
         men6 = menu6(deep_copy)
         attr = getattr(men6, 'dicti')
-        men6.init_set_file_n_tooltip(attr)
+        men6.init_set_file_n_tooltip()
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu5(Inherit):
@@ -142,7 +142,7 @@ class menu5(Inherit):
 
         men5 = menu5(deep_copy)
         attr = getattr(men5, 'dicti')
-        men5.init_set_file_n_tooltip(attr)
+        men5.init_set_file_n_tooltip()
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu4(Inherit):
@@ -193,7 +193,7 @@ class menu4(Inherit):
 
         men4 = menu4(deep_copy)
         attr = getattr(men4, 'dicti')
-        men4.init_set_file_n_tooltip(attr)
+        men4.init_set_file_n_tooltip()
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu3(Inherit):
@@ -243,7 +243,7 @@ class menu3(Inherit):
 
         men3 = menu3(deep_copy)
         attr = getattr(men3, 'dicti')
-        men3.init_set_file_n_tooltip(attr)
+        men3.init_set_file_n_tooltip()
         setattr(CurrentCategoryDict, 'dicti', attr)
         
 class menu2(Inherit):
@@ -253,7 +253,7 @@ class menu2(Inherit):
         from mymodules.categories.menu2_button import Menu2
         local_dict = {
         "evince": ("/usr/bin/evince", 'Evince', "Evince is a document viewer for multiple document formats."),
-        "f-spot": ("/usr/bin/f-spot", 'F-spot', "F-Spot is a full-featured personal photo management application."),
+        "f-spot": ("/usr/bin/f-spot", 'F-spot', "f_spot", "F-Spot is a full-featured personal photo management application."),
         "gimp": ("/usr/bin/gimp", 'GIMP', "GIMP is an image retouching and editing tool, similar to Photoshop."),
         "gwenview": ("/usr/bin/gwenview", 'Gwenview', "Gwenview is an image viewer."),
         "inkscape": ("/usr/bin/inkscape", 'Inkscape', "Inkscape is an open source vector graphics editor."),
@@ -264,7 +264,7 @@ class menu2(Inherit):
         "imagemagick": ("/usr/bin/convert", "ImageMagick", "Use ImageMagick to convert, edit, or compose bitmap images in a variety of formats.")}
         deep_copy = deepcopy(local_dict)
         for key, value in local_dict.items():
-            key2 = (key if not key == 'f-spot' else 'f_spot')
+            key2 = (key if not len(value) > 3 else value[2])
             setattr(Menu2, key2, Builder.builder3.get_object(key2))          # install_remove_button
             setattr(Img, '{}_img'.format(key2),
                 Builder.builder3.get_object('{}_img'.format(key2)))          # install_remove_button image
@@ -273,17 +273,18 @@ class menu2(Inherit):
 
                             #exe_file or path, Img.program_name, Menu2.program_name, program_name.capitalize()
             deep_copy[key] = (value[0], getattr(Img, '{}_img'.format(key2)), getattr(Menu2, key2), value[1])
-            getattr(Menu2, '{}_icon_tooltip'.format(key2)).set_tooltip_text(value[2]) # faenza icon tooltip text
+            getattr(Menu2, '{}_icon_tooltip'.format(key2)).set_tooltip_text(
+            (value[2] if not len(value) > 3 else value[3]))                  # faenza icon tooltip text
 
         if not menu2.first_run:
-            for key in local_dict.keys():
-                key2 = (key if not key == 'f-spot' else 'f_spot')
+            for key, value in local_dict.items():
+                key2 = (key if not len(value) > 3 else value[2])
                 getattr(Menu2, key2).connect('clicked', StartKickingSomeNinjas, key)
             menu2.first_run = 'not first run'
 
         men2 = menu2(deep_copy)
         attr = getattr(men2, 'dicti')
-        men2.init_set_file_n_tooltip(attr)
+        men2.init_set_file_n_tooltip()
         setattr(CurrentCategoryDict, 'dicti', attr)
 
 class menu1(Inherit):
@@ -327,5 +328,5 @@ class menu1(Inherit):
 
         men1 = menu1(deep_copy)
         attr = getattr(men1, 'dicti')
-        men1.init_set_file_n_tooltip(attr)
+        men1.init_set_file_n_tooltip()
         setattr(CurrentCategoryDict, 'dicti', attr)

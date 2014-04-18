@@ -1,6 +1,6 @@
 from mymodules.builder import Builder
 
-class Img:
+class Img(object):
     geany__img = Builder.builder8.get_object("geany_img_")
     blender__img = Builder.builder8.get_object("blender_img_")
     ninja_ide__img = Builder.builder8.get_object("ninja_ide_img_")
