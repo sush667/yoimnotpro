@@ -6,10 +6,43 @@ from mymodules.action.install_remove import StartKickingSomeNinjas
 from mymodules.action.dial import SetToolTip, action, CurrentCategoryDict
 
 class Inherit(object):
-    def __init__(self, dicti):
-        self.dicti = dicti
+    def set_attr_on_the_fly(self, *arg):
+        from mymodules.categories.menu6_button import Menu6
+        from mymodules.categories.menu5_button import Menu5
+        from mymodules.categories.menu4_button import Menu4
+        from mymodules.categories.menu3_button import Menu3
+        from mymodules.categories.menu2_button import Menu2
+        from mymodules.categories.menu1_button import Menu1
+        local_dict = self.dicti
+        self.deep_copy = deepcopy(local_dict)
+        for key, value in local_dict.items():                      # args: [0] Menu{Number}, 
+            key2 = (key if not len(value) > 3 else value[2])       # [1] Builder.builder{Number}, [2] menu{Number}
+            skyp_or_not = (key2 if not key2 == 'skype' else 'skyp')
+            setattr(arg[0], skyp_or_not,
+             arg[1].get_object(skyp_or_not))                       # install_remove_button
+            setattr(Img, '{}_img'.format(key2),
+                arg[1].get_object('{}_img'.format(key2)))          # install_remove_button image
+            setattr(arg[0], '{}_icon_tooltip'.format(key2),
+                arg[1].get_object('{}_icon_tooltip'.format(key2))) # faenza icon
+
+                            #exe_file or path, Img.program_name, Menu6.program_name, program_name.capitalize()
+            self.deep_copy[key] = (value[0], getattr(Img, '{}_img'.format(key2)), 
+                getattr(arg[0], skyp_or_not), value[1])
+            getattr(arg[0], '{}_icon_tooltip'.format(key2)).set_tooltip_text(
+            (value[2] if not len(value) > 3 else value[3]))                  # faenza icon tooltip text
+
+        if not getattr(arg[2], 'first_run'):
+            for key, value in local_dict.items():
+                key2 = (key if not len(value) > 3 else value[2])
+                skyp_or_not = (key2 if not key2 == 'skype' else 'skyp')
+                getattr(arg[0], skyp_or_not).connect('clicked', StartKickingSomeNinjas, key)
+            setattr(arg[2], 'first_run', 'not first run')
+
+        setattr(CurrentCategoryDict, 'dicti', self.deep_copy)
+        self.init_set_file_n_tooltip()
+
     def init_set_file_n_tooltip(self):
-    	args = self.dicti
+        args = self.deep_copy
         for val in args.values():
             if (os.path.isfile(val[0]) if not val[0]
                 == "/usr/share/licenses/jre7-openjdk/" else
@@ -21,6 +54,9 @@ class Inherit(object):
                 val[1].set_from_file(action.gtk_no)
                 val[2].set_tooltip_markup(format(SetToolTip(val[3],
                     action.not_here, action.install_it)))
+    def __init__(self, dicti):
+        self.dicti = dicti
+        self.deep_copy = dict()
 
 class menu7(Inherit):
     pass
@@ -71,29 +107,8 @@ class menu6(Inherit):
         "tuxcards": ("/usr/bin/tuxcards", "Tuxcards", "TuxCards is a hierarical notebook."),
         "imagewriter": ("/usr/bin/imagewriter", "Imagewriter", "This tool is used for writing images to USB sticks."),
         "p7zip": ("/usr/bin/7zFM", "7zip", 'sevenzip', "7-Zip is an open source file archiver")}
-        deep_copy = deepcopy(local_dict)
-        for key, value in local_dict.items():
-            key2 = (key if not len(value) > 3 else value[2])
-            setattr(Menu6, key2, Builder.builder7.get_object(key2))          # install_remove_button
-            setattr(Img, '{}_img'.format(key2),
-                Builder.builder7.get_object('{}_img'.format(key2)))          # install_remove_button image
-            setattr(Menu6, '{}_icon_tooltip'.format(key2),
-                Builder.builder7.get_object('{}_icon_tooltip'.format(key2))) # faenza icon
-
-                            #exe_file or path, Img.program_name, Menu6.program_name, program_name.capitalize()
-            deep_copy[key] = (value[0], getattr(Img, '{}_img'.format(key2)), getattr(Menu6, key2), value[1])
-            getattr(Menu6, '{}_icon_tooltip'.format(key2)).set_tooltip_text(
-            (value[2] if not len(value) > 3 else value[3]))                  # faenza icon tooltip text
-
-        if not menu6.first_run:
-            for key, value in local_dict.items():
-                key2 = (key if not len(value) > 3 else value[2])
-                getattr(Menu6, key2).connect('clicked', StartKickingSomeNinjas, key)
-            menu6.first_run = 'not first run'
-        men6 = menu6(deep_copy)
-        attr = getattr(men6, 'dicti')
-        men6.init_set_file_n_tooltip()
-        setattr(CurrentCategoryDict, 'dicti', attr)
+        men6 = menu6(local_dict)
+        men6.set_attr_on_the_fly(Menu6, Builder.builder7, menu6)
 
 class menu5(Inherit):
     first_run = str()
@@ -120,30 +135,8 @@ class menu5(Inherit):
         "pamac": ("/usr/bin/pamac-manager", 'Pamac', "Pamac - simple graphical package manager for Manjaro Linux."),
         "gnome-system-monitor": ("/usr/bin/gnome-system-monitor", 
             'Gnome System Monitor', 'gnome_system_monitor', "Gnome System Monitor is a GNOME process viewer and system monitor with a nice easy-to-use interface")}
-        deep_copy = deepcopy(local_dict)
-        for key, value in local_dict.items():
-            key2 = (key if not len(value) > 3 else value[2])
-            setattr(Menu5, key2, Builder.builder6.get_object(key2))          # install_remove_button
-            setattr(Img, '{}_img'.format(key2),
-                Builder.builder6.get_object('{}_img'.format(key2)))          # install_remove_button image
-            setattr(Menu5, '{}_icon_tooltip'.format(key2),
-                Builder.builder6.get_object('{}_icon_tooltip'.format(key2))) # faenza icon
-
-                            #exe_file or path, Img.program_name, Menu5.program_name, program_name.capitalize()
-            deep_copy[key] = (value[0], getattr(Img, '{}_img'.format(key2)), getattr(Menu5, key2), value[1])
-            getattr(Menu5, '{}_icon_tooltip'.format(key2)).set_tooltip_text(
-            (value[2] if not len(value) > 3 else value[3]))                  # faenza icon tooltip text
-
-        if not menu5.first_run:
-            for key, value in local_dict.items():
-                key2 = (key if not len(value) > 3 else value[2])
-                getattr(Menu5, key2).connect('clicked', StartKickingSomeNinjas, key)
-            menu5.first_run = 'not first run'
-
-        men5 = menu5(deep_copy)
-        attr = getattr(men5, 'dicti')
-        men5.init_set_file_n_tooltip()
-        setattr(CurrentCategoryDict, 'dicti', attr)
+        men5 = menu5(local_dict)
+        men5.set_attr_on_the_fly(Menu5, Builder.builder6, menu5)
 
 class menu4(Inherit):
     first_run = str()
@@ -171,30 +164,8 @@ class menu4(Inherit):
         "kdenlive": ("/usr/bin/kdenlive", 'Kdenlive', 'Kdenlive (KDE Non-Linear Video Editor) is an open source video editing software'),
         "simplescreenrecorder": ("/usr/bin/simplescreenrecorder", 'Simple Screen Recorder', 'SimpleScreenRecorder is capable of recording video from full-screen and window-size captures of Opengl applications(and games).'),
         "vokoscreen": ("/usr/bin/vokoscreen", 'Vokoscreen', 'Vokoscreen is an easy to use screencast creator to record educational videos, live recordings of browser, installation, videoconferences, etc.')}
-        deep_copy = deepcopy(local_dict)
-        for key, value in local_dict.items():
-            key2 = (key if not len(value) > 3 else value[2])
-            setattr(Menu4, key2, Builder.builder5.get_object(key2))          # install_remove_button
-            setattr(Img, '{}_img'.format(key2),
-                Builder.builder5.get_object('{}_img'.format(key2)))          # install_remove_button image
-            setattr(Menu4, '{}_icon_tooltip'.format(key2),
-                Builder.builder5.get_object('{}_icon_tooltip'.format(key2))) # faenza icon
-
-                            #exe_file or path, Img.program_name, Menu4.program_name, program_name.capitalize()
-            deep_copy[key] = (value[0], getattr(Img, '{}_img'.format(key2)), getattr(Menu4, key2), value[1])
-            getattr(Menu4, '{}_icon_tooltip'.format(key2)).set_tooltip_text(
-            (value[2] if not len(value) > 3 else value[3]))                  # faenza icon tooltip text
-
-        if not menu4.first_run:
-            for key, value in local_dict.items():
-                key2 = (key if not len(value) > 3 else value[2])
-                getattr(Menu4, key2).connect('clicked', StartKickingSomeNinjas, key)
-            menu4.first_run = 'not first run'
-
-        men4 = menu4(deep_copy)
-        attr = getattr(men4, 'dicti')
-        men4.init_set_file_n_tooltip()
-        setattr(CurrentCategoryDict, 'dicti', attr)
+        men4 = menu4(local_dict)
+        men4.set_attr_on_the_fly(Menu4, Builder.builder5, menu4)
 
 class menu3(Inherit):
     first_run = str()
@@ -219,32 +190,8 @@ class menu3(Inherit):
         "thunderbird": ("/usr/bin/thunderbird", 'ThunderBird', "Thunderbird is an email program."),
         "transmission-gtk": ("/usr/bin/transmission-gtk", 'Transmission', 'transmission', "Transmission is a BitTorrent client."),
         "linuxdcpp": ("/usr/bin/linuxdcpp", 'Linuxdcpp', "A port of DC++ to GNU/Linux")}
-        deep_copy = deepcopy(local_dict)
-        for key, value in local_dict.items():
-            key2 = (key if not len(value) > 3 else value[2])
-            skyp_or_not = (key2 if not key2 == 'skype' else 'skyp')
-            setattr(Menu3, skyp_or_not, 
-            Builder.builder4.get_object(skyp_or_not))                        # install_remove_button
-            setattr(Img, '{}_img'.format(key2),
-                Builder.builder4.get_object('{}_img'.format(key2)))          # install_remove_button image
-            setattr(Menu3, '{}_icon_tooltip'.format(key2),
-                Builder.builder4.get_object('{}_icon_tooltip'.format(key2))) # faenza icon
-                            #exe_file or path, Img.program_name, Menu3.program_name, program_name.capitalize()
-            deep_copy[key] = (value[0], getattr(Img, '{}_img'.format(key2)), getattr(Menu3, skyp_or_not), value[1])
-            getattr(Menu3, '{}_icon_tooltip'.format(key2)).set_tooltip_text(
-            (value[2] if not len(value) > 3 else value[3]))                  # faenza icon tooltip text
-
-        if not menu3.first_run:
-            for key, value in local_dict.items():
-                key2 = (key if not len(value) > 3 else value[2])
-                skyp_or_not = (key2 if not key2 == 'skype' else 'skyp')
-                getattr(Menu3, skyp_or_not).connect('clicked', StartKickingSomeNinjas, key)
-            menu3.first_run = 'not first run'
-
-        men3 = menu3(deep_copy)
-        attr = getattr(men3, 'dicti')
-        men3.init_set_file_n_tooltip()
-        setattr(CurrentCategoryDict, 'dicti', attr)
+        men3 = menu3(local_dict)
+        men3.set_attr_on_the_fly(Menu3, Builder.builder4, menu3)
         
 class menu2(Inherit):
     first_run = str()
@@ -262,30 +209,8 @@ class menu2(Inherit):
         "shotwell": ("/usr/bin/shotwell", 'Shotwell', "Shotwell is an image organizer."),
         "stellarium": ("/usr/bin/stellarium", 'Stellarium', "Stellarium is a planetarium software that shows exactly what you see when you look up at the stars."),
         "imagemagick": ("/usr/bin/convert", "ImageMagick", "Use ImageMagick to convert, edit, or compose bitmap images in a variety of formats.")}
-        deep_copy = deepcopy(local_dict)
-        for key, value in local_dict.items():
-            key2 = (key if not len(value) > 3 else value[2])
-            setattr(Menu2, key2, Builder.builder3.get_object(key2))          # install_remove_button
-            setattr(Img, '{}_img'.format(key2),
-                Builder.builder3.get_object('{}_img'.format(key2)))          # install_remove_button image
-            setattr(Menu2, '{}_icon_tooltip'.format(key2),
-                Builder.builder3.get_object('{}_icon_tooltip'.format(key2))) # faenza icon
-
-                            #exe_file or path, Img.program_name, Menu2.program_name, program_name.capitalize()
-            deep_copy[key] = (value[0], getattr(Img, '{}_img'.format(key2)), getattr(Menu2, key2), value[1])
-            getattr(Menu2, '{}_icon_tooltip'.format(key2)).set_tooltip_text(
-            (value[2] if not len(value) > 3 else value[3]))                  # faenza icon tooltip text
-
-        if not menu2.first_run:
-            for key, value in local_dict.items():
-                key2 = (key if not len(value) > 3 else value[2])
-                getattr(Menu2, key2).connect('clicked', StartKickingSomeNinjas, key)
-            menu2.first_run = 'not first run'
-
-        men2 = menu2(deep_copy)
-        attr = getattr(men2, 'dicti')
-        men2.init_set_file_n_tooltip()
-        setattr(CurrentCategoryDict, 'dicti', attr)
+        men2 = menu2(local_dict)
+        men2.set_attr_on_the_fly(Menu2, Builder.builder3, menu2)
 
 class menu1(Inherit):
     first_run = str()
@@ -306,27 +231,5 @@ class menu1(Inherit):
         "qtcreator": ("/usr/bin/qtcreator", 'QtCreator', "Qt Creator is a cross-platform C++ IDE"),
         "ninja-ide": ("/usr/bin/ninja-ide", 'Ninja-IDE', 'ninja_ide', "Ninja-IDE is a cross-platform integrated development environment designed to build Python applications."),
         "openjdk": ("/usr/share/licenses/jre7-openjdk/", "OpenJDK", "OpenJDK (Open Java Development Kit) is a free and open source implementation of the Java Platform, Standard Edition (Java SE).")}
-        deep_copy = deepcopy(local_dict)
-        for key, value in local_dict.items():
-            key2 = (key if not len(value) > 3 else value[2])
-            setattr(Menu1, key2, Builder.builder2.get_object(key2))          # install_remove_button
-            setattr(Img, '{}_img'.format(key2),
-                Builder.builder2.get_object('{}_img'.format(key2)))          # install_remove_button image
-            setattr(Menu1, '{}_icon_tooltip'.format(key2),
-                Builder.builder2.get_object('{}_icon_tooltip'.format(key2))) # faenza icon
-
-                            #exe_file or path, Img.program_name, Menu1.program_name, program_name.capitalize()
-            deep_copy[key] = (value[0], getattr(Img, '{}_img'.format(key2)), getattr(Menu1, key2), value[1])
-            getattr(Menu1, '{}_icon_tooltip'.format(key2)).set_tooltip_text(
-            (value[2] if not len(value) > 3 else value[3]))                  # faenza icon tooltip text
-
-        if not menu1.first_run:
-            for key, value in local_dict.items():
-                key2 = (key if not len(value) > 3 else value[2])
-                getattr(Menu1, key2).connect('clicked', StartKickingSomeNinjas, key)
-            menu1.first_run = 'not first run'
-
-        men1 = menu1(deep_copy)
-        attr = getattr(men1, 'dicti')
-        men1.init_set_file_n_tooltip()
-        setattr(CurrentCategoryDict, 'dicti', attr)
+        men1 = menu1(local_dict)
+        men1.set_attr_on_the_fly(Menu1, Builder.builder2, menu1)
