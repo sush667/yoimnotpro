@@ -42,8 +42,8 @@ class Inherit(object):
         self.init_set_file_n_tooltip()
 
     def init_set_file_n_tooltip(self):
-        args = self.deep_copy
-        for val in args.values():
+        cur_dict = (self.deep_copy if self.deep_copy else self.dicti)
+        for val in cur_dict.values():
             if (os.path.isfile(val[0]) if not val[0]
                 == "/usr/share/licenses/jre7-openjdk/" else
                 os.path.exists(val[0])):
