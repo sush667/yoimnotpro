@@ -3,12 +3,7 @@ import os
 import sys
 from mymodules.builder import Builder, SetMenuCategoriesTooltipNames
 from mymodules.categories.menu7_button import Menu7, InitConnectMeSignals
-from mymodules.categories.menu6_button import Menu6
-from mymodules.categories.menu5_button import Menu5
-from mymodules.categories.menu4_button import Menu4
-from mymodules.categories.menu3_button import Menu3
-from mymodules.categories.menu2_button import Menu2
-from mymodules.categories.menu1_button import Menu1
+import mymodules.categories.somesome
 from mymodules.action.dial import action
 import cairo
 from gi.repository import Gtk, GdkPixbuf, Gdk
@@ -21,37 +16,37 @@ class iod:
         os.execlpe('gksudo', *arguments)
 
     def on_button1_clicked(self, widget):
-        Menu1.on_button1_clicked()
+        mymodules.categories.somesome.menu1.load()
         self.vbox.remove(self.current_category)
         self.current_category = Builder.grid_development
         self.vbox.add(Builder.grid_development)
 
     def on_button2_clicked(self, widget):
-        Menu2.on_button2_clicked()
+        mymodules.categories.somesome.menu2.load()
         self.vbox.remove(self.current_category)
         self.current_category = Builder.grid_graphics
         self.vbox.add(Builder.grid_graphics)
 
     def on_button3_clicked(self, widget):
-        Menu3.on_button3_clicked()
+        mymodules.categories.somesome.menu3.load()
         self.vbox.remove(self.current_category)
         self.current_category = Builder.grid_internet
         self.vbox.add(Builder.grid_internet)
 
     def on_button4_clicked(self, widget):
-        Menu4.on_button4_clicked()
+        mymodules.categories.somesome.menu4.load()
         self.vbox.remove(self.current_category)
         self.current_category = Builder.grid_multimedia
         self.vbox.add(Builder.grid_multimedia)
 
     def on_button5_clicked(self, widget):
-        Menu5.on_button5_clicked()
+        mymodules.categories.somesome.menu5.load()
         self.vbox.remove(self.current_category)
         self.current_category = Builder.grid_system
         self.vbox.add(Builder.grid_system)
 
     def on_button6_clicked(self, widget):
-        Menu6.on_button6_clicked()
+        mymodules.categories.somesome.menu6.load()
         self.vbox.remove(self.current_category)
         self.current_category = Builder.grid_utilities
         self.vbox.add(Builder.grid_utilities)
