@@ -29,7 +29,6 @@ class Inherit(object):
         for x in img_list:
             if not x[1] == given_img:
                 x[1].set_from_file(x[0])
-
     def set_attr_on_the_fly(self, *arg):
         local_dict = self.dicti
         self.deep_copy = deepcopy(local_dict)
@@ -58,6 +57,7 @@ class Inherit(object):
 
         setattr(CurrentCategoryDict, 'dicti', self.deep_copy)
         self.init_set_file_n_tooltip()
+        self.set_grey_menu_icons(arg[3])
 
     def init_set_file_n_tooltip(self):
         cur_dict = (self.deep_copy if self.deep_copy else self.dicti)
@@ -125,8 +125,7 @@ class menu6(Inherit):
         "imagewriter": ("/usr/bin/imagewriter", "Imagewriter", "This tool is used for writing images to USB sticks."),
         "p7zip": ("/usr/bin/7zFM", "7zip", 'sevenzip', "7-Zip is an open source file archiver")}
         men6 = menu6(local_dict)
-        men6.set_attr_on_the_fly(Menu6, Builder.builder7, menu6)
-        men6.set_grey_menu_icons(Img.image6)
+        men6.set_attr_on_the_fly(Menu6, Builder.builder7, menu6, Img.image6)
 
 class menu5(Inherit):
     first_run = str()
@@ -154,8 +153,7 @@ class menu5(Inherit):
         "gnome-system-monitor": ("/usr/bin/gnome-system-monitor", 
             'Gnome System Monitor', 'gnome_system_monitor', "Gnome System Monitor is a GNOME process viewer and system monitor with a nice easy-to-use interface")}
         men5 = menu5(local_dict)
-        men5.set_attr_on_the_fly(Menu5, Builder.builder6, menu5)
-        men5.set_grey_menu_icons(Img.image5)
+        men5.set_attr_on_the_fly(Menu5, Builder.builder6, menu5, Img.image5)
 
 class menu4(Inherit):
     first_run = str()
@@ -184,8 +182,7 @@ class menu4(Inherit):
         "simplescreenrecorder": ("/usr/bin/simplescreenrecorder", 'Simple Screen Recorder', 'SimpleScreenRecorder is capable of recording video from full-screen and window-size captures of Opengl applications(and games).'),
         "vokoscreen": ("/usr/bin/vokoscreen", 'Vokoscreen', 'Vokoscreen is an easy to use screencast creator to record educational videos, live recordings of browser, installation, videoconferences, etc.')}
         men4 = menu4(local_dict)
-        men4.set_attr_on_the_fly(Menu4, Builder.builder5, menu4)
-        men4.set_grey_menu_icons(Img.image4)
+        men4.set_attr_on_the_fly(Menu4, Builder.builder5, menu4, Img.image4)
 
 class menu3(Inherit):
     first_run = str()
@@ -211,8 +208,7 @@ class menu3(Inherit):
         "transmission-gtk": ("/usr/bin/transmission-gtk", 'Transmission', 'transmission', "Transmission is a BitTorrent client."),
         "linuxdcpp": ("/usr/bin/linuxdcpp", 'Linuxdcpp', "A port of DC++ to GNU/Linux")}
         men3 = menu3(local_dict)
-        men3.set_attr_on_the_fly(Menu3, Builder.builder4, menu3)
-        men3.set_grey_menu_icons(Img.image3)
+        men3.set_attr_on_the_fly(Menu3, Builder.builder4, menu3, Img.image3)
         
 class menu2(Inherit):
     first_run = str()
@@ -231,8 +227,7 @@ class menu2(Inherit):
         "stellarium": ("/usr/bin/stellarium", 'Stellarium', "Stellarium is a planetarium software that shows exactly what you see when you look up at the stars."),
         "imagemagick": ("/usr/bin/convert", "ImageMagick", "Use ImageMagick to convert, edit, or compose bitmap images in a variety of formats.")}
         men2 = menu2(local_dict)
-        men2.set_attr_on_the_fly(Menu2, Builder.builder3, menu2)
-        men2.set_grey_menu_icons(Img.image2)
+        men2.set_attr_on_the_fly(Menu2, Builder.builder3, menu2, Img.image2)
 
 class menu1(Inherit):
     first_run = str()
@@ -254,5 +249,4 @@ class menu1(Inherit):
         "ninja-ide": ("/usr/bin/ninja-ide", 'Ninja-IDE', 'ninja_ide', "Ninja-IDE is a cross-platform integrated development environment designed to build Python applications."),
         "openjdk": ("/usr/share/licenses/jre7-openjdk/", "OpenJDK", "OpenJDK (Open Java Development Kit) is a free and open source implementation of the Java Platform, Standard Edition (Java SE).")}
         men1 = menu1(local_dict)
-        men1.set_attr_on_the_fly(Menu1, Builder.builder2, menu1)
-        men1.set_grey_menu_icons(Img.image1)
+        men1.set_attr_on_the_fly(Menu1, Builder.builder2, menu1, Img.image1)
