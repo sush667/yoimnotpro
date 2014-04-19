@@ -5,13 +5,19 @@ from mymodules.builder import Builder
 from mymodules.action.install_remove import StartKickingSomeNinjas
 from mymodules.action.dial import SetToolTip, action, CurrentCategoryDict
 from mymodules.categories.menu7_button import Menu7
-from mymodules.categories.menu6_button import Menu6
-from mymodules.categories.menu5_button import Menu5
-from mymodules.categories.menu4_button import Menu4
-from mymodules.categories.menu3_button import Menu3
-from mymodules.categories.menu2_button import Menu2
-from mymodules.categories.menu1_button import Menu1
 
+class Menu6(object):
+    pass
+class Menu5(object):
+    pass
+class Menu2(object):
+    pass
+class Menu4(object):
+    pass
+class Menu3(object):
+    pass
+class Menu1(object):
+    pass
 class Inherit(object):
     def set_attr_on_the_fly(self, *arg):
         local_dict = self.dicti
@@ -93,6 +99,12 @@ class menu6(Inherit):
     first_run = str()
     @staticmethod
     def load():
+        Img.image1.set_from_file(action.menu_img_1)
+        Img.image2.set_from_file(action.menu_img_2)
+        Img.image3.set_from_file(action.menu_img_3)
+        Img.image4.set_from_file(action.menu_img_4)
+        Img.image5.set_from_file(action.menu_img_5)
+        Img.image6.set_from_file(action.menu_img_66)
         local_dict = {
         "docky": ("/usr/bin/docky", "Docky", "Docky is an advanced shortcut bar that sits at the edges of your screen."),
         "emacs": ("/usr/bin/emacs", "Emacs", "Emacs is a text editor."),
@@ -113,6 +125,12 @@ class menu5(Inherit):
     first_run = str()
     @staticmethod
     def load():
+        Img.image1.set_from_file(action.menu_img_1)
+        Img.image2.set_from_file(action.menu_img_2)
+        Img.image3.set_from_file(action.menu_img_3)
+        Img.image4.set_from_file(action.menu_img_4)
+        Img.image5.set_from_file(action.menu_img_55)
+        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "gparted": ("/usr/bin/gparted", 'Gparted', "GParted is a free partition editor for graphically managing your disk partitions. "),
         "guake": ("/usr/bin/guake", 'Guake', "Guake is a drop-down terminal."),
@@ -140,6 +158,12 @@ class menu4(Inherit):
     first_run = str()
     @staticmethod
     def load():
+        Img.image1.set_from_file(action.menu_img_1)
+        Img.image2.set_from_file(action.menu_img_2)
+        Img.image3.set_from_file(action.menu_img_3)
+        Img.image4.set_from_file(action.menu_img_44)
+        Img.image5.set_from_file(action.menu_img_5)
+        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "amarok": ("/usr/bin/amarok", 'Amarok', "Amarok is a cross-platform free and open source music player."),
         "audacious": ("/usr/bin/audacious", 'Audacious', 'Audacious is a free and open source audio player.'),
@@ -168,6 +192,12 @@ class menu3(Inherit):
     first_run = str()
     @staticmethod
     def load():
+        Img.image1.set_from_file(action.menu_img_1)
+        Img.image2.set_from_file(action.menu_img_2)
+        Img.image3.set_from_file(action.menu_img_33)
+        Img.image4.set_from_file(action.menu_img_4)
+        Img.image5.set_from_file(action.menu_img_5)
+        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "chromium": ("/usr/bin/chromium", 'Chromium', "Chromium is the open source web browser project from which Google Chrome draws its source code."),
         "deluge": ("/usr/bin/deluge", 'Deluge', "Open source, cross-platform BitTorrent client."),
@@ -193,6 +223,12 @@ class menu2(Inherit):
     first_run = str()
     @staticmethod
     def load():
+        Img.image1.set_from_file(action.menu_img_1)
+        Img.image2.set_from_file(action.menu_img_22)
+        Img.image3.set_from_file(action.menu_img_3)
+        Img.image4.set_from_file(action.menu_img_4)
+        Img.image5.set_from_file(action.menu_img_5)
+        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "evince": ("/usr/bin/evince", 'Evince', "Evince is a document viewer for multiple document formats."),
         "f-spot": ("/usr/bin/f-spot", 'F-spot', "f_spot", "F-Spot is a full-featured personal photo management application."),
@@ -211,6 +247,12 @@ class menu1(Inherit):
     first_run = str()
     @staticmethod
     def load():
+        Img.image1.set_from_file(action.menu_img_11)
+        Img.image2.set_from_file(action.menu_img_2)
+        Img.image3.set_from_file(action.menu_img_3)
+        Img.image4.set_from_file(action.menu_img_4)
+        Img.image5.set_from_file(action.menu_img_5)
+        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "anjuta": ("/usr/bin/anjuta", 'Anjuta', "Anjuta is an integrated development environment."),
         "blender": ("/usr/bin/blender", "Blender", "Blender is a free and open-source 3D computer graphics software product used for creating animated films, \nvisual effects, art, 3D printed models and so on."),
