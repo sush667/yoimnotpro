@@ -19,6 +19,17 @@ class Menu3(object):
 class Menu1(object):
     pass
 class Inherit(object):
+    def set_grey_menu_icons(self, given_img):
+        img_list = [(action.menu_img_1, Img.image1),
+        (action.menu_img_2, Img.image2),
+        (action.menu_img_3, Img.image3),
+        (action.menu_img_4, Img.image4),
+        (action.menu_img_5, Img.image5),
+        (action.menu_img_6, Img.image6)]
+        for x in img_list:
+            if not x[1] == given_img:
+                x[1].set_from_file(x[0])
+
     def set_attr_on_the_fly(self, *arg):
         local_dict = self.dicti
         self.deep_copy = deepcopy(local_dict)
@@ -99,11 +110,6 @@ class menu6(Inherit):
     first_run = str()
     @staticmethod
     def load():
-        Img.image1.set_from_file(action.menu_img_1)
-        Img.image2.set_from_file(action.menu_img_2)
-        Img.image3.set_from_file(action.menu_img_3)
-        Img.image4.set_from_file(action.menu_img_4)
-        Img.image5.set_from_file(action.menu_img_5)
         Img.image6.set_from_file(action.menu_img_66)
         local_dict = {
         "docky": ("/usr/bin/docky", "Docky", "Docky is an advanced shortcut bar that sits at the edges of your screen."),
@@ -120,17 +126,13 @@ class menu6(Inherit):
         "p7zip": ("/usr/bin/7zFM", "7zip", 'sevenzip', "7-Zip is an open source file archiver")}
         men6 = menu6(local_dict)
         men6.set_attr_on_the_fly(Menu6, Builder.builder7, menu6)
+        men6.set_grey_menu_icons(Img.image6)
 
 class menu5(Inherit):
     first_run = str()
     @staticmethod
     def load():
-        Img.image1.set_from_file(action.menu_img_1)
-        Img.image2.set_from_file(action.menu_img_2)
-        Img.image3.set_from_file(action.menu_img_3)
-        Img.image4.set_from_file(action.menu_img_4)
         Img.image5.set_from_file(action.menu_img_55)
-        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "gparted": ("/usr/bin/gparted", 'Gparted', "GParted is a free partition editor for graphically managing your disk partitions. "),
         "guake": ("/usr/bin/guake", 'Guake', "Guake is a drop-down terminal."),
@@ -153,17 +155,13 @@ class menu5(Inherit):
             'Gnome System Monitor', 'gnome_system_monitor', "Gnome System Monitor is a GNOME process viewer and system monitor with a nice easy-to-use interface")}
         men5 = menu5(local_dict)
         men5.set_attr_on_the_fly(Menu5, Builder.builder6, menu5)
+        men5.set_grey_menu_icons(Img.image5)
 
 class menu4(Inherit):
     first_run = str()
     @staticmethod
     def load():
-        Img.image1.set_from_file(action.menu_img_1)
-        Img.image2.set_from_file(action.menu_img_2)
-        Img.image3.set_from_file(action.menu_img_3)
         Img.image4.set_from_file(action.menu_img_44)
-        Img.image5.set_from_file(action.menu_img_5)
-        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "amarok": ("/usr/bin/amarok", 'Amarok', "Amarok is a cross-platform free and open source music player."),
         "audacious": ("/usr/bin/audacious", 'Audacious', 'Audacious is a free and open source audio player.'),
@@ -187,17 +185,13 @@ class menu4(Inherit):
         "vokoscreen": ("/usr/bin/vokoscreen", 'Vokoscreen', 'Vokoscreen is an easy to use screencast creator to record educational videos, live recordings of browser, installation, videoconferences, etc.')}
         men4 = menu4(local_dict)
         men4.set_attr_on_the_fly(Menu4, Builder.builder5, menu4)
+        men4.set_grey_menu_icons(Img.image4)
 
 class menu3(Inherit):
     first_run = str()
     @staticmethod
     def load():
-        Img.image1.set_from_file(action.menu_img_1)
-        Img.image2.set_from_file(action.menu_img_2)
         Img.image3.set_from_file(action.menu_img_33)
-        Img.image4.set_from_file(action.menu_img_4)
-        Img.image5.set_from_file(action.menu_img_5)
-        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "chromium": ("/usr/bin/chromium", 'Chromium', "Chromium is the open source web browser project from which Google Chrome draws its source code."),
         "deluge": ("/usr/bin/deluge", 'Deluge', "Open source, cross-platform BitTorrent client."),
@@ -218,17 +212,13 @@ class menu3(Inherit):
         "linuxdcpp": ("/usr/bin/linuxdcpp", 'Linuxdcpp', "A port of DC++ to GNU/Linux")}
         men3 = menu3(local_dict)
         men3.set_attr_on_the_fly(Menu3, Builder.builder4, menu3)
+        men3.set_grey_menu_icons(Img.image3)
         
 class menu2(Inherit):
     first_run = str()
     @staticmethod
     def load():
-        Img.image1.set_from_file(action.menu_img_1)
         Img.image2.set_from_file(action.menu_img_22)
-        Img.image3.set_from_file(action.menu_img_3)
-        Img.image4.set_from_file(action.menu_img_4)
-        Img.image5.set_from_file(action.menu_img_5)
-        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "evince": ("/usr/bin/evince", 'Evince', "Evince is a document viewer for multiple document formats."),
         "f-spot": ("/usr/bin/f-spot", 'F-spot', "f_spot", "F-Spot is a full-featured personal photo management application."),
@@ -242,17 +232,13 @@ class menu2(Inherit):
         "imagemagick": ("/usr/bin/convert", "ImageMagick", "Use ImageMagick to convert, edit, or compose bitmap images in a variety of formats.")}
         men2 = menu2(local_dict)
         men2.set_attr_on_the_fly(Menu2, Builder.builder3, menu2)
+        men2.set_grey_menu_icons(Img.image2)
 
 class menu1(Inherit):
     first_run = str()
     @staticmethod
     def load():
         Img.image1.set_from_file(action.menu_img_11)
-        Img.image2.set_from_file(action.menu_img_2)
-        Img.image3.set_from_file(action.menu_img_3)
-        Img.image4.set_from_file(action.menu_img_4)
-        Img.image5.set_from_file(action.menu_img_5)
-        Img.image6.set_from_file(action.menu_img_6)
         local_dict = {
         "anjuta": ("/usr/bin/anjuta", 'Anjuta', "Anjuta is an integrated development environment."),
         "blender": ("/usr/bin/blender", "Blender", "Blender is a free and open-source 3D computer graphics software product used for creating animated films, \nvisual effects, art, 3D printed models and so on."),
@@ -269,3 +255,4 @@ class menu1(Inherit):
         "openjdk": ("/usr/share/licenses/jre7-openjdk/", "OpenJDK", "OpenJDK (Open Java Development Kit) is a free and open source implementation of the Java Platform, Standard Edition (Java SE).")}
         men1 = menu1(local_dict)
         men1.set_attr_on_the_fly(Menu1, Builder.builder2, menu1)
+        men1.set_grey_menu_icons(Img.image1)
