@@ -10,20 +10,10 @@ class ChangeLang(object):
     def combo_changed(self, combobox):
         from mymodules.builder import SetMenuCategoriesTooltipNames
         active = self.combobox.get_active_text()
-        if active == "Deutsch":
-            self.save_lang('german,cp1252')
-            OpenCFGnSetLang()
-            SetMenuCategoriesTooltipNames()
-        if active == "Русский".encode('cp855').decode('cp855'):
-            self.save_lang('russian,cp855')
-            OpenCFGnSetLang()
-            SetMenuCategoriesTooltipNames()
-        if active == "Български".encode('cp1251').decode('cp1251'):
-            self.save_lang('bulgarian,cp1251')
-            OpenCFGnSetLang()
-            SetMenuCategoriesTooltipNames()
-        if active == 'English':
-            self.save_lang('english,utf-8')
+        local_dict = {'English':'english,utf-8', 'Deutsch':'german,cp1252',
+        'Русский':'russian,cp855', 'Български':'bulgarian,cp1251'}
+        if active in local_dict:
+            self.save_lang(local_dict[active])
             OpenCFGnSetLang()
             SetMenuCategoriesTooltipNames()
     def __init__(self):
@@ -88,54 +78,26 @@ class dial(object):
             == 'english' else 'removed'): (action.how_dare_you, action.pitty_to_see_it_go, '>:-(',
                     action.was_douchebag, 'LMAO', 'LOL', action.damn_you_bro)}
         self.display_message(action.installed2
-                        if self._action == action.installed else (action.not_here2 if not action.section
-            == 'english' else 'removed'))
+                        if self._action == action.installed else (action.not_here2 
+                            if not action.section == 'english' else 'removed'))
 class SetToolTip(object):
     def __init__(self, *arg):
         self._arg = arg
     def __repr__(self):
         return '<b><i>{program_name}</i></b> {iz2} {maybe_here}.\n{click_to2} {apply_some_action_to} {it2}'\
-        .format(program_name=self._arg[0].capitalize(), iz2=(('is' if action.section == 'english' else action.iz if self._arg[1]
-        == action.installed else str())),
+        .format(program_name=self._arg[0].capitalize(), iz2=(('is' if action.section == 'english' else
+         action.iz if self._arg[1] == action.installed else str())),
             maybe_here=self._arg[1], click_to2=action.click_to, apply_some_action_to=self._arg[2],
             it2=('it' if action.section == 'english' else action.it))
 class action(object):
-    encoding = str()
-    section = str()
-    langs = str()
-    damn_you_bro = str()
-    was_douchebag = str()
-    pitty_to_see_it_go = str()
-    how_dare_you = str()
-    cheers = str()
-    eyecandy = str()
-    i_like_it_too = str()
-    good_choice = str()
-    thats_my_boy = str()
-    program_description = str()
-    dev_website = str()
-    license = str()
-    suggestions = str()
-    comments = str()
-    program_name = str()
-    not_here = str()
-    install_it = str()
-    remove_it = str()
-    installed = str()
-    development = str()
-    graphics = str()
-    internet = str()
-    multimedia = str()
-    system = str()
-    utilities = str()
-    about = str()
-    was = str()
-    successfully = str()
-    installed2 = str()
-    not_here2 = str()
-    iz = str()
-    click_to = str()
-    it = str()
+    encoding, section, langs, damn_you_bro = str(), str(), str(), str()
+    was_douchebag, pitty_to_see_it_go, how_dare_you, cheers = str(), str(), str(), str()
+    eyecandy, i_like_it_too, good_choice, thats_my_boy = str(), str(), str(), str()
+    program_description, dev_website, license, suggestions = str(), str(), str(), str()
+    comments, program_name, not_here, install_it, remove_it = str(), str(), str(), str(), str()
+    installed, development, graphics, internet = str(), str(), str(), str()
+    multimedia, system, utilities, about, was = str(), str(), str(), str(), str()
+    successfully, installed2, not_here2, iz, click_to, it = str(), str(), str(), str(), str(), str()
     gtk_yes = './categories/gtk-yes.png'
     gtk_no = './categories/gtk-no.png'
     menu_img_66 = './categories/menu66.png'
