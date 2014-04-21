@@ -10,6 +10,10 @@ class ChangeLang(object):
     def combo_changed(self, combobox):
         from mymodules.builder import SetMenuCategoriesTooltipNames
         active = self.combobox.get_active_text()
+        if active == "Русский".encode('cp855').decode('cp855'):
+            self.save_lang('russian,cp855')
+            OpenCFGnSetLang()
+            SetMenuCategoriesTooltipNames()
         if active == "Български".encode('cp1251').decode('cp1251'):
             self.save_lang('bulgarian,cp1251')
             OpenCFGnSetLang()
@@ -25,6 +29,8 @@ class ChangeLang(object):
         self.combobox.append("", "English")
         self.combobox.append("", "Български"\
             .encode('cp1251').decode('cp1251'))
+        self.combobox.append("", "Русский"\
+            .encode('cp855').decode('cp855'))
         self.combobox.set_active(0)
         self.combobox.connect("changed", self.combo_changed)
         self.window.add(self.combobox)
@@ -42,11 +48,10 @@ class OpenCFGnSetLang(object):
             action.encoding = 'utf-8'
             action.section = 'english'
         cfg = ConfigParser()
-        cfg.readfp(open('mymodules/langs.ini'))
+        cfg.read('translations/langs.ini')
         enc = action.encoding
         for key, val in cfg.items(action.section):
             dec = val.encode(enc).decode(enc)
-            #print(dec.decode('cp1251'))
             if key in ['development','graphics','internet','system',
             'multimedia','utilities','about', 'langs']:
                 setattr(action, key, '<b>{}</b>'.format(dec))
@@ -75,11 +80,11 @@ class dial(object):
         action.installed2: (action.good_choice, action.thats_my_boy, action.i_like_it_too,
                     action.cheers, '>:-)', action.eyecandy),
         (action.not_here2 if action.section
-            == 'bulgarian' else 'removed'): (action.how_dare_you, action.pitty_to_see_it_go, '>:-(', action.was_douchebag,
-                    'LMAO', 'LOL', action.damn_you_bro)}
+            in ['bulgarian', 'russian'] else 'removed'): (action.how_dare_you, action.pitty_to_see_it_go, '>:-(',
+                    action.was_douchebag, 'LMAO', 'LOL', action.damn_you_bro)}
         self.display_message(action.installed2
                         if self._action == action.installed else (action.not_here2 if action.section
-            == 'bulgarian' else 'removed'))
+            in ['bulgarian', 'russian'] else 'removed'))
 class SetToolTip(object):
     def __init__(self, *arg):
         self._arg = arg
