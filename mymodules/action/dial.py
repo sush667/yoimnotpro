@@ -10,6 +10,10 @@ class ChangeLang(object):
     def combo_changed(self, combobox):
         from mymodules.builder import SetMenuCategoriesTooltipNames
         active = self.combobox.get_active_text()
+        if active == "Deutsch":
+            self.save_lang('german,cp1252')
+            OpenCFGnSetLang()
+            SetMenuCategoriesTooltipNames()
         if active == "Русский".encode('cp855').decode('cp855'):
             self.save_lang('russian,cp855')
             OpenCFGnSetLang()
@@ -31,6 +35,7 @@ class ChangeLang(object):
             .encode('cp1251').decode('cp1251'))
         self.combobox.append("", "Русский"\
             .encode('cp855').decode('cp855'))
+        self.combobox.append("", "Deutsch")
         self.combobox.set_active(0)
         self.combobox.connect("changed", self.combo_changed)
         self.window.add(self.combobox)
@@ -79,12 +84,12 @@ class dial(object):
         self._dict_with_phrases = {
         action.installed2: (action.good_choice, action.thats_my_boy, action.i_like_it_too,
                     action.cheers, '>:-)', action.eyecandy),
-        (action.not_here2 if action.section
-            in ['bulgarian', 'russian'] else 'removed'): (action.how_dare_you, action.pitty_to_see_it_go, '>:-(',
+        (action.not_here2 if not action.section
+            == 'english' else 'removed'): (action.how_dare_you, action.pitty_to_see_it_go, '>:-(',
                     action.was_douchebag, 'LMAO', 'LOL', action.damn_you_bro)}
         self.display_message(action.installed2
-                        if self._action == action.installed else (action.not_here2 if action.section
-            in ['bulgarian', 'russian'] else 'removed'))
+                        if self._action == action.installed else (action.not_here2 if not action.section
+            == 'english' else 'removed'))
 class SetToolTip(object):
     def __init__(self, *arg):
         self._arg = arg
