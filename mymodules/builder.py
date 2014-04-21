@@ -41,6 +41,7 @@ class Builder:
     button5 = builder.get_object("button5")
     button6 = builder.get_object("button6")
     button7 = builder.get_object("button7")
+    button8 = builder.get_object("button8")
 
 class SetMenuCategoriesTooltipNames:
     def __init__(self):
@@ -51,3 +52,4 @@ class SetMenuCategoriesTooltipNames:
         Builder.button5.set_tooltip_markup(action.system)
         Builder.button6.set_tooltip_markup(action.utilities)
         Builder.button7.set_tooltip_markup(action.about)
+        Builder.button8.set_tooltip_markup(action.langs)

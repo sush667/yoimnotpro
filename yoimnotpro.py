@@ -1,10 +1,10 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 import os
 import sys
 from mymodules.builder import Builder, SetMenuCategoriesTooltipNames
 from mymodules.categories.menu7_button import Menu7, InitConnectMeSignals
 import mymodules.categories.somesome
-from mymodules.action.dial import action
+from mymodules.action.dial import action, OpenCFGnSetLang, ChangeLang
 import cairo
 from gi.repository import Gtk, GdkPixbuf, Gdk
 
@@ -53,7 +53,7 @@ class iod:
 
     def on_button7_clicked(self, widget):
         aboutdialog = Gtk.AboutDialog()
-        aboutdialog.set_program_name("1.6")
+        aboutdialog.set_program_name("1.7")
         aboutdialog.set_version(action.program_name)
         aboutdialog.set_logo(GdkPixbuf.Pixbuf.new_from_file("ui/yoimnotpro_icon.png"))
         aboutdialog.set_comments(action.program_description)
@@ -65,6 +65,9 @@ class iod:
         aboutdialog.set_copyright('{License}: GPLv3 - http://www.gnu.org/licenses/gpl.html'.format(License=action.license))
         aboutdialog.run()
         aboutdialog.destroy()
+
+    def on_button8_clicked(self, widget):
+        ChangeLang()
 
     def draw_transparency(self, widget, cr):
         cr.set_source_rgba(.1, .1, .1, 0.8)
@@ -100,6 +103,7 @@ class iod:
         self.context = Gtk.StyleContext()
         self.context.add_provider_for_screen(self.screen, self.css_provider, self.priority)
 
+        OpenCFGnSetLang()
         InitConnectMeSignals()
         Menu7.load_icons_n_tooltips_at_startup()
         SetMenuCategoriesTooltipNames()

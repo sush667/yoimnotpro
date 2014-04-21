@@ -12,8 +12,8 @@ Archlinux users can install the program directly from AUR, without the need to d
 
 ## Requirements
 
-* python2
-* python2-gobject
+* python
+* python-gobject
 * webkitgtk
 * pywebkitgtk
 * gnome-themes-standard  (set Adwaita theme after that)
